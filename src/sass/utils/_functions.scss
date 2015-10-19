@@ -1,0 +1,7 @@
+@function type-scale($ratio) {
+  @return map-get($type-scale, $ratio);
+}
+
+@function line-height($ratio) {
+  @return map-get($line-height, $ratio);
+}

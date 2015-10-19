@@ -1,0 +1,7 @@
+@mixin vertical-rhythm($ratio: 0) {
+  font-size: type-scale($ratio);
+  line-height: line-height($ratio);
+}
+
+// @include vertical-rhythm(1);
+// This keeps font-size and line-height in the ratio

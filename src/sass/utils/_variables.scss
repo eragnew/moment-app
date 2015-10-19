@@ -1,0 +1,57 @@
+// BREAKPOINTS
+
+$break: 50em;
+
+
+// COLORS
+
+$theme-colors: (
+  primary: (
+    base: #,
+    light: #,
+    dark: #
+  ),
+  accent: (
+    base: #,
+    light: #,
+    dark: #
+  ),
+  secondary: (
+    base: #,
+    light: #,
+    dark: #
+  ),
+  foreground: (
+    base: #,
+    light: #,
+    dark: #,
+    darker: #
+  ),
+  base: (
+    base: #,
+    light: #,
+    dark: #
+  )
+);
+
+
+// TYPOGRAPHY
+
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.2;
+
+$type-scale: (
+  -1: 0.8rem,
+  0: 1rem,
+  1: 1.25rem,
+  2: 1.563rem,
+  3: 1.953rem
+);
+
+$line-heights: (
+  -1: $base-line-height,
+  0: $base-line-height,
+  1: $base-line-height * 2,
+  2: $base-line-height * 2,
+  3: $base-line-height * 2
+);
