@@ -14,26 +14,18 @@ module.exports = {
     src: src + "/images/**",
     dest: dest + "/images"
   },
-  html: {
-    viewsSrc: src + "/app/**/*.html",
-    viewsDest: dest + "/views/",
+  index: {
     src: src + "/index.html",
     dest: dest
   },
-  iconFonts: {
-    name: 'Gulp Starter Icons',
-    src: src + '/icons/*.svg',
-    dest: dest + '/fonts',
-    sassDest: src + '/sass',
-    template: './gulp/tasks/iconFont/template.sass.swig',
-    sassOutputName: '_icons.sass',
-    fontPath: 'fonts',
-    className: 'icon',
-    options: {
-      fontName: 'Post-Creator-Icons',
-      appendCodepoints: true,
-      normalize: false
-    }
+  html: {
+    src: src + "/app/**/*.html",
+    dest: dest + "/views/"
+  },
+  fonts: {
+      src: src + '/sass/fonts/*',
+      dest: dest + "/fonts/",
+      extensions: ['woff2', 'woff', 'eot', 'ttf', 'svg']
   },
   javascript: {
     src: src + '/app/**/*.js',
@@ -43,6 +35,9 @@ module.exports = {
   },
   ngConfig: {
     dest: dest + '/js',
+  },
+    server: {
+    serverFile: './server.js'
   },
   production: {
     cssSrc: dest + '/*.css',
