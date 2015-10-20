@@ -1,6 +1,6 @@
 require('../app.js');
 
-(function momentsCtrl() {
+(function momentsController() {
 
   "use strict";
 

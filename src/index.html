@@ -26,7 +26,7 @@
     </header>
 
     <header class="header" data-ng-hide="currentPath === '/'">
-      <h1 class="header-username" data-ng-if="loggedIn()"><span>{{ vm.user.name }}'s</span> Moment</h1>
+      <h1 class="header-username"><span>{{ vm.user.name }}'s</span> Moment</h1>
       <nav class="nav-logout">
         <ul>
           <li><a href data-ng-click="logOut()">Log Out</a></li>
@@ -39,7 +39,7 @@
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script> -->
-    <script src="js/main.js"></script>
+    <script src="js/packed.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

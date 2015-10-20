@@ -30,7 +30,7 @@ module.exports = {
   javascript: {
     src: src + '/app/**/*.js',
     dest: dest + '/js/',
-    entryPoint: src + '/app/index.js',
+    entryPoint: src + '/app/entry.js',
     packedFile: 'packed.js'
   },
   ngConfig: {
