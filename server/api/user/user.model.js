@@ -9,6 +9,10 @@ var userSchema = new mongoose.Schema({
   profile: {
     type: Object
   },
+  role: {
+    type: String,
+    default: 'user'
+  },
   accessToken: {
     type: String
   },
