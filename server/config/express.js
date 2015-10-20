@@ -8,5 +8,5 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(cookieParser());
   app.use(passport.initialize());
-  app.use(express.static(__dirname + '/build'));
+  app.use(express.static(__dirname + '/../../build'));
 };
