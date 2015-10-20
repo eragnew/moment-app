@@ -37,7 +37,7 @@ module.exports = {
     dest: dest + '/js',
   },
     server: {
-    serverFile: './server.js'
+    serverFile: './server/server.js'
   },
   production: {
     cssSrc: dest + '/*.css',
