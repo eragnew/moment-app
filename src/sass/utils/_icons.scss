@@ -1,28 +1,27 @@
 %icon-font-base {
-  font-family: 'icomoon';
+  font-family: 'moment';
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
 }
 
 $iconPrimary:
-(spotify 1.5em "\e800")
-(create 1.5em "\e912")
-(search 1.5em "\eb30")
-(grid 1.5em "\ec5f")
-(menu 1.5em "\ec6e")
-(invalid 1.5em "\ed6a")
-(valid 1.5em "\ed6f")
-(arrowR 1.5em "\edba")
-(arrowL 1.5em "\edc2");
+(spotify 2 "\e800")
+(create 2 "\e912")
+(search 2 "\eb30")
+(grid 2 "\ec5f")
+(menu 2 "\ec6e")
+(invalid 2 "\ed6a")
+(valid 2 "\ed6f")
+(arrowR 2 "\edba")
+(arrowL 2 "\edc2");
 
 @each $iconP in $iconPrimary {
   .icon-#{nth($iconP, 1)} {
     @extend %icon-font-base;
-    font-size: #{nth($iconP, 2)};
+    @include vertical-rhythm(nth($iconP, 2));
     color: #1e1d24;
     width: 100%;
     &:before {

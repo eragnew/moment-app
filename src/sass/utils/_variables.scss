@@ -7,31 +7,25 @@ $break: 50em;
 
 $theme-colors: (
   primary: (
-    base: #797676,
-    // light: #,
-    // dark: #
+    base: #000000,
+    light: #212121,
+    dark: #303030
   ),
   accent: (
-    base: #ffffff,
-  //   light: #,
-  //   dark: #
+    base: #4CAF50,
+      light: #81C784,
+      dark: #388E3C
+  ),
+  secondary: (
+    base: #03A9F4,
+    light: #29B6F6,
+    dark: #0288D1
+  ),
+  base: (
+    base: #FAFAFA,
+    light: #FFFFFF,
+    dark: #EEEEEE
   )
-  // secondary: (
-  //   base: #,
-  //   light: #,
-  //   dark: #
-  // ),
-  // foreground: (
-  //   base: #,
-  //   light: #,
-  //   dark: #,
-  //   darker: #
-  // ),
-  // base: (
-  //   base: #,
-  //   light: #,
-  //   dark: #
-  // )
 );
 
 
