@@ -1,36 +1,32 @@
-@mixin bgSettings($url){
+@mixin background($url){
   background: url($url);
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .moment-banner {
-  ul {
-    @include flex-box($align: flex-start, $wrap: wrap, $direction: row, $justify: flex-basis);
-    li {
-      width: 100%;
-      height: 100%;
-      float: left;
-      list-style: none;
-      position: relative;
-      display: inline-block;
-      text-indent: -999em;
+  @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-between);
+  @include background('/images/mainBG.png');
+  padding: 3em 0 0;
 
-      li:nth-child(1){
-      @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-1.jpg");
-      }
-      li:nth-child(2){
-        @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-2.jpg");
-      }
-      li:nth-child(3){
-        @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-3.jpg");
-      }
-      li:nth-child(4){
-        @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-4.jpg");
-      }
-      li:nth-child(5){
-        @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-5.jpg");
-      }
+  h1 {
+    order: 1;
+    flex-basis: 100%;
+    @include vertical-rhythm(4);
+    color: color('base', 'base');
+    margin: 0 2em 6em 2em;
+  }
+
+  img {
+    order: 2;
+    margin: 1em;
+  }
+
+  ul {
+    order: 3;
+    display: inline-flex;
+    li {
+      margin: 1em;
     }
   }
 }
