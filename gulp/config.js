@@ -20,7 +20,7 @@ module.exports = {
   },
   html: {
     src: src + "/app/**/*.html",
-    dest: dest + "/views/"
+    dest: dest
   },
   fonts: {
       src: src + '/sass/fonts/*',

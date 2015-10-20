@@ -48,9 +48,11 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login');
 }
 
-app.get('/', function(req, res) {
-  res.send('<html><body><a href="/auth/spotify">log in with Spotify</a></body></html>');
-});
+// app.get('/', function(req, res) {
+//   res.send('<html><body><a href="/auth/spotify">log IN with Spotify</a></body></html>');
+// });
+
+app.use(express.static(__dirname + '/build'));
 
 app.get('/auth/spotify',
   passport.authenticate('spotify', {scope: ['user-read-email', 'user-read-private'], showDialog: true}),
@@ -62,7 +64,7 @@ app.get('/auth/spotify',
 app.get('/auth/spotify/callback',
   passport.authenticate('spotify', {failureRedirect: '/'}),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/moments');
   }
 );
 

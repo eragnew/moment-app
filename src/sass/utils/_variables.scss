@@ -5,34 +5,34 @@ $break: 50em;
 
 // COLORS
 
-// $theme-colors: (
-//   primary: (
-//     base: #,
-//     light: #,
-//     dark: #
-//   ),
-//   accent: (
-//     base: #,
-//     light: #,
-//     dark: #
-//   ),
-//   secondary: (
-//     base: #,
-//     light: #,
-//     dark: #
-//   ),
-//   foreground: (
-//     base: #,
-//     light: #,
-//     dark: #,
-//     darker: #
-//   ),
-//   base: (
-//     base: #,
-//     light: #,
-//     dark: #
-//   )
-// );
+$theme-colors: (
+  primary: (
+    base: #797676,
+    // light: #,
+    // dark: #
+  ),
+  accent: (
+    base: #ffffff,
+  //   light: #,
+  //   dark: #
+  )
+  // secondary: (
+  //   base: #,
+  //   light: #,
+  //   dark: #
+  // ),
+  // foreground: (
+  //   base: #,
+  //   light: #,
+  //   dark: #,
+  //   darker: #
+  // ),
+  // base: (
+  //   base: #,
+  //   light: #,
+  //   dark: #
+  // )
+);
 
 
 // TYPOGRAPHY
@@ -48,7 +48,7 @@ $type-scale: (
   3: 1.953rem
 );
 
-$line-heights: (
+$line-height: (
   -1: $base-line-height,
   0: $base-line-height,
   1: $base-line-height * 2,
