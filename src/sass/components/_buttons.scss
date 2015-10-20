@@ -15,3 +15,7 @@ $button-color-hover: color(accent);
     border-style: solid;
     border-radius: $button-border-radius;
 }
+
+.btn-small {
+  @extend %button;
+}
