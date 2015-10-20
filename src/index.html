@@ -10,29 +10,62 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
+    <!--
+    /**
+     * @license
+     * MyFonts Webfont Build ID 3051131, 2015-06-29T23:00:01-0400
+     *
+     * The fonts listed in this notice are subject to the End User License
+     * Agreement(s) entered into by the website owner. All other parties are
+     * explicitly restricted from using the Licensed Webfonts(s).
+     *
+     * You may obtain a valid license at the URLs below.
+     *
+     * Webfont: MuseoSlab-500 by exljbris
+     * URL: http://www.myfonts.com/fonts/exljbris/museo-slab/500/
+     *
+     * Webfont: MuseoSlab-500Italic by exljbris
+     * URL: http://www.myfonts.com/fonts/exljbris/museo-slab/500-italic/
+     *
+     *
+     * License: http://www.myfonts.com/viewlicense?type=web&buildid=3051131
+     * Licensed pageviews: 10,000
+     * Webfonts copyright: Copyright (c) 2009 by Jos Buivenga. All rights reserved.
+     *
+     * © 2015 MyFonts Inc
+    */
+    -->
+    <link rel="stylesheet" href="fonts/museo-slab.css">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
         <!-- <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif] -->
-    <header class="header-login">
-      <h1>Moment</h1>
-      <nav class="nav-login">
+    <header class="header" data-ng-show="currentPath === '/'">
+      <h1 class="header-logo">Moment</h1>
+      <nav class="nav-landing">
         <ul>
           <li><a href="/auth/spotify" class="">Log In</a></li>
           <li><a href="" class="">Sign Up</a></li>
         </ul>
       </nav>
-      <p><strong>Moment</strong> is your <em>personal</em> music collection</p>
-      <p>See what you listen to most and save your special moments with music.</p>
     </header>
-    <main ng-view>
-    </main>
+
+    <header class="header" data-ng-hide="currentPath === '/'">
+      <h1 class="header-username"><span>{{ vm.user.name }}'s</span> Moment</h1>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href data-ng-click="logOut()">Log out</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main ng-view></main>
 
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script> -->
-    <script src="js/main.js"></script>
+    <script src="js/packed.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
