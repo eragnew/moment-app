@@ -5,7 +5,7 @@ var passport = require('passport');
 var SpotifyStrategy = require('passport-spotify').Strategy;
 var mongoose = require('mongoose');
 var User = require(__dirname + '/models/user');
-var spotifyConfig = require(__dirname + '/spotify-config');
+var spotifyConfig = require(__dirname + '/config/spotify-config');
 
 mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/moment_dev');
 

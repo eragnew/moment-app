@@ -23,7 +23,7 @@ module.exports = {
     dest: dest
   },
   fonts: {
-      src: src + '/sass/fonts/*',
+      src: src + '/sass/fonts/**/*',
       dest: dest + "/fonts/",
       extensions: ['woff2', 'woff', 'eot', 'ttf', 'svg']
   },
@@ -36,8 +36,8 @@ module.exports = {
   ngConfig: {
     dest: dest + '/js',
   },
-    server: {
-    serverFile: './server.js'
+  server: {
+    serverFile: './server/server.js'
   },
   production: {
     cssSrc: dest + '/*.css',
