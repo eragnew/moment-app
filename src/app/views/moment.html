@@ -1,0 +1,18 @@
+<section class="moment-container">
+  <article ng-controller="" class="moment-summary">
+    <div class="moment-banner">
+      <h1>{{ vm.moment.title }}</h1>
+    </div>
+    <img src="">{{vm.moment.cover}}<img>
+    <p class="moment-song"> {{ vm.moment.song }} | {{vm.moment.artist}} </p>
+    <p> {{ vm.moment.text }}</p>
+    <ul class="moment-metadata">
+      <li class="date">{{ vm.moment.date | date:"MM-dd-yyyy" }}</li>
+      <li>{{vm.moment.user}}</li>
+      <li>Listen On Spotify</li>
+      <li>{{vm.moment.album}}</li>
+    </ul>
+    <a class="btn-primary" href="#/moments/{{ moment._id }}">View All</a>
+    <a class= "btn-small" href="#/moments/{{vm.moment._id}}/edit">Edit</a>
+  </article>
+</section>
