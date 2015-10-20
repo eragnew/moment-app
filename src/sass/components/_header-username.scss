@@ -1,4 +1,7 @@
 .header-username {
-  font-family: MuseoSlab;
-  font-weight: regular;
+  font-family: font-family('secondary', 'semibold');
+
+  span {
+  font-family: font-family('secondary', 'regular');
+  }
 }

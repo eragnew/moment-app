@@ -24,3 +24,7 @@
 
   @return $color;
 }
+
+@function font-family($font-name, $font-variant) {
+  @return map-get(map-get($font-family, $font-name), $font-variant);
+}
