@@ -55,3 +55,19 @@ $line-height: (
   2: $base-line-height * 2,
   3: $base-line-height * 2
 );
+
+//font family map
+$font-family: (
+  'primary': (
+    'light': 'OpenSans-Light' sans-serif,
+    'light-italic': 'OpenSans-LightItalic' sans-serif,
+    'regular': 'OpenSans-Regular' sans-serif,
+    'italic': 'OpenSans-Italic' sans-serif,
+    'semibold': 'OpenSans-Semibold' sans-serif,
+    'semibold-italic': 'OpenSans-SemiboldItalic' sans-serif
+  ),
+  'secondary': (
+    'light': 'RobotoSlab-Light' serif,
+    'regular': 'RobotoSlab-Regular' serif
+  ),
+);
