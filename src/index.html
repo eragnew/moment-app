@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="momentApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,17 +10,23 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <header></header>
-    <main>
-        <audio src="http://">
-  Play.
-</audio>
+        <!-- <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif] -->
+    <header class="header-login">
+      <h1>Moment</h1>
+      <nav class="nav-login">
+        <ul>
+          <li><a href="/auth/spotify" class="">Log In</a></li>
+          <li><a href="" class="">Sign Up</a></li>
+        </ul>
+      </nav>
+      <p><strong>Moment</strong> is your <em>personal</em> music collection</p>
+      <p>See what you listen to most and save your special moments with music.</p>
+    </header>
+    <main ng-view>
     </main>
 
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>

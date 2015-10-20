@@ -1,0 +1,17 @@
+$button-padding: 0.5rem 1rem;
+$button-font-size: type-scale(1);
+$button-bgcolor: color(primary);
+$button-border-width: 0;
+$button-border-radius: type-scale(0);
+$button-color-hover: color(accent);
+
+%button {
+    display: inline-block;
+    padding: $button-padding;
+    font-size: $button-font-size;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-width: $button-border-width;
+    border-style: solid;
+    border-radius: $button-border-radius;
+}

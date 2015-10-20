@@ -1,0 +1,34 @@
+.header-login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h1 {
+    @include vertical-rhythm(3);
+    display: inline-block;
+  }
+  h1:before {
+    content: "";
+    display: inline-block;
+    height: $base-line-height * 2;
+    width: $base-line-height * 2;
+    padding-right: type-scale(0);
+    vertical-align: bottom;
+    background: url('/images/record.svg') no-repeat;
+    background-size: contain;
+  }
+
+  .nav-login {
+    ul {
+      display: inline-block;
+    }
+    li {
+      display: inline-block;
+    }
+  }
+
+  p {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}

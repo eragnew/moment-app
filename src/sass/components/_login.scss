@@ -1,0 +1,6 @@
+.nav-login {
+  a {
+    @extend %button;
+    @include moment-button-theme(color(primary, base));
+  }
+}
