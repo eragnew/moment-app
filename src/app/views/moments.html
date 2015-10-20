@@ -1,5 +1,11 @@
 <main>
-  <img class="image-profile" src="" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <div class="moment-banner">
+    <h1>{{ vm.moment.user }}'s Moments</h1>
+    <img class="image-profile" src="" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+    <ul class="moment-background">
+      <li class="one-sixth" ng-repeat="{{ vm.moment.art }}"></li>
+    </ul>
+  </div>
   <ul class="user-stats">
     <li>{{ vm.moments.total }} <span>moments</span></li>
     <li>{{ vm.moments.tags }} <span>tags</span></li>

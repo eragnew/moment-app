@@ -16,3 +16,12 @@
     background-color: $color;
   }
 }
+
+@mixin flex-box($align: null, $wrap: null, $direction: null, $justify: null, $basis: null) {
+  @include display(flex);
+  @include align-items($align);
+  @include flex-wrap($wrap);
+  @include flex-direction($direction);
+  @include justify-content($justify);
+  @include flex-basis($basis);
+}

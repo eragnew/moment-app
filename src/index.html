@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" ng-app="momentApp">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -45,8 +45,8 @@
       <h1 class="header-logo">Moment</h1>
       <nav class="nav-landing">
         <ul>
-          <li class="btn-small"><a href="/auth/spotify">Log In</a></li>
-          <li class="btn-small"><a href="">Sign Up</a></li>
+          <li><a class="btn-small" href="/auth/spotify">Log In</a></li>
+          <li><a class="btn-small" href="">Sign Up</a></li>
         </ul>
       </nav>
     </header>
@@ -55,12 +55,42 @@
       <h1 class="header-username"><span>{{ vm.user.name }}'s</span> Moment</h1>
       <nav class="nav-menu">
         <ul>
-          <li><a href data-ng-click="logOut()">Log out</a></li>
+          <li><a class="btn-small" href data-ng-click="logOut()">Log out</a></li>
         </ul>
       </nav>
     </header>
 
-    <main ng-view></main>
+    <main ng-view>
+      <div class="moment-banner">
+    <h1>{{ vm.moment.user }}'s Moments</h1>
+    <img class="image-profile" src="" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+    <ul class="moment-background">
+      <li class="one-sixth" ng-repeat="{{ vm.moment.art }}"></li>
+    </ul>
+  </div>
+  <ul class="user-stats">
+    <li>{{ vm.moments.total }} <span>moments</span></li>
+    <li>{{ vm.moments.tags }} <span>tags</span></li>
+    <li>{{ vm.user.tracks }} <span>tracks</span></li>
+  </ul>
+  <a class="create-button" href="">Create a moment</a>
+  <section class="timeline">
+    <h2>Timeline</h2>
+    <input type="text" name="search" data-ng-model="search">
+    <section class="moments-list" data-ng-repeat="month in vm.moments.date">
+      <h3>{{ moments.date | date:'M' }}</h3>
+      <ul>
+        <li data-ng-repeat="moment in vm.moments | orderBy:'-date' | filter:search">
+          <p>{{ moment.content | limitTo:150 }}</p>
+          <figure>
+            <img src="" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
+            <figcaption>{{ moment.date | date:'d' }}</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </section>
+    </main>
 
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
