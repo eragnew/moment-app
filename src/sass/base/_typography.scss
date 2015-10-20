@@ -1,1 +1,58 @@
+@font-face {
+  font-family: 'moment';
+  src:url('././fonts/moment.eot?tkezvf');
+  src:url('././fonts/moment.eot?tkezvf#iefix') format('embedded-opentype'),
+    url('./fonts/moment.ttf?tkezvf') format('truetype'),
+    url('./fonts/moment.woff?tkezvf') format('woff'),
+    url('./fonts/moment.svg?tkezvf#moment') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+// OpenSans Light
+@font-face {
+  font-family: 'OpenSans-Light';
+  src:url('./fonts/OpenSans-Light.ttf');
+  font-weight: normal;
+}
+
+//OpenSans Light Italic
+@font-face {
+  font-family: 'OpenSans-LightItalic';
+  src:url('./fonts/OpenSans-LightItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// OpenSans Regular
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src:url('./fonts/OpenSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//OpenSans Italic
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src:url('./fonts/OpenSans-Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//OpenSans Semibold
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src:url('./fonts/OpenSans-Semibold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//OpenSans Semibold Italic
+@font-face {
+  font-family: 'OpenSans-SemiboldItalic';
+  src:url('./fonts/OpenSans-SemiboldItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
