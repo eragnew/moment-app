@@ -41,17 +41,18 @@ function hasRole(roleRequired) {
 }
 
 function signToken(id) {
-  return jwt.sign({_id: id}, config.secrets.session, {expiresInMinutes: 60*5});
+  return jwt.sign({_id: id}, config.secrets.session, {expiresIn: 60*5*60});
 }
 
 function setTokenCookie(req, res) {
   console.log('setting token');
   console.log();
-  if (!res.user) return res.json(404, {message: 'something went wrong'});
+  debugger;
+  if (!req.user) return res.status(404).json({message: 'something went wrong'});
   var token = signToken(req.user._id, req.user.role);
   console.log(token);
   res.cookie('token', JSON.stringify(token));
-  res.redirect('/start');
+  res.redirect('/');
 }
 
 exports.isAuthenticated = isAuthenticated;

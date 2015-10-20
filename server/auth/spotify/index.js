@@ -6,7 +6,7 @@ var router = express.Router();
 
 router.get('/',
   passport.authenticate('spotify', {
-    scope: ['playlist-read-false'],
+    scope: ['playlist-read-private', 'user-library-read', 'user-follow-read'],
     session: false
   }),
   function(req, res) {
