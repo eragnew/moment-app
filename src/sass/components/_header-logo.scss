@@ -1,0 +1,15 @@
+.header-logo {
+  @include vertical-rhythm(3);
+  display: inline-block;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: $base-line-height * 4;
+    width: $base-line-height * 4;
+    padding-right: type-scale(0);
+    vertical-align: middle;
+    background: url('/images/record.svg') no-repeat;
+    background-size: contain;
+  }
+}

@@ -1,0 +1,23 @@
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h2 {
+    display: inline-block;
+  }
+  input[type="text"] {
+    display: inline-block;
+  }
+  .moments-list {
+    flex-basis: 100%;
+
+    h3 {
+      text-align: center;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

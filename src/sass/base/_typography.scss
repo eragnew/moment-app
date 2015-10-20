@@ -1,3 +1,36 @@
+@import url("//hello.myfonts.net/count/2f78d2");
+
+@font-face {
+  font-family: 'MuseoSlab-Regular';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./fonts/museo-slab/2F78D2_0_0.eot');
+  src: url('./fonts/museo-slab/2F78D2_0_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_0_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_0_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MuseoSlab-Semibold';
+  font-weight: bold;
+  font-style: normal;
+  src: url('./fonts/museo-slab/2F78D2_1_0.eot');
+  src: url('./fonts/museo-slab/2F78D2_1_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_1_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_1_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_1_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MuseoSlab-RegularItalic';
+  font-weight: normal;
+  font-style: italic;
+  src: url('./fonts/museo-slab/2F78D2_2_0.eot');
+  src: url('./fonts/museo-slab/2F78D2_2_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_2_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_2_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_2_0.ttf') format('truetype');
+}
+
+@font-face {font-family: 'MuseoSlab-SemiboldItalic';
+  font-weight: bold;
+  font-style: italic;
+  src: url('./fonts/museo-slab/2F78D2_3_0.eot');
+  src: url('./fonts/museo-slab/2F78D2_3_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_3_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_3_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_3_0.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'moment';
   src:url('./fonts/moment.eot?tkezvf');

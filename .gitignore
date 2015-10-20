@@ -25,3 +25,6 @@ node_modules
 
 # Compiled Public Directory
 build
+
+# Strategy Directory
+strategy

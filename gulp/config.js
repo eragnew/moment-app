@@ -23,20 +23,20 @@ module.exports = {
     dest: dest
   },
   fonts: {
-      src: src + '/sass/fonts/*',
+      src: src + '/sass/fonts/**/*',
       dest: dest + "/fonts/",
       extensions: ['woff2', 'woff', 'eot', 'ttf', 'svg']
   },
   javascript: {
     src: src + '/app/**/*.js',
     dest: dest + '/js/',
-    entryPoint: src + '/app/index.js',
+    entryPoint: src + '/app/entry.js',
     packedFile: 'packed.js'
   },
   ngConfig: {
     dest: dest + '/js',
   },
-    server: {
+  server: {
     serverFile: './server/server.js'
   },
   production: {
