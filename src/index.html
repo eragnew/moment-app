@@ -15,8 +15,7 @@
   <body>
         <!-- <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif] -->
-
-    <!-- <header class="header-login">
+    <header class="header" data-ng-show="currentPath === '/'">
       <h1 class="header-logo">Moment</h1>
       <nav class="nav-login">
         <ul>
@@ -24,45 +23,18 @@
           <li><a href="" class="">Sign Up</a></li>
         </ul>
       </nav>
-      <p><strong>Moment</strong> is your <em>personal</em> music collection</p>
-      <p>See what you listen to most and save your special moments with music.</p>
-    </header> -->
+    </header>
 
-    <header>
-      <h1 class="header-username"><span>{{ vm.user.name }}'s</span> Moment</h1>
+    <header class="header" data-ng-hide="currentPath === '/'">
+      <h1 class="header-username" data-ng-if="loggedIn()"><span>{{ vm.user.name }}'s</span> Moment</h1>
       <nav class="nav-logout">
         <ul>
           <li><a href data-ng-click="logOut()">Log Out</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <img class="image-profile" src="" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-      <ul class="user-stats">
-        <li>{{ vm.moments.total }} moments</li>
-        <li>{{ vm.moments.tags }} tags</li>
-        <li>{{ vm.user.tracks }} tracks</li>
-      </ul>
-      <a class="create-button" href="">Create a moment</a>
-      <section class="timeline">
-        <h2>Timeline</h2>
-        <input type="text" name="search" data-ng-model="search">
-        <section data-ng-repeat="month in vm.moments.date">
-          <h3>{{ moments.date | date:'M' }}</h3>
-          <ul>
-            <li data-ng-repeat="moment in vm.moments | orderBy:'-date' | filter:search">  <p>{{ moment.content | limitTo:150 }}</p>
-              <figure>
-                <img src="" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
-                <figcaption>{{ moment.date | date:'d' }}</figcaption>
-              </figure>
-            </li>
-          </ul>
-        </section>
-      </section>
-    </main>
 
-    <!-- <main ng-view>
-    </main> -->
+    <main ng-view></main>
 
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>

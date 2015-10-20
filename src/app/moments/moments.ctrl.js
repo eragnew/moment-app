@@ -8,6 +8,8 @@ require('../app.js');
 
     var vm = this;
 
+    vm.currentPath = $location.path();
+
     // Initialize the controller
     initialize();
 
