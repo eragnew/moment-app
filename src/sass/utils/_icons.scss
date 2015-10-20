@@ -1,0 +1,31 @@
+%icon-font-base {
+  font-family: 'moment';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+$iconPrimary:
+(spotify 2 "\e800")
+(create 2 "\e912")
+(search 2 "\eb30")
+(grid 2 "\ec5f")
+(menu 2 "\ec6e")
+(invalid 2 "\ed6a")
+(valid 2 "\ed6f")
+(arrowR 2 "\edba")
+(arrowL 2 "\edc2");
+
+@each $iconP in $iconPrimary {
+  .icon-#{nth($iconP, 1)} {
+    @extend %icon-font-base;
+    @include vertical-rhythm(nth($iconP, 2));
+    color: #1e1d24;
+    width: 100%;
+    &:before {
+      content: nth($iconP, 3);
+    }
+  }
+}
