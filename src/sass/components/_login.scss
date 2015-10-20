@@ -1,4 +1,10 @@
 .nav-login {
+  ul {
+      display: inline-block;
+    }
+  li {
+    display: inline-block;
+  }
   a {
     @extend %button;
     @include moment-button-theme(color(primary, base));
