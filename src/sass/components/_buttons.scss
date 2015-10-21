@@ -1,21 +1,28 @@
-$button-padding: 0.5rem 1rem;
-$button-font-size: type-scale(1);
-$button-bgcolor: color(primary);
-$button-border-width: 0;
-$button-border-radius: type-scale(0);
-$button-color-hover: color(accent);
+$button-border-width: 1px;
+$button-border-radius: type-scale(-1);
 
 %button {
     display: inline-block;
-    padding: $button-padding;
-    font-size: $button-font-size;
-    font-weight: bold;
     text-transform: uppercase;
     border-width: $button-border-width;
     border-style: solid;
     border-radius: $button-border-radius;
+    font-family: font-family('secondary', 'semibold');
 }
 
 .btn-small {
   @extend %button;
+  @include moment-button-theme(color('base', 'base'), color('primary', 'dark'), color('accent', 'base'), color('primary', 'dark'));
+  font-size: type-scale(-1);
+  padding: 0em 1em;
+}
+
+.btn-large {
+  @extend %button;
+  @include moment-button-theme(color('base', 'base'), transparent, color('primary', 'base'), color('base', 'light'));
+  font-size: type-scale(0);
+  padding: 1em;
+  &:hover {
+    border-color: color('base', 'light');
+  }
 }

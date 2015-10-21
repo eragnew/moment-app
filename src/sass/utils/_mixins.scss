@@ -6,13 +6,23 @@
 // @include vertical-rhythm(1);
 // This keeps font-size and line-height in the ratio
 
-@mixin moment-button-theme($color, $color-text-hover: color(accent)) {
+@mixin moment-button-theme($color, $bg-color, $hover, $hover-bg) {
   color: $color;
   border-color: $color;
-  background-color: transparent;
+  background-color: $bg-color;
 
   &:hover {
-    color: $color-text-hover;
-    background-color: $color;
+    color: $hover;
+    border-color: $hover;
+    background-color: $hover-bg;
   }
+}
+
+@mixin flex-box($align: null, $wrap: null, $direction: null, $justify: null, $basis: null) {
+  @include display(flex);
+  @include align-items($align);
+  @include flex-wrap($wrap);
+  @include flex-direction($direction);
+  @include justify-content($justify);
+  @include flex-basis($basis);
 }

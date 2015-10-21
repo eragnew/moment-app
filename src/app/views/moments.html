@@ -1,25 +1,28 @@
-<main>
+<div class="moment-banner">
+  <h1>Peter's <span>Moments</span></h1>
   <img class="image-profile" src="" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-  <ul class="user-stats">
-    <li>{{ vm.moments.total }} <span>moments</span></li>
-    <li>{{ vm.moments.tags }} <span>tags</span></li>
-    <li>{{ vm.user.tracks }} <span>tracks</span></li>
-  </ul>
-  <a class="create-button" href="">Create a moment</a>
-  <section class="timeline">
+<ul class="user-stats">
+  <li>{{ vm.moments.total }} <span>moments</span></li>
+  <li>{{ vm.moments.tags }} <span>tags</span></li>
+  <li>{{ vm.user.tracks }} <span>tracks</span></li>
+</ul>
+</div>
+<section class="timeline">
+  <a class="btn-large" href="">Create a moment</a>
+  <div class="timeline-header">
     <h2>Timeline</h2>
-    <input type="text" name="search" data-ng-model="search">
-    <section class="moments-list" data-ng-repeat="month in vm.moments.date">
-      <h3>{{ moments.date | date:'M' }}</h3>
-      <ul>
-        <li data-ng-repeat="moment in vm.moments | orderBy:'-date' | filter:search">
-          <p>{{ moment.content | limitTo:150 }}</p>
-          <figure>
-            <img src="" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
-            <figcaption>{{ moment.date | date:'d' }}</figcaption>
-          </figure>
-        </li>
-      </ul>
-    </section>
+    <input type="text" name="search" placeholder="SEARCH" data-ng-model="search">
+  </div>
+  <section class="moments-list" data-ng-repeat="month in vm.moments.date">
+    <h3>{{ moments.date | date:'M' }}</h3>
+    <ul>
+      <li data-ng-repeat="moment in vm.moments | orderBy:'-date' | filter:search">
+        <p>{{ moment.content | limitTo:150 }}</p>
+        <figure>
+          <img src="" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
+          <figcaption>{{ moment.date | date:'d' }}</figcaption>
+        </figure>
+      </li>
+    </ul>
   </section>
-</main>
+</section>

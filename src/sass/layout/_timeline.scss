@@ -1,15 +1,60 @@
 .timeline {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: center);
+  margin: 2em 0 2em 0;
+  @media only screen and (min-width: $break) {
 
-  h2 {
-    display: inline-block;
   }
-  input[type="text"] {
-    display: inline-block;
+
+  .btn-large {
+    order: 1;
   }
+
+  .timeline-header {
+    order: 2;
+    flex-basis: 100%;
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media only screen and (min-width: $break) {
+      margin: 0 6em 0 6em;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    h2 {
+      @include vertical-rhythm(2);
+      color: color('base', 'base');
+      font-family: font-family('secondary', 'semibold');
+      text-transform: uppercase;
+      margin: 1em 0;
+      @media only screen and (min-width: $break) {
+        display: inline-flex;
+        flex-basis: 60%;
+      }
+    }
+    input[type="text"] {
+      @include vertical-rhythm(1);
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #eeeeee;
+      opacity: .8;
+      margin: 1em 0;
+      color: color('primary', 'light');
+      &:focus {
+        outline: 0;
+        border-bottom: 1px solid color('secondary', 'base');
+      }
+      @media only screen and (min-width: $break) {
+        display: inline-flex;
+        flex-basis: 30%;
+        height: 2em;
+      }
+    }
+  }
+
   .moments-list {
+    order: 3;
     flex-basis: 100%;
 
     h3 {
