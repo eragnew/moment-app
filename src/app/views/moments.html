@@ -11,7 +11,7 @@
   <a class="btn-large" href="">Create a moment</a>
   <div class="timeline-header">
     <h2>Timeline</h2>
-    <input type="text" name="search" placeholder="SEARCH" data-ng-model="search">
+    <input class="timeline-search" type="text" name="search" placeholder="SEARCH" data-ng-model="search">
   </div>
   <section class="moments-list" data-ng-repeat="month in vm.moments.date">
     <h3>{{ moments.date | date:'M' }}</h3>
