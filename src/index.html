@@ -38,10 +38,11 @@
     <link rel="stylesheet" href="fonts/museo-slab.css">
     <link rel="stylesheet" href="main.css">
   </head>
-  <body>
+  <body data-ng-controller="RouterController as rt">
         <!-- <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif] -->
-    <header class="header" data-ng-show="currentPath === '/login'">
+
+    <header class="header" data-ng-show="rt.isLoginForm()">
       <h1 class="header-logo">Moment</h1>
       <nav class="nav-landing">
         <ul>
@@ -51,7 +52,7 @@
       </nav>
     </header>
 
-    <header class="header" data-ng-hide="currentPath === '/login'">
+    <header class="header" data-ng-hide="rt.isLoginForm()">
       <h1 class="header-username">Moment</h1>
       <nav class="nav-menu">
         <ul>
