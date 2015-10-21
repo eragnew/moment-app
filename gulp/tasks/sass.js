@@ -14,10 +14,10 @@ gulp.task('sass', function () {
       includePaths: require('node-bourbon').includePaths
     }))
     .on('error', handleErrors)
-    .pipe(sourcemaps.write())
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
           cascade: false
         }))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dest));
 });
