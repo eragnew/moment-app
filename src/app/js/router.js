@@ -17,4 +17,13 @@ module.exports = function(momentApp) {
         redirectTo: '/moments'
       });
   }]);
+  momentApp.controller('RouterController', ['$http', '$location', '$cookies', function($http, $location, $cookies) {
+    var rt = this;
+
+    // rt.currentPath = $location.path();
+
+    rt.isLoginForm = function() {
+      return $location.path() === '/login';
+    }
+  }]);
 };

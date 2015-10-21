@@ -9,7 +9,7 @@
 <div class="form-wrapper">
   <img src="">{{vm.moment.cover}}<img>
   <p class="moment-song"> {{ vm.moment.song }} | {{vm.moment.artist}} </p>
-  <form ng-submit="vm.save()" ng-controller="MomentFormCtrl">
+  <form ng-submit="vm.save()">
     <input type="text" ng-model="vm.moment.title" placeholder="Title" />
     <textarea type="text" ng-model="vm.moment.text" placeholder="Text"></textarea>
     <input type="text" ng-model="vm.moment.author" placeholder="Author" />

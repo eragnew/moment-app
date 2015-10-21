@@ -1,8 +1,12 @@
 module.exports = function(app) {
   app.controller('MomentsController', ['$scope', '$location', '$cookies', function($scope, $location, $cookies) {
+    var vm = this;
+
+    vm.currentPath = $location.path();
+
     var token = $cookies.get('token');
     if (!(token && token.length))
-      console.log('oh no! we are not logged in!');
+      $location.path('/login');
   }]);
 };
 
