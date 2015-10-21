@@ -1,37 +1,50 @@
-require('angular');
-// require('ng-showdown');
+require('angular/angular');
 require('angular-route');
+require('angular-cookies');
 
-(function appFile() {
 
-  "use strict";
+var momentApp = angular.module('momentApp', ['ngRoute', 'ngCookies']);
 
-  var app = angular.module('momentApp', ['ngRoute']);
+require('./js/services/services')(momentApp);
+require('./js/moments/moments')(momentApp);
+require('./js/users/users')(momentApp);
+require('./js/router')(momentApp);
 
-  app.config(["$routeProvider", function($routeProvider) {
 
-      $routeProvider.when('/moments', {
-        templateUrl: "views/moments.html",
-        controller: "MomentsCtrl as vm"
-      }).
-      when('/moments/new', {
-        templateUrl: "views/moment_form.html",
-        controller: "MomentFormCtrl as vm",
-      }).
-      when('/moments/:gist_id', {
-        templateUrl: "views/posts/blog-post-detail.html",
-        controller: "BlogCtrl as vm"
-      }).
-       when('/moments/:gist_id/edit', {
-        templateUrl: "views/posts/blog-post-form.html",
-        controller: "BlogFormCtrl as vm"
-      }).
-       when('/moments/:gist_id/destroy', {
-        templateUrl: "views/posts/blog-post-detail.html",
-        controller: "BlogFormCtrl as vm"
-      }).
-       otherwise({
-        redirectTo: "/moments"
-      });
-    }]);
-})();
+// require('angular');
+// // require('ng-showdown');
+// require('angular-route');
+
+// (function appFile() {
+
+//   "use strict";
+
+//   var app = angular.module('momentApp', ['ngRoute']);
+
+//   app.config(["$routeProvider", function($routeProvider) {
+
+//       $routeProvider.when('/moments', {
+//         templateUrl: "views/moments.html",
+//         controller: "MomentsCtrl as vm"
+//       }).
+//       when('/moments/new', {
+//         templateUrl: "views/posts/blog-post-form.html",
+//         controller: "BlogFormCtrl as vm",
+//       }).
+//       when('/moments/:gist_id', {
+//         templateUrl: "views/posts/blog-post-detail.html",
+//         controller: "BlogCtrl as vm"
+//       }).
+//        when('/moments/:gist_id/edit', {
+//         templateUrl: "views/posts/blog-post-form.html",
+//         controller: "BlogFormCtrl as vm"
+//       }).
+//        when('/moments/:gist_id/destroy', {
+//         templateUrl: "views/posts/blog-post-detail.html",
+//         controller: "BlogFormCtrl as vm"
+//       }).
+//        otherwise({
+//         redirectTo: "/moments"
+//       });
+//     }]);
+// })();

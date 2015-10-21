@@ -1,0 +1,11 @@
+@mixin inputs($rhythm, $color) {
+  @include vertical-rhythm(1);
+  background-color: transparent;
+  border: none;
+  opacity: .8;
+  margin: 1em 0;
+  color: $color;
+  &:focus {
+    outline: 0;
+  }
+}
