@@ -1,8 +1,8 @@
 .timeline {
   @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: center);
-  margin: 2em 0 2em 0;
+    margin: 0 0 2em 0;
   @media only screen and (min-width: $break) {
-
+    margin: 0 0 2em 0;
   }
 
   .btn-large {
@@ -12,7 +12,7 @@
   .timeline-header {
     order: 2;
     flex-basis: 100%;
-    padding: 2em 2em;
+    padding: 0 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;

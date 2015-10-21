@@ -1,8 +1,28 @@
-.nav-landing {
-  ul {
-      display: inline-block;
-    }
-  li {
-    display: inline-block;
+.login-banner {
+  @include background('/images/mainBGdark.svg');
+}
+
+section {
+  @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
+  padding: 8em 1em;
+  @media only screen and (min-width: $break) {
+    padding: 10em 0;
+  }
+
+  h1 {
+    font-family: font-family('primary', 'light');
+    font-weight: 100;
+    @include vertical-rhythm(4);
+    color: color('base', 'base');
+  }
+
+  p {
+    font-family: font-family('primary', 'semibold-italic');
+    @include vertical-rhythm(0);
+    margin: 2em 0;
+  }
+
+  a {
+    margin: 2em 0;
   }
 }

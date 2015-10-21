@@ -1,8 +1,3 @@
-@mixin background($url){
-  background: url($url);
-  background-size: cover;
-}
-
 .moment-banner {
   @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
   @include background('/images/mainBGdark.svg');
