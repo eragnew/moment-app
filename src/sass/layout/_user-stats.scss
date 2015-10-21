@@ -1,8 +1,18 @@
 .user-stats {
   li {
-    display: inline-block;
+    font-family: font-family('primary', 'semibold');
+    @include vertical-rhythm(0);
+    @media only screen and (min-width: $break) {
+      // @include vertical-rhythm(0);
+      @include vertical-rhythm(4);
+    }
+
     span {
-      display: block;
+      font-family: font-family('primary', 'light');
+      @include vertical-rhythm(-1);
+      @media only screen and (min-width: $break) {
+        @include vertical-rhythm(0)
+      }
     }
   }
 }
