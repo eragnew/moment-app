@@ -45,22 +45,23 @@
       <h1 class="header-logo">Moment</h1>
       <nav class="nav-landing">
         <ul>
-          <li><a href="/auth/spotify" class="">Log In</a></li>
-          <li><a href="" class="">Sign Up</a></li>
+          <li><a class="btn-small" href="/auth/spotify">Log In</a></li>
+          <li><a class="btn-small" href="">Sign Up</a></li>
         </ul>
       </nav>
     </header>
 
     <header class="header" data-ng-hide="currentPath === '/'">
-      <h1 class="header-username"><span>{{ vm.user.name }}'s</span> Moment</h1>
+      <h1 class="header-username">Moment</h1>
       <nav class="nav-menu">
         <ul>
-          <li><a href data-ng-click="logOut()">Log out</a></li>
+          <li><a class="btn-small" href data-ng-click="logOut()">Log out</a></li>
         </ul>
       </nav>
     </header>
 
-    <main ng-view></main>
+    <main ng-view>
+    </main>
 
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>

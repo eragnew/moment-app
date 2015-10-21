@@ -6,25 +6,25 @@ $break: 50em;
 // COLORS
 
 $theme-colors: (
-  primary: (
-    base: #000000,
-    light: #888888,
-    dark: #191919
+  'primary': (
+    'base': #303030,
+    'light': #888888,
+    'dark': #000000
   ),
-  accent: (
-    base: #4CAF50,
-      light: #81C784,
-      dark: #388E3C
+  'accent': (
+    'base': #4CAF50,
+    'light': #81C784,
+    'dark': #388E3C
   ),
-  secondary: (
-    base: #03A9F4,
-    light: #29B6F6,
-    dark: #0288D1
+  'secondary': (
+    'base': #03A9F4,
+    'light': #29B6F6,
+    'dark': #0288D1
   ),
-  base: (
-    base: #FAFAFA,
-    light: #FFFFFF,
-    dark: #EEEEEE
+  'base': (
+    'base': #FAFAFA,
+    'light': #FFFFFF,
+    'dark': #EEEEEE
   )
 );
 

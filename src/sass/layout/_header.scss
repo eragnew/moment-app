@@ -1,7 +1,8 @@
 .header {
-  @include display(flex);
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+  @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-between);
+  padding: 1em 1em;
+  background-color: transparent;
 
   p {
     flex-basis: 100%;
