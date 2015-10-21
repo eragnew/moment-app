@@ -1,32 +1,57 @@
 @mixin background($url){
   background: url($url);
-  background-position: 50% 50%;
   background-size: cover;
 }
 
 .moment-banner {
-  @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-between);
-  @include background('/images/mainBG.png');
-  padding: 3em 0 0;
+  @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
+  @include background('/images/mainBGdark.svg');
+  @media only screen and (min-width: $break) {
+    @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-between);
+    padding: 3em 2em 0 2em;
+    }
 
   h1 {
     order: 1;
     flex-basis: 100%;
+    font-family: font-family('primary', 'light');
+    font-weight: 100;
     @include vertical-rhythm(4);
     color: color('base', 'base');
-    margin: 0 2em 6em 2em;
+    padding: 2em 0;
+    @media only screen and (min-width: $break) {
+      margin: 0 0 6em .5em;
+      padding: 1em 0;
+    }
   }
 
   img {
     order: 2;
-    margin: 1em;
+    padding: 2em 0;
+    @media only screen and (min-width: $break) {
+      margin: 1em;
+      padding: 0;
+    }
   }
 
   ul {
     order: 3;
     display: inline-flex;
+    justify-content: space-between;
+    padding: 2em 0;
+    @media only screen and (min-width: $break) {
+      padding: 0;
+    }
     li {
-      margin: 1em;
+      font-family: font-family('primary', 'light');
+      color: color('base', 'dark');
+      @include vertical-rhythm(-1);
+      padding: 1em;
+      @media only screen and (min-width: $break) {
+        @include vertical-rhythm(0);
+        margin: 1em;
+        padding: 0;
+      }
     }
   }
 }

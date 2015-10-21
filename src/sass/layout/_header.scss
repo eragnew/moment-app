@@ -1,6 +1,6 @@
 .header {
-  @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-between, $basis: null);
-  padding: .5em 1em;
+  @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-between);
+  padding: 1em 1em;
   background-color: transparent;
 
   p {

@@ -6,14 +6,15 @@
 // @include vertical-rhythm(1);
 // This keeps font-size and line-height in the ratio
 
-@mixin moment-button-theme($color, $bg-color) {
+@mixin moment-button-theme($color, $bg-color, $hover, $hover-bg) {
   color: $color;
   border-color: $color;
   background-color: $bg-color;
 
   &:hover {
-    color: $bg-color;
-    background-color: $color;
+    color: $hover;
+    border-color: $hover;
+    background-color: $hover-bg;
   }
 }
 
