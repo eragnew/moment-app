@@ -2,9 +2,10 @@
   @include background('/images/mainBGdark.svg');
 }
 
-section {
+.login-section {
   @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
-  padding: 8em 1em;
+  text-align: center;
+  padding: 2em;
   @media only screen and (min-width: $break) {
     padding: 10em 0;
   }
@@ -25,4 +26,20 @@ section {
   a {
     margin: 2em 0;
   }
+
+  .btn-large-alt {
+    border-color: color('base', 'base');
+    span {
+      color: color('primary', 'dark');
+    }
+    &:hover {
+      span {
+        color: color('base', 'base');
+      }
+    }
+  }
+  // a {
+  //   @extend %button;
+  //   @include moment-button-theme(color(primary, base), color(accent, base));
+  // }
 }

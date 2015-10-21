@@ -27,3 +27,22 @@ $button-border-radius: type-scale(-1);
     border-color: color('base', 'light');
   }
 }
+
+.btn-large-alt {
+  @extend %button;
+  @include moment-button-theme(color('primary', 'base'), color('base', 'base'), color('base', 'base'), color('accent', 'base'));
+  font-size: type-scale(0);
+  padding: 1em;
+  &:hover {
+    border-color: ('base', 'base');
+  }
+}
+
+.btn-primary-alt {
+  @extend %button;
+  @include moment-button-theme(color('base', 'dark'), color('primary', 'base'), color('primary', 'base'), color('base', 'dark'));
+  height: 3rem;
+  font-family: font-family(primary, regular);
+  font-size: type-scale(2);
+  padding: 0 1em;
+}
