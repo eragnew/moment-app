@@ -7,6 +7,6 @@
   }
   a {
     @extend %button;
-    @include moment-button-theme(color(primary, base));
+    @include moment-button-theme(color(primary, base), color(accent, base));
   }
 }

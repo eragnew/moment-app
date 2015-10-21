@@ -1,9 +1,9 @@
 $button-padding: 0.5rem 1rem;
 $button-font-size: type-scale(1);
-$button-bgcolor: color(primary);
+$button-bgcolor: color(primary, base);
 $button-border-width: 0;
 $button-border-radius: type-scale(0);
-$button-color-hover: color(accent);
+$button-color-hover: color(accent, base);
 
 %button {
     display: inline-block;

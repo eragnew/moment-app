@@ -8,8 +8,8 @@ $break: 50em;
 $theme-colors: (
   primary: (
     base: #000000,
-    light: #212121,
-    dark: #303030
+    light: #888888,
+    dark: #191919
   ),
   accent: (
     base: #4CAF50,
@@ -39,7 +39,8 @@ $type-scale: (
   0: 1rem,
   1: 1.25rem,
   2: 1.563rem,
-  3: 1.953rem
+  3: 1.953rem,
+  4: 2.441rem
 );
 
 $line-height: (
@@ -47,7 +48,8 @@ $line-height: (
   0: $base-line-height,
   1: $base-line-height * 2,
   2: $base-line-height * 2,
-  3: $base-line-height * 2
+  3: $base-line-height * 2,
+  4: $base-line-height * 3
 );
 
 //font family map
