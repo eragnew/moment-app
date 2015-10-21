@@ -47,7 +47,6 @@ function signToken(id) {
 function setTokenCookie(req, res) {
   console.log('setting token');
   console.log();
-  debugger;
   if (!req.user) return res.status(404).json({message: 'something went wrong'});
   var token = signToken(req.user._id, req.user.role);
   console.log(token);
