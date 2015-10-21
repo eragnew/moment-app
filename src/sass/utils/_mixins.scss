@@ -26,3 +26,8 @@
   @include justify-content($justify);
   @include flex-basis($basis);
 }
+
+@mixin background($url){
+  background: url($url);
+  background-size: cover;
+}

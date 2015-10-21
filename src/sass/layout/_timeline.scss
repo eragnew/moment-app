@@ -1,9 +1,6 @@
 .timeline {
   @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: center);
   margin: 2em 0 2em 0;
-  @media only screen and (min-width: $break) {
-
-  }
 
   .btn-large {
     order: 1;
