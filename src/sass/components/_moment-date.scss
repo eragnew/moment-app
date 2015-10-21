@@ -1,0 +1,50 @@
+.moment-date {
+  display: inline-block;
+  font-size: type-scale(3);
+  p {
+    font-family: font-family(secondary, semibold);
+    letter-spacing: 0;
+    line-height: 1;
+  }
+  span {
+    font-family: font-family(secondary, regular);
+    color: color(primary, light);
+    letter-spacing: $base-line-height;
+  }
+}
+
+input[type="date"] {
+    width: 4em;
+    height: 3.3em;
+    margin: .5rem 0;
+    padding-right: 1em;
+    color: transparent;
+    background: url('/images/calendar.svg') no-repeat;
+    background-position: left .2em;
+    background-size: 3em;
+    border: none;
+    -webkit-appearance: none;
+    @include transition(all .3s ease-in);
+    &:hover {
+      opacity: .5;
+      cursor: pointer;
+    }
+  }
+input[type="date"]:focus {
+    outline: 0;
+    width: 40%;
+    padding-left: 4em;
+    color: color(base, base);
+    background-color: rgba(255,255,255,.2);
+    border-bottom: 1px solid color('secondary', 'base');
+    &:hover {
+      opacity: 1;
+    }
+    @media screen and (min-width: $break) {
+      width: 14em;
+    }
+  }
+input[type="date"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}

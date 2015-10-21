@@ -27,3 +27,12 @@ $button-border-radius: type-scale(-1);
     border-color: color('base', 'light');
   }
 }
+
+.btn-primary-alt {
+  @extend %button;
+  @include moment-button-theme(color('base', 'dark'), color('primary', 'base'), color('primary', 'base'), color('base', 'dark'));
+  height: 3rem;
+  font-family: font-family(primary, regular);
+  font-size: type-scale(2);
+  padding: 0 1em;
+}

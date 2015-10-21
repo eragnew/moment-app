@@ -1,0 +1,45 @@
+.form-wrapper {
+  position: relative;
+  top: -$base-line-height * 2;
+  margin: 0 1em;
+  padding: $base-line-height * 2;
+  background-color: color(primary, base);
+  border-radius: .5rem;
+  box-shadow: 2px -2px 20px 10px rgba(0, 0, 0, 0.2);
+
+  @media only screen and (min-width: $break) {
+    margin: 0 6em;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    input {
+      display: block;
+    }
+    input[type="submit"] {
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      margin-top: $base-line-height;
+      @media only screen and (min-width: $break) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    textarea {
+      margin-top: 0;
+    }
+    figure {
+      display: inline-block;
+      margin-left: $base-line-height;
+      vertical-align: top;
+    }
+  }
+}
