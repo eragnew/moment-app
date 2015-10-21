@@ -3,15 +3,15 @@ module.exports = function(momentApp) {
     $route
       .when('/moments', {
         templateUrl: 'views/moments.html',
-        controller: 'MomentsController'
+        controller: 'MomentsController as vm'
       })
       .when('/moments/new', {
         templateUrl: 'views/moment_form.html',
-        controller: 'MomentFormController'
+        controller: 'MomentFormController as vm'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'UserController'
+        controller: 'UserController as vm'
       })
       .otherwise({
         redirectTo: '/moments'
