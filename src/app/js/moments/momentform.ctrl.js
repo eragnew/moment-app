@@ -8,6 +8,12 @@ module.exports = function(app) {
 
     vm.track = {};
 
+    vm.addTrack = function addTrack(data) {
+      vm.track = data;
+      $log.info(vm.track);
+      $log.info(Object.keys(vm.track));
+    };
+
     vm.contentExpand = function() {
       var content = document.getElementById('moment-textarea');
       var scrollHeight = content.scrollHeight - 60;

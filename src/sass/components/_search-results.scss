@@ -7,4 +7,9 @@
     @include vertical-rhythm(0);
     font-family: font-family(primary, regular);
   }
+  p {
+    span {
+      color: color(primary, light);
+    }
+  }
 }
