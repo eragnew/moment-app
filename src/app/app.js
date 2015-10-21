@@ -2,6 +2,7 @@ require('angular/angular');
 require('angular-route');
 require('angular-cookies');
 
+
 var momentApp = angular.module('momentApp', ['ngRoute', 'ngCookies']);
 
 require('./js/services/services')(momentApp);
