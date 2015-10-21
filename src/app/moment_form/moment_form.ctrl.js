@@ -10,7 +10,11 @@ require('../app.js');
 
     vm.search = searchSpotify;
 
+    vm.addtrack = addSelectedTrack;
+
     vm.date = $filter("date")(Date.now(), 'yyyy-MM-dd');
+
+    vm.track = {};
 
 
     // var formHeader = document.getElementById("h1");
@@ -29,6 +33,8 @@ require('../app.js');
     //       alert("here");
     //   }, 10);
     // }
+
+
 
     vm.contentExpand = function() {
       var content = document.getElementById('moment-textarea');

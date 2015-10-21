@@ -9,10 +9,10 @@
     <section class="results">
       <h2 ng-show="vm.results.length > 0">Results</h2>
       <ul>
-        <li ng-repeat="result in vm.results | limitTo: 4">
+        <li ng-click="vm.track.push(vm.selectedTrack)" ng-repeat="result in vm.results | limitTo: 4">
           <figure>
-            <img src="{{ result.album.images[2].url }}" alt="" title="" >
-            <figcaption>{{ result.artists[0].name }}</figcaption>
+            <img ng-model="vm.selectedTrack.art" src="{{ result.album.images[2].url }}" alt="" title="" >
+            <figcaption ng-model="vm.selectedTrack.artist">{{ result.artists[0].name }}</figcaption>
           </figure>
         </li>
       </ul>
