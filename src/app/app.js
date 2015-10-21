@@ -16,7 +16,7 @@ require('angular-route');
       }).
       when('/moments/new', {
         templateUrl: "views/moment_form.html",
-        controller: "MomentCtrl as vm",
+        controller: "MomentFormCtrl as vm",
       }).
       when('/moments/:gist_id', {
         templateUrl: "views/posts/blog-post-detail.html",

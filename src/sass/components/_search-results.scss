@@ -1,0 +1,10 @@
+.results {
+  h2 {
+    @include vertical-rhythm(2);
+    font-family: font-family(secondary, regular);
+  }
+  li {
+    @include vertical-rhythm(0);
+    font-family: font-family(primary, regular);
+  }
+}
