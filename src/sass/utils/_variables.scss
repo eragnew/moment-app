@@ -55,17 +55,17 @@ $line-height: (
 //font family map
 $font-family: (
   'primary': (
-    'light': 'OpenSans-Light' sans-serif,
-    'light-italic': 'OpenSans-LightItalic' sans-serif,
-    'regular': 'OpenSans-Regular' sans-serif,
-    'italic': 'OpenSans-Italic' sans-serif,
-    'semibold': 'OpenSans-Semibold' sans-serif,
-    'semibold-italic': 'OpenSans-SemiboldItalic' sans-serif
+    'light': ("OpenSans-Light", sans-serif),
+    'light-italic': ("OpenSans-LightItalic", sans-serif),
+    'regular': ("OpenSans-Regular", sans-serif),
+    'italic': ("OpenSans-Italic", sans-serif),
+    'semibold': ("OpenSans-Semibold", sans-serif),
+    'semibold-italic': ("OpenSans-SemiboldItalic", sans-serif)
   ),
   'secondary': (
-    'regular': 'MuseoSlab-Regular' serif,
-    'regular-italic': 'MuseoSlab-RegularItalic' serif,
-    'semibold': 'MuseoSlab-Semibold' serif,
-    'semibold-italic': 'MuseoSlab-SemiboldItalic' serif
+    'regular': ("MuseoSlab-Regular", serif),
+    'regular-italic': ("MuseoSlab-RegularItalic", serif),
+    'semibold': ("MuseoSlab-Semibold", serif),
+    'semibold-italic': ("MuseoSlab-SemiboldItalic", serif)
   ),
 );

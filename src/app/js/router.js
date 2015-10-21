@@ -1,14 +1,20 @@
-module.exports = function(momenteApp) {
-  momenteApp.config(['$routeProvide', function($route) {
+module.exports = function(momentApp) {
+  momentApp.config(['$routeProvider', function($route) {
     $route
-      .when('/app', {
-        templateUrl: '/templates/views/app_view.html'
+      .when('/moments', {
+        templateUrl: 'views/moments.html',
+        controller: 'MomentsController'
       })
-      .when('/signin', {
-        templateUrl: '/templates/views/signin_view.html'
+      .when('/moments/new', {
+        templateUrl: 'views/moment_form.html',
+        controller: 'MomentFormController'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'UserController'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/moments'
       });
   }]);
 };

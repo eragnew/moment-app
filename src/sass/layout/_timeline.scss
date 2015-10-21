@@ -33,18 +33,7 @@
         flex-basis: 60%;
       }
     }
-    input[type="text"] {
-      @include vertical-rhythm(1);
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid #eeeeee;
-      opacity: .8;
-      margin: 1em 0;
-      color: color('primary', 'light');
-      &:focus {
-        outline: 0;
-        border-bottom: 1px solid color('secondary', 'base');
-      }
+    .timeline-search {
       @media only screen and (min-width: $break) {
         display: inline-flex;
         flex-basis: 30%;
