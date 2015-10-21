@@ -1,59 +1,59 @@
 @import url("//hello.myfonts.net/count/2f78d2");
 
 @font-face {
-  font-family: 'MuseoSlab-Regular';
+  font-family: "MuseoSlab-Regular";
   font-weight: normal;
   font-style: normal;
-  src: url('./fonts/museo-slab/2F78D2_0_0.eot');
-  src: url('./fonts/museo-slab/2F78D2_0_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_0_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_0_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_0_0.ttf') format('truetype');
+  src: url("./fonts/museo-slab/2F78D2_0_0.eot");
+  src: url("./fonts/museo-slab/2F78D2_0_0.eot?#iefix") format("embedded-opentype"),url("./fonts/museo-slab/2F78D2_0_0.woff2") format("woff2"),url("./fonts/museo-slab/2F78D2_0_0.woff") format("woff"),url("./fonts/museo-slab/2F78D2_0_0.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'MuseoSlab-Semibold';
+  font-family: "MuseoSlab-Semibold";
   font-weight: bold;
   font-style: normal;
-  src: url('./fonts/museo-slab/2F78D2_1_0.eot');
-  src: url('./fonts/museo-slab/2F78D2_1_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_1_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_1_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_1_0.ttf') format('truetype');
+  src: url("./fonts/museo-slab/2F78D2_1_0.eot");
+  src: url("./fonts/museo-slab/2F78D2_1_0.eot?#iefix") format("embedded-opentype"),url("./fonts/museo-slab/2F78D2_1_0.woff2") format("woff2"),url("./fonts/museo-slab/2F78D2_1_0.woff") format("woff"),url("./fonts/museo-slab/2F78D2_1_0.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'MuseoSlab-RegularItalic';
+  font-family: "MuseoSlab-RegularItalic";
   font-weight: normal;
   font-style: italic;
-  src: url('./fonts/museo-slab/2F78D2_2_0.eot');
-  src: url('./fonts/museo-slab/2F78D2_2_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_2_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_2_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_2_0.ttf') format('truetype');
+  src: url("./fonts/museo-slab/2F78D2_2_0.eot");
+  src: url("./fonts/museo-slab/2F78D2_2_0.eot?#iefix") format("embedded-opentype"),url("./fonts/museo-slab/2F78D2_2_0.woff2") format("woff2"),url("./fonts/museo-slab/2F78D2_2_0.woff") format("woff"),url("./fonts/museo-slab/2F78D2_2_0.ttf") format("truetype");
 }
 
-@font-face {font-family: 'MuseoSlab-SemiboldItalic';
+@font-face {font-family: "MuseoSlab-SemiboldItalic";
   font-weight: bold;
   font-style: italic;
-  src: url('./fonts/museo-slab/2F78D2_3_0.eot');
-  src: url('./fonts/museo-slab/2F78D2_3_0.eot?#iefix') format('embedded-opentype'),url('./fonts/museo-slab/2F78D2_3_0.woff2') format('woff2'),url('./fonts/museo-slab/2F78D2_3_0.woff') format('woff'),url('./fonts/museo-slab/2F78D2_3_0.ttf') format('truetype');
+  src: url("./fonts/museo-slab/2F78D2_3_0.eot");
+  src: url("./fonts/museo-slab/2F78D2_3_0.eot?#iefix") format("embedded-opentype"),url("./fonts/museo-slab/2F78D2_3_0.woff2") format("woff2"),url("./fonts/museo-slab/2F78D2_3_0.woff") format("woff"),url("./fonts/museo-slab/2F78D2_3_0.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'moment';
-  src:url('./fonts/moment.eot?tkezvf');
-  src:url('./fonts/moment.eot?tkezvf#iefix') format('embedded-opentype'),
-    url('./fonts/moment.ttf?tkezvf') format('truetype'),
-    url('./fonts/moment.woff?tkezvf') format('woff'),
-    url('./fonts/moment.svg?tkezvf#moment') format('svg');
+  font-family: "moment";
+  src:url("./fonts/moment.eot?tkezvf");
+  src:url("./fonts/moment.eot?tkezvf#iefix") format("embedded-opentype"),
+    url("./fonts/moment.ttf?tkezvf") format("truetype"),
+    url("./fonts/moment.woff?tkezvf") format("woff"),
+    url("./fonts/moment.svg?tkezvf#moment") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 // OpenSans Light
 @font-face {
-  font-family: 'OpenSans-Light';
-  src:url('./fonts/OpenSans-Light.ttf');
+  font-family: "OpenSans-Light";
+  src:url("./fonts/OpenSans-Light.ttf");
   font-weight: 100;
   font-style: normal;
 }
 
 //OpenSans Light Italic
 @font-face {
-  font-family: 'OpenSans-LightItalic';
-  src:url('./fonts/OpenSans-LightItalic.ttf');
+  font-family: "OpenSans-LightItalic";
+  src:url("./fonts/OpenSans-LightItalic.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -61,32 +61,32 @@
 
 // OpenSans Regular
 @font-face {
-  font-family: 'OpenSans-Regular';
-  src:url('./fonts/OpenSans-Regular.ttf');
+  font-family: "OpenSans-Regular";
+  src:url("./fonts/OpenSans-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 //OpenSans Italic
 @font-face {
-  font-family: 'OpenSans-Italic';
-  src:url('./fonts/OpenSans-Italic.ttf');
+  font-family: "OpenSans-Italic";
+  src:url("./fonts/OpenSans-Italic.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 //OpenSans Semibold
 @font-face {
-  font-family: 'OpenSans-Semibold';
-  src:url('./fonts/OpenSans-Semibold.ttf');
+  font-family: "OpenSans-Semibold";
+  src:url("./fonts/OpenSans-Semibold.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 //OpenSans Semibold Italic
 @font-face {
-  font-family: 'OpenSans-SemiboldItalic';
-  src:url('./fonts/OpenSans-SemiboldItalic.ttf');
+  font-family: "OpenSans-SemiboldItalic";
+  src:url("./fonts/OpenSans-SemiboldItalic.ttf");
   font-weight: normal;
   font-style: normal;
 }
