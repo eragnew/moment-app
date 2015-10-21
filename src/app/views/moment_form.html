@@ -1,19 +1,30 @@
-<div class="page-banner">
-  <h1>Add or Edit A Moment</h1>
-</div>
-<div class="search-wrapper">
-  <form>
-    <input type="text" ng-model="search" name="search" placeholder="Search"/>
-  </form>
-</div>
-<div class="form-wrapper">
-  <img src="">{{vm.moment.cover}}<img>
-  <p class="moment-song"> {{ vm.moment.song }} | {{vm.moment.artist}} </p>
-  <form ng-submit="vm.save()">
-    <input type="text" ng-model="vm.moment.title" placeholder="Title" />
-    <textarea type="text" ng-model="vm.moment.text" placeholder="Text"></textarea>
-    <input type="text" ng-model="vm.moment.author" placeholder="Author" />
-    <input type="date" ng-model="vm.date" value="{{date | date:'yyyy-MM-dd'}}"/>
-    <input class="btn-primary-alt" type="submit" name="Submit">
-  </form>
-</div>
+<section class="moment-create-edit">
+  <div class="search-wrapper">
+    <div class="page-banner">
+      <h1>Add or Edit A Moment</h1>
+    </div>
+    <form>
+      <input type="text" ng-model="search" name="search" placeholder="Search"/>
+    </form>
+  </div>
+  <div class="form-wrapper">
+    <form ng-submit="vm.save()">
+      <div class="moment-date">
+        <p>{{ vm.date | date: 'dd MMMM' }}</p>
+        <p><span>{{ vm.date | date: 'yyyy' }}</span></p>
+        <input type="date" ng-model="vm.date" value="{{example.value | date: 'yyyy-MM-dd'}}" required/>
+      </div>
+      <input class="btn-primary-alt" type="submit" name="Submit" value="Save">
+      <!-- <input type="text" ng-model="vm.moment.title" placeholder="Title" /> -->
+      <div class="content">
+        <textarea id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.text" placeholder="Content"></textarea>
+        <!-- <input type="text" ng-model="vm.moment.author" placeholder="Author" /> -->
+        <figure>
+          <img src="/images/eric.jpg" alt="Album cover for {{vm.moment.cover}}" title="{{ vm.moment.cover }}">
+          <figcaption>
+            <p class="moment-song"> Indian Summer <span>|</span> Eric Lindell </p></figcaption>
+        </figure>
+      </div>
+    </form>
+  </div>
+</section>

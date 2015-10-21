@@ -23,3 +23,8 @@ li {
 h1, h2, p, figure, blockquote {
   margin: 0;
 }
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}

@@ -3,6 +3,16 @@
   background-size: cover;
 }
 
+.page-banner {
+  h1 {
+    @include vertical-rhythm(4);
+    font-family: font-family('primary', 'light');
+    font-weight: 100;
+    color: color('base', 'base');
+    padding: 2em 0 1em;
+  }
+}
+
 .moment-banner {
   @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
   @include background('/images/mainBGdark.svg');
