@@ -12,34 +12,52 @@
   }
 
   form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    input {
+    @include flex-box($direction: row, $wrap: wrap, $justify: space-between);
+
+    input[type="date"] {
+      order: 1;
       display: block;
     }
-    input[type="submit"] {
-      display: inline-block;
-      vertical-align: top;
-      cursor: pointer;
+    .btn-primary-alt {
+      order: 5;
+      margin: 1em auto;
+      @media only screen and (min-width: $break) {
+        order: 2;
+        margin: 0;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+      }
     }
     .content {
+      order: 2;
       @include flex-box($direction: column, $justify: center);
       text-align: center;
       flex-basis: 100%;
       margin-top: $base-line-height;
       @media only screen and (min-width: $break) {
+        order: 3;
         @include flex-box($direction: row, $justify: center);
         text-align: left;
       }
     }
     textarea {
-      margin-top: 0;
+      order: 3;
+      margin: 0 auto;
+      @media only screen and (min-width: $break) {
+        order: 4;
+        margin: 0;
+      }
     }
     figure {
+      order: 4;
       display: inline-block;
-      margin-left: $base-line-height;
+      margin: 0 auto;
       vertical-align: top;
+      @media only screen and (min-width: $break) {
+        order: 5;
+        margin-left: $base-line-height;
+      }
     }
   }
 }
