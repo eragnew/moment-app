@@ -30,7 +30,7 @@
       <div class="moment-date">
         <p>{{ vm.date | date: 'dd MMMM' }}</p>
         <p><span>{{ vm.date | date: 'yyyy' }}</span></p>
-        <input type="date" ng-model="vm.date" value="{{Date.now() | date: 'yyyy-MM-dd'}}" required/>
+        <input type="date" ng-model="vm.date" value="{{Date.now() | date: 'yyyy-MM-dd'}}" required >
       </div>
       <input class="btn-primary-alt" type="submit" name="Submit" value="Save">
       <!-- <input type="text" ng-model="vm.moment.title" placeholder="Title" /> -->
@@ -43,6 +43,7 @@
             <p><span class="moment-song">{{ vm.track.name }}</span><span>|</span>{{ vm.track.artists[0].name }}</p></figcaption>
         </figure>
       </div>
+      <input class="moment-tags search-light" type="text" ng-model="vm.tags" placeholder="Tags" >
     </form>
   </div>
 </section>

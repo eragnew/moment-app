@@ -19,7 +19,7 @@
       display: block;
     }
     .btn-primary-alt {
-      order: 5;
+      order: 6;
       margin: 1em auto;
       @media only screen and (min-width: $break) {
         order: 2;
@@ -50,13 +50,21 @@
       }
     }
     figure {
-      order: 4;
+      order: 5;
       display: inline-block;
       margin: 0 auto;
       vertical-align: top;
       @media only screen and (min-width: $break) {
         order: 5;
         margin-left: $base-line-height;
+      }
+    }
+    .moment-tags {
+      order: 4;
+      flex-basis: 100%;
+      @media only screen and (min-width: $break) {
+        order: 5;
+        flex-basis: 20%;
       }
     }
   }
