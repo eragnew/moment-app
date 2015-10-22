@@ -4,13 +4,13 @@ var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {
-  return res.json(422, err);
+  return res.status(422).json(err);
 };
 
 exports.index = function(req, res) {
   User.find({}, function(err, users) {
     if (err) return res.send(500, err);
-    res.json(200, users);
+    res.status(200).json(users);
   });
 };
 
