@@ -7,4 +7,27 @@
     @include vertical-rhythm(0);
     font-family: font-family(primary, regular);
   }
+  p {
+    span {
+      color: color(primary, light);
+    }
+  }
+  button {
+    opacity: .5;
+    border: none;
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      opacity: .9;
+    }
+  }
+  .right-arrow {
+    background: url('/images/right-arrow.svg') no-repeat;
+    padding-left: type-scale(-1);
+  }
+  .left-arrow {
+    background: url('/images/left-arrow.svg') no-repeat;
+    padding-right: type-scale(-1);
+  }
 }

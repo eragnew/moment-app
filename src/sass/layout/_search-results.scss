@@ -1,22 +1,28 @@
 .results {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  width: 45%;
+  width: 49%;
 
   h2 {
-    flex-basis: 100%;
     margin-bottom: $base-line-height;
   }
 
+  .results-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
   li {
     display: inline-block;
+    align-self: baseline;
+    padding: 0 .5em;
   }
-
+  button {
+    display: inline-block;
+    width: 20px;
+    height: 64px;
+  }
 }
