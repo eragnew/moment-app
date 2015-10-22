@@ -42,7 +42,10 @@
 
   .moments-list {
     order: 3;
-    flex-basis: 50%;
+    flex-basis: 95%;
+    @media only screen and (min-width: $break) {
+      flex-basis: 50%;
+    }
 
     h3 {
       @include vertical-rhythm(1);
@@ -62,8 +65,12 @@
       border-bottom: 1px solid color('primary', 'light');
     }
     p {
-      font-size: type-scale(1);
-      line-height: line-height(1) / 1.5;
+      @include vertical-rhythm(0);
+
+      @media only screen and (min-width: $break) {
+        font-size: type-scale(1);
+        line-height: line-height(1) / 1.5;
+      }
     }
     figure {
       position: relative;
@@ -78,9 +85,9 @@
         left: 0;
         box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,.3);
       }
-      img {
-        max-width: 100px;
-      }
+      // img {
+      //   max-width: 100px;
+      // }
     }
     figcaption {
       position: absolute;

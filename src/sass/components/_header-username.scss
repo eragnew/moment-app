@@ -1,4 +1,7 @@
 .header-username {
   font-family: font-family('secondary', 'semibold');
   color: color('base', 'base');
+  a {
+    color: color('base', 'base');
+  }
 }

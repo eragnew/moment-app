@@ -1,7 +1,7 @@
 <div class="moment-banner" ng-controller="MomentsController">
-  <h1>{{vm.user.display_name}}, here are your moments!</h1>
-  <img ng-hide="{{vm.user.images[0]}}" class="image-profile" src="{{ vm.user.images[0].url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-  <img ng-show="{{vm.user.images[0]}}" class="image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <h1 class="ng-cloak">{{vm.user.display_name}}, here are your moments!</h1>
+  <img class="ng-cloak" ng-hide="{{vm.user.images[0]}}" class="image-profile" src="{{ vm.user.images[0].url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <img class="ng-cloak" ng-show="{{vm.user.images[0]}}" class="image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
     <li>15 <span>moments</span></li>
     <li>3 <span>tags</span></li>
