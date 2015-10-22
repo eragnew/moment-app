@@ -2,6 +2,7 @@ require('./momentform.filter.js');
 
 module.exports = function(app) {
   app.controller('MomentFormController', ['SpotifySearchService', '$anchorScroll', '$location', '$routeParams', '$log', '$filter', function(SpotifySearchService, $anchorScroll, $location, $routeParams, $log, $filter) {
+
     var vm = this;
 
     vm.search = searchSpotify;

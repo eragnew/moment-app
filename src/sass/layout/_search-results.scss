@@ -20,7 +20,8 @@
       flex-basis: 100%;
       padding: 0 1em 1em 1em;
       @media only screen and (min-width: $break) {
-        flex-basis: initial;
+        flex-basis: inherit;
+        margin: 0 auto;
         order: 2;
         padding: 0;
       }
@@ -28,12 +29,18 @@
     li {
       display: inline-block;
       align-self: baseline;
-      padding: 0 .5em;
+      padding: .25em .5em;
+      @media only screen and (min-width: $break) {
+        text-align: center;
+        padding: 0 auto;
+      }
     }
     .icon-arrowL {
       order: 2;
       color: color('base', 'base');
       @media only screen and (min-width: $break) {
+        text-align: center;
+        // margin: 0 auto;
         order: 1;
       }
     }
@@ -41,6 +48,8 @@
       order: 3;
       color: color('base', 'base');
       @media only screen and (min-width: $break) {
+        text-align: center;
+        // margin: 0 auto;
         order: 3;
       }
     }
