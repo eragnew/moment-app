@@ -1,7 +1,7 @@
 .results {
   padding: 0 0 2em 0;
   @media only screen and (min-width: $break) {
-    max-width: 49%;
+    flex-basis: 45%;
     padding: 0;
   }
 
@@ -10,29 +10,37 @@
   }
 
   .results-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 0 1em 0;
-    @media only screen and (min-width: $break) {
-      padding: 0;
+    @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: space-around);
+
+    ul {
+      order: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-basis: 100%;
+      padding: 0 1em 1em 1em;
+      @media only screen and (min-width: $break) {
+        flex-basis: initial;
+        order: 2;
+        padding: 0;
+      }
     }
-  }
-  li {
-    display: inline-block;
-    align-self: baseline;
-    padding: 0 .5em;
-  }
-  button {
-    display: inline-block;
-    @media only screen and (min-width: $break) {
-      width: 20px;
-      height: 64px;
+    li {
+      display: inline-block;
+      align-self: baseline;
+      padding: 0 .5em;
+    }
+    .icon-arrowL {
+      order: 2;
+      @media only screen and (min-width: $break) {
+        order: 1;
+      }
+    }
+    .icon-arrowR {
+      order: 3;
+      @media only screen and (min-width: $break) {
+        order: 3;
+      }
     }
   }
 }

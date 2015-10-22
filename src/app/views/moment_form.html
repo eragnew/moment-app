@@ -9,7 +9,7 @@
     <section ng-show="vm.results.length > 0" class="results">
       <h2>Select your track</h2>
       <div class="results-nav">
-        <button class="left-arrow" ng-click="vm.pagination.prevPage()"></button>
+        <a class="icon-arrowL" ng-click="vm.pagination.prevPage()"></a>
         <ul>
           <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | pager:vm.pagination">
             <figure>
@@ -21,7 +21,7 @@
             </figure>
           </li>
         </ul>
-        <button class="right-arrow" ng-click="vm.pagination.prevPage()"></button>
+        <a class="icon-arrowR" ng-click="vm.pagination.prevPage()"></a>
       </div>
     </section>
   </div>

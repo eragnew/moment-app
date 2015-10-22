@@ -8,22 +8,22 @@
 }
 
 $iconPrimary:
-(spotify 2 "\e800")
-(create 2 "\e912")
-(search 2 "\eb30")
-(grid 2 "\ec5f")
-(menu 2 "\ec6e")
-(invalid 2 "\ed6a")
-(valid 2 "\ed6f")
-(arrowR 2 "\edba")
-(arrowL 2 "\edc2");
+(spotify 2 "\e800" 100%)
+(create 2 "\e912" 100%)
+(search 2 "\eb30" 100%)
+(grid 2 "\ec5f" 100%)
+(menu 2 "\ec6e" 100%)
+(invalid 2 "\ed6a" 100%)
+(valid 2 "\ed6f" 100%)
+(arrowR 2 "\edba" 2em)
+(arrowL 2 "\edc2" 2em);
 
 @each $iconP in $iconPrimary {
   .icon-#{nth($iconP, 1)} {
     @extend %icon-font-base;
     @include vertical-rhythm(nth($iconP, 2));
     color: #1e1d24;
-    width: 100%;
+    width: nth($iconP, 4);
     &:before {
       content: nth($iconP, 3);
     }
