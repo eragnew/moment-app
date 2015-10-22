@@ -19,6 +19,11 @@ module.exports = function(app) {
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
+    MomentsAPI.prototype.getOne = function(token, data, callback) {
+      $http.get('/api/moments/' + data._id + '?access_token=' + token)
+        .then(handleSuccess(callback), handleFailure(callback));
+    };
+
     MomentsAPI.prototype.getAll = function(token, callback) {
       $http.get('/api/moments?access_token=' + token)
         .then(handleSuccess(callback), handleFailure(callback));
