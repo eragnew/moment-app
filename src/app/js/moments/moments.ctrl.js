@@ -18,9 +18,6 @@ module.exports = function(app) {
         if (err) return errorHandler(err);
         window.sessionStorage.setItem('access_token', data.accessToken);
         window.sessionStorage.setItem('profile', JSON.stringify(data.profile));
-        // var name = data.profile.display_name.split(' ');
-        // vm.user.name = name[0];
-        // vm.user.profile_image = data.profile.images[0];
         return data.profile;
       });
       SpotifyAPI.me(token).then(function(resp) {
@@ -32,30 +29,8 @@ module.exports = function(app) {
 
     vm.initPage();
 
-    // vm.moments = momentsAPI.getAll(token, function(err, data) {
-    //   if (err) return errorHandler(err);
-    //   return data;
-    // });
-
-    // vm.spotifyMe = SpotifyAPI.me(token).then(function(response) {
-    //   console.log(response);
-    //   return response;
-    // }, errorHandler);
-
     function errorHandler(response) {
       $log.error('Error', response);
-    }
-
-    function getProfile() {
-
-      // SpotifyAPI.me(token).then(function(resp) {
-      //   var name = resp.data.display_name.split(' ');
-
-      //   vm.user = [
-      //     name[0],
-      //     resp.data.images[0]
-      //   ];
-      // });
     }
 
   }]);
