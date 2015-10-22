@@ -1,7 +1,13 @@
-.timeline-search {
-  @include inputs(1, color('primary', 'light'));
-  border-bottom: 1px solid #eeeeee;
-  &:focus {
-    border-bottom: 1px solid color('secondary', 'base');
-  }
+.search-light {
+  @include inputs(1, color('primary', 'light'), .8);
+}
+
+.search-heavy {
+  @include inputs(3, color('base', 'base'), 1);
+  font-weight: 300;
+}
+
+input[type="date"] {
+  font-family: font-family('primary', 'semibold');
+  opacity: .8;
 }

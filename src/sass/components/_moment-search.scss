@@ -10,19 +10,7 @@
     flex-basis: 100%;
   }
 
-  input[name="search"] {
-    @include vertical-rhythm(3);
-    font-weight: 300;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #eeeeee;
-    opacity: 1;
-    margin: 1em 0;
-    color: color('base', 'base');
-    &:focus {
-      outline: 0;
-      border-bottom: 1px solid color('secondary', 'base');
-    }
+  .search-heavy {
     @media only screen and (min-width: $break) {
       display: inline-flex;
       flex-basis: 30%;
