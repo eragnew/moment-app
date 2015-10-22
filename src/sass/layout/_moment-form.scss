@@ -24,13 +24,13 @@
       cursor: pointer;
     }
     .content {
-      display: flex;
-      flex-direction: column;
+      @include flex-box($direction: column, $justify: center);
+      text-align: center;
       flex-basis: 100%;
       margin-top: $base-line-height;
       @media only screen and (min-width: $break) {
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex-box($direction: row, $justify: center);
+        text-align: left;
       }
     }
     textarea {
