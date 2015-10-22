@@ -29,19 +29,19 @@ function isAuthenticated() {
     });
 }
 
-function hasRole(roleRequired) {
-  if (!roleRequired) throw new Error('Required role needs to be set');
+// function hasRole(roleRequired) {
+//   if (!roleRequired) throw new Error('Required role needs to be set');
 
-  return compose()
-    .use(isAuthenticated())
-    .use(function meetsRequirements(req, res, next) {
-      if (config.userRoles.indexOf(req.user.role) >= config.userRoles.indexOf(roleRequired)) {
-        next();
-      } else {
-        res.send(403);
-      }
-    });
-}
+//   return compose()
+//     .use(isAuthenticated())
+//     .use(function meetsRequirements(req, res, next) {
+//       if (config.userRoles.indexOf(req.user.role) >= config.userRoles.indexOf(roleRequired)) {
+//         next();
+//       } else {
+//         res.send(403);
+//       }
+//     });
+// }
 
 function signToken(id) {
   return jwt.sign({_id: id}, config.secrets.session, {expiresIn: 60*5*60});
@@ -58,6 +58,6 @@ function setTokenCookie(req, res) {
 }
 
 exports.isAuthenticated = isAuthenticated;
-exports.hasRole = hasRole;
+// exports.hasRole = hasRole;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;
