@@ -11,9 +11,16 @@ module.exports = function(app) {
     vm.save = submitMoment;
 
     vm.date = $filter('date')(Date.now(), 'yyyy-MM-dd');
+    vm.today = new Date(vm.date);
 
     vm.moment = {};
     vm.track = {};
+
+    showDate();
+
+    function showDate () {
+      console.log(vm.date);
+    }
 
     var pageNumber;
 

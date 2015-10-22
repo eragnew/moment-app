@@ -13,7 +13,7 @@
         <ul>
           <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | pager:vm.pagination">
             <figure>
-              <img src="{{ result.album.images[2].url }}" alt="" title="" >
+              <img ng-src="{{ result.album.images[2].url }}" alt="" title="" >
               <figcaption>
                 <p>{{ result.artists[0].name | limitTo: 11}}{{ result.artists[0].name.length > 11 ? '...' : '' }}</p>
                 <p><span>{{ result.name | limitTo: 11}}{{ result.name.length > 11 ? '...' : '' }}</span></p>
@@ -30,7 +30,7 @@
       <div class="moment-date">
         <p>{{ vm.date | date: 'dd MMMM' }}</p>
         <p><span>{{ vm.date | date: 'yyyy' }}</span></p>
-        <input type="date" ng-model="vm.date" value="{{ vm.date }}" >
+        <input type="date" ng-model="vm.date" value="2015-10-22" required>
       </div>
       <input class="btn-primary-alt" type="submit" name="Submit" value="Save">
       <!-- <input type="text" ng-model="vm.moment.title" placeholder="Title" /> -->
@@ -44,9 +44,9 @@
         </figure>
       </div>
       <input class="moment-tags search-light" type="text" ng-model="vm.moment.tags" placeholder="Tags" >
-      <input type="hidden" aria-hidden="true" ng-model="vm.moment.title" name="title" value="{{ vm.track.name }}" >
+  <!--     <input type="hidden" aria-hidden="true" ng-model="vm.moment.title" name="title" value="{{ vm.track.name }}" >
       <input type="hidden" aria-hidden="true" ng-model="vm.moment.spotifyResource" value="{{ vm.track }}">
-      <input type="hidden" aria-hidden="true" ng-model="vm.moment.dateCreated" value="vm.date" >
+      <input type="hidden" aria-hidden="true" ng-model="vm.moment.dateCreated" value="vm.date" > -->
     </form>
   </div>
 </section>
