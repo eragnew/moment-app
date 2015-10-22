@@ -32,12 +32,14 @@
     }
     .icon-arrowL {
       order: 2;
+      color: color('base', 'base');
       @media only screen and (min-width: $break) {
         order: 1;
       }
     }
     .icon-arrowR {
       order: 3;
+      color: color('base', 'base');
       @media only screen and (min-width: $break) {
         order: 3;
       }
