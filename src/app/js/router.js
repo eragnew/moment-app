@@ -20,10 +20,13 @@ module.exports = function(momentApp) {
   momentApp.controller('RouterController', ['$http', '$location', '$cookies', function($http, $location, $cookies) {
     var rt = this;
 
-    // rt.currentPath = $location.path();
-
     rt.isLoginForm = function() {
       return $location.path() === '/login';
-    }
+    };
+
+    rt.logout = function() {
+      $cookies.remove('token');
+      $location.path('/login');
+    };
   }]);
 };
