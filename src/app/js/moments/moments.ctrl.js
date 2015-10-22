@@ -23,6 +23,7 @@ module.exports = function(app) {
 
     vm.spotifyMe = SpotifyAPI.me(token).then(function(response) {
       console.log(response);
+      vm.profile = response.data;
       return response;
     }, errorHandler);
 

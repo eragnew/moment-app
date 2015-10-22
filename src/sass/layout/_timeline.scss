@@ -1,6 +1,7 @@
 .timeline {
   @include flex-box($align: center, $wrap: wrap, $direction: row, $justify: center);
-  margin: 2em 0 2em 0;
+  padding: 2em 0 2em 0;
+  background: color(primary, base);
 
   .btn-large {
     order: 1;
@@ -41,14 +42,52 @@
 
   .moments-list {
     order: 3;
-    flex-basis: 100%;
+    flex-basis: 50%;
 
     h3 {
-      text-align: center;
+      @include vertical-rhythm(1);
+      text-align: left;
+      // background: linear-gradient(to left, color(primary, base) 0%, rgba(255,255,255,.2) 50%, color(primary, base) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,.2) 0%, color(primary, base) 100%);
+
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+      background-position: bottom;
     }
     li {
       display: flex;
       justify-content: space-between;
+      padding-bottom: $base-line-height;
+      padding-top: $base-line-height;
+      border-bottom: 1px solid color('primary', 'light');
+    }
+    p {
+      font-size: type-scale(1);
+      line-height: line-height(1) / 1.5;
+    }
+    figure {
+      position: relative;
+      align-self: baseline;
+      margin-left: $base-line-height;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 5px;
+        left: 0;
+        box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,.3);
+      }
+      img {
+        max-width: 100px;
+      }
+    }
+    figcaption {
+      position: absolute;
+      bottom: $base-line-height / 2.5;
+      right: 0;
+      font-family: font-family(primary, regular);
+      font-size: type-scale(3);
     }
   }
 }

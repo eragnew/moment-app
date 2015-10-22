@@ -43,10 +43,12 @@ module.exports = function(app) {
       currentPage: 1,
       perPage: (window.innerWidth >= 360 ? 3 : 2),
       getOffset: function () {
-        return vm.pagination.currentPage + vm.pagination.perPage;
+        return vm.pagination.currentPage * vm.pagination.perPage;
       },
       prevPage: function () {
+
         vm.pagination.currentPage--;
+        console.log(vm.pagination.currentPage);
       },
       nextPage: function () {
         vm.pagination.currentPage++;
