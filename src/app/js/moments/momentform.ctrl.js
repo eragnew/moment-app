@@ -54,17 +54,14 @@ module.exports = function(app) {
       perPage: (window.innerWidth > 320 ? 3 : 2),
       getOffset: function () {
         return vm.pagination.currentPage * vm.pagination.perPage;
-        // console.log('getOffset called, CURRENT PAGE: ' + vm.pagination.currentPage);
       },
       prevPage: function () {
         if (vm.pagination.currentPage > 0)
           vm.pagination.currentPage--;
-        console.log('prevPage called, CURRENT PAGE: ' + vm.pagination.currentPage);
       },
       nextPage: function () {
         if (vm.pagination.currentPage + 1 <= (Math.floor(vm.results.length / vm.pagination.perPage)))
           vm.pagination.currentPage++;
-        console.log('nextPage called, CURRENT PAGE: ' + vm.pagination.currentPage);
       }
     };
 
