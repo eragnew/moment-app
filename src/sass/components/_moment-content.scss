@@ -25,10 +25,14 @@
 
 .content {
   figcaption {
-    font-family: font-family(secondary, regular);
-    span {
+    font-family: font-family('primary', 'light');
+
+    .moment-song {
+      font-family: font-family('primary', 'semibold');
+    }
+    span:nth-child(2) {
       padding: 0 .5rem;
-      color: color(primary, light);
+      color: color('primary', 'semibold');
     }
   }
 }
