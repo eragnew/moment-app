@@ -2,6 +2,8 @@ module.exports = function(app) {
   app.controller('MomentsController', ['MomentsAPI', 'SpotifyAPI', '$scope', '$location', '$cookies', '$log', function(MomentsAPI, SpotifyAPI, $scope, $location, $cookies, $log) {
     var vm = this;
 
+    vm.user = [];
+
     vm.currentPath = $location.path();
 
     var token = $cookies.get('token');
@@ -29,5 +31,14 @@ module.exports = function(app) {
     function errorHandler(response) {
       $log.error('Error', response);
     }
+
+    function getProfile() {
+      SpotifyAPI.me(token).then(function(resp) {
+        vm.user = resp.data;
+      });
+    }
+
+  getProfile();
+
   }]);
 };
