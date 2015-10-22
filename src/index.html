@@ -56,10 +56,10 @@
       </nav>
     </header> -->
 
-    <header class="header" data-ng-hide="rt.isLoginForm()">
+    <header class="header">
       <h1 class="header-username">Moment</h1>
       <nav class="nav-menu">
-        <ul>
+        <ul data-ng-hide="rt.isLoginForm()">
           <li><a class="btn-small" href data-ng-click="rt.logout()">Log out</a></li>
         </ul>
       </nav>
