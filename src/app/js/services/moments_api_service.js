@@ -15,8 +15,6 @@ module.exports = function(app) {
     var MomentsAPI = function() {};
 
     MomentsAPI.prototype.create = function(token, data, callback) {
-      // $http.post('/api/moments/new', data)
-      //   .then(handleSuccess(callback), handleFailure(callback));
       $http({
         method: 'POST',
         url: '/api/moments/new',
@@ -38,8 +36,6 @@ module.exports = function(app) {
     };
 
     MomentsAPI.prototype.update = function(token, data, callback) {
-      // $http.put('/api/moments/' + data._id, data)
-      //   .then(handleSuccess(callback), handleFailure(callback));
       $http({
         method: 'PUT',
         url: '/api/moments/' + data._id,
@@ -51,8 +47,6 @@ module.exports = function(app) {
     };
 
     MomentsAPI.prototype.remove = function(token, data, callback) {
-      // $http.delete('/api/moments/' + data._id)
-      //   .then(handleSuccess(callback), handleFailure(callback));
       $http({
         method: 'DELETE',
         url: '/api/moments/' + data._id,

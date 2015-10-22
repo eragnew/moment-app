@@ -10,6 +10,7 @@ exports.index = function(req, res) {
 
 exports.create = function(req, res, next) {
   var newMoment = new Moment(req.body);
+  newMomentBody.userID = req.user._id;
   newMoment.save(function(err, moment) {
     if (err) return res.send(500, err);
     res.status(200).json(moment);
