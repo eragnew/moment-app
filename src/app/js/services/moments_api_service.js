@@ -19,8 +19,8 @@ module.exports = function(app) {
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
-    MomentsAPI.prototype.getAll = function(callback) {
-      $http.get('/api/moments')
+    MomentsAPI.prototype.getAll = function(token, callback) {
+      $http.get('/api/moments?access_token=' + token)
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
@@ -31,6 +31,11 @@ module.exports = function(app) {
 
     MomentsAPI.prototype.remove = function(data, callback) {
       $http.delete('/api/moments/' + data._id)
+        .then(handleSuccess(callback), handleFailure(callback));
+    };
+
+    MomentsAPI.prototype.me = function(token, callback) {
+      $http.get('/api/users/me?access_token=' + token)
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
