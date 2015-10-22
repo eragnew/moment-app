@@ -1,7 +1,43 @@
-.timeline-search {
-  @include inputs(1, color('primary', 'light'));
-  border-bottom: 1px solid #eeeeee;
+.search-light {
+  @include inputs(1, color('primary', 'light'), .8);
+}
+
+.search-heavy {
+  @include inputs(3, color('base', 'base'), 1);
+  font-weight: 300;
+}
+
+input[type="date"] {
+  font-family: font-family('primary', 'semibold');
+  width: 4em;
+  height: 3.3em;
+  color: transparent;
+  background: url('/images/calendar.svg') no-repeat;
+  background-position: left .2em;
+  background-size: 3em;
+  border: none;
+  -webkit-appearance: none;
+  opacity: .8;
+  @include transition(all .3s ease-in);
+  &:hover {
+    opacity: .5;
+    cursor: pointer;
+  }
   &:focus {
+    outline: 0;
+    width: 40%;
+    color: color(base, base);
+    background-color: rgba(255,255,255,.2);
     border-bottom: 1px solid color('secondary', 'base');
+    &:hover {
+      opacity: 1;
+    }
+    @media screen and (min-width: $break) {
+      width: 14em;
+    }
+  }
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
   }
 }
