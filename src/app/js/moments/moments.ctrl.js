@@ -4,6 +4,8 @@ module.exports = function(app) {
 
     vm.user = [];
 
+    getProfile();
+
     vm.currentPath = $location.path();
 
     var token = $cookies.get('token');
@@ -42,8 +44,5 @@ module.exports = function(app) {
         ];
       });
     }
-
-    getProfile();
-
   }]);
 };
