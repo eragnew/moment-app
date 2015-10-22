@@ -10,18 +10,18 @@ var momentSchema = new mongoose.Schema({
     type: String
   },
   spotifyResource: {
-    type: Schema.Types.Mixed
+    type: String
   },
   content: {
     type: String
   },
   dateCreated: {
     type: Date,
-    default: Date.now
+    default: Date.now()
   },
   dateModified: {
     type: Date,
-    default: Date.now
+    default: Date.now()
   },
   tags: [{tag: String}]
 });
