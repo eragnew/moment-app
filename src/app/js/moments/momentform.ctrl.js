@@ -10,6 +10,8 @@ module.exports = function(app) {
 
     vm.track = {};
 
+    var pageNumber;
+
     vm.addTrack = function addTrack(data) {
       vm.track = data;
       $log.info(vm.track);
@@ -38,10 +40,10 @@ module.exports = function(app) {
     }
 
     vm.pagination = {
-      currentPage: 0,
-      perPage: 3,
+      currentPage: 1,
+      perPage: (window.innerWidth >= 360 ? 3 : 2),
       getOffset: function () {
-        return vm.pagination.currentPage * vm.pagination.perPage;
+        return vm.pagination.currentPage + vm.pagination.perPage;
       },
       prevPage: function () {
         vm.pagination.currentPage--;
@@ -53,7 +55,6 @@ module.exports = function(app) {
 
   }]);
 };
-
 
     // var formHeader = document.getElementById("h1");
 
