@@ -51,12 +51,12 @@ module.exports = function(app) {
       }
     }
 
-    function submitMoment() {
-      var momentAPI = new MomentsAPI();
-      momentAPI.create(vm.moment).then(function(response){
-        $log.info(response.data);
-      });
-    }
+    // function submitMoment() {
+    //   var momentAPI = new MomentsAPI();
+    //   momentAPI.create(vm.moment).then(function(response){
+    //     $log.info(response.data);
+    //   });
+    // }
 
     vm.pagination = {
       currentPage: 0,
