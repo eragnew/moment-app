@@ -1,15 +1,21 @@
 require('./momentform.filter.js');
 
 module.exports = function(app) {
-  app.controller('MomentFormController', ['SpotifySearchService', '$anchorScroll', '$location', '$routeParams', '$log', '$filter', function(SpotifySearchService, $anchorScroll, $location, $routeParams, $log, $filter) {
+
+  app.controller('MomentFormController', ['SpotifySearchService', 'MomentsAPI','$anchorScroll', '$location', '$routeParams', '$log', '$filter', function(SpotifySearchService, MomentsAPI, $anchorScroll, $location, $routeParams, $log, $filter) {
 
     var vm = this;
 
     vm.search = searchSpotify;
 
+    vm.save = submitMoment;
+
     vm.date = $filter('date')(Date.now(), 'yyyy-MM-dd');
 
+    vm.moment = {};
     vm.track = {};
+
+    var pageNumber;
 
     vm.addTrack = function addTrack(data) {
       vm.track = data;
@@ -36,6 +42,13 @@ module.exports = function(app) {
       function errorHandler(response) {
         $log.error('Error', response);
       }
+    }
+
+    function submitMoment() {
+      var momentAPI = new MomentsAPI();
+      momentAPI.create(vm.moment).then(function(response){
+        $log.info(response.data);
+      });
     }
 
     vm.pagination = {

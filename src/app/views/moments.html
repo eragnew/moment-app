@@ -1,12 +1,8 @@
 <div class="moment-banner" ng-controller="MomentsController">
-  <!-- <h1 ng-show="{{vm.user[0] !== null}}">{{vm.user[0]}}, here are your moments!</h1>
-  <h1 ng-hide="{{vm.user[0] !== null}}">Hello, here are your moments!</h1>
-  <img ng-show="{{vm.user[1]}}" class="image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-  <img ng-hide="{{vm.user[1]}}" class="image-profile" src="{{ vm.user[1].url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}"> -->
-  <h1 ng-show="{{vm.user.name !== null}}">{{vm.user.name}}, here are your moments!</h1>
-  <h1 ng-hide="{{vm.user.name !== null}}">Hello, here are your moments!</h1>
-  <img ng-show="{{vm.user.profile_image}}" class="image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-  <img ng-hide="{{vm.user.profile_image}}" class="image-profile" src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <h1 class="ng-cloak" ng-show="{{vm.user.name !== null}}">{{vm.user.name}}, here are your moments!</h1>
+  <h1 class="ng-cloak" ng-hide="{{vm.user.name !== null}}">Hello, here are your moments!</h1>
+  <img ng-show="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <img ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
     <li>15 <span>moments</span></li>
     <li>3 <span>tags</span></li>
@@ -19,14 +15,14 @@
     <h2>Timeline</h2>
     <input class="search-light" type="text" name="search" placeholder="SEARCH" data-ng-model="search">
   </div>
-  <section class="moments-list" data-ng-repeat="month in vm.moments.date">
-    <h3>{{ moments.date | date:'M' }}</h3>
+  <section class="moments-list">
+    <h3>October 2015</h3>
     <ul>
-      <li data-ng-repeat="moment in vm.moments | orderBy:'-date' | filter:search">
-        <p>{{ moment.content | limitTo:150 }}</p>
+      <li>
+        <p>Great album. We had a sweet time listening to this back in 2012. So I decided to get the album again before the show. But we didn’t have time to finish listening, which was a little bit</p>
         <figure>
-          <img src="" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
-          <figcaption>{{ moment.date | date:'d' }}</figcaption>
+          <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
+          <figcaption>21</figcaption>
         </figure>
       </li>
     </ul>

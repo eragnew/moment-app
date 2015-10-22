@@ -30,12 +30,12 @@
       <div class="moment-date">
         <p>{{ vm.date | date: 'dd MMMM' }}</p>
         <p><span>{{ vm.date | date: 'yyyy' }}</span></p>
-        <input type="date" ng-model="vm.date" value="{{Date.now() | date: 'yyyy-MM-dd'}}" required/>
+        <input type="date" ng-model="vm.date" value="{{ vm.date }}" >
       </div>
       <input class="btn-primary-alt" type="submit" name="Submit" value="Save">
       <!-- <input type="text" ng-model="vm.moment.title" placeholder="Title" /> -->
       <div class="content">
-        <textarea id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.text" placeholder="Content"></textarea>
+        <textarea id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.content" placeholder="Content" required></textarea>
         <!-- <input type="text" ng-model="vm.moment.author" placeholder="Author" /> -->
         <figure>
           <img src="{{ vm.track.album.images[1].url || '../images/defaultAlbum.png'}}" alt="Album cover for {{ vm.track.artists[0].name }}" title="{{ vm.track.artists[0].name }}">
@@ -43,6 +43,10 @@
             <p><span class="moment-song">{{ vm.track.name }}</span><span>|</span>{{ vm.track.artists[0].name }}</p></figcaption>
         </figure>
       </div>
+      <input class="moment-tags search-light" type="text" ng-model="vm.moment.tags" placeholder="Tags" >
+      <input type="hidden" aria-hidden="true" ng-model="vm.moment.title" name="title" value="{{ vm.track.name }}" >
+      <input type="hidden" aria-hidden="true" ng-model="vm.moment.spotifyResource" value="{{ vm.track }}">
+      <input type="hidden" aria-hidden="true" ng-model="vm.moment.dateCreated" value="vm.date" >
     </form>
   </div>
 </section>

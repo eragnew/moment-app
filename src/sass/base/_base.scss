@@ -1,6 +1,7 @@
 html {
   min-height: 100%;
 }
+
 body {
   min-height: 100%;
   color: color(base, base);
@@ -9,4 +10,8 @@ body {
   background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
