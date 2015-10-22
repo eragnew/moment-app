@@ -6,19 +6,23 @@
     <form ng-submit="vm.search(search)">
       <input class="search-heavy" type="text" ng-model="search" name="search" placeholder="Search"/>
     </form>
-    <section class="results">
-      <h2 ng-show="vm.results.length > 0">Results</h2>
-      <ul>
-        <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | limitTo: 3">
-          <figure>
-            <img src="{{ result.album.images[2].url }}" alt="" title="" >
-            <figcaption>
-              <p>{{ result.artists[0].name }}</p>
-              <p><span>{{ result.name }}</span></p>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
+    <section ng-show="vm.results.length > 0" class="results">
+      <h2>Select your track</h2>
+      <div class="results-nav">
+        <button class="left-arrow" ng-click="vm.pagination.prevPage()"></button>
+        <ul>
+          <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | pager:vm.pagination">
+            <figure>
+              <img src="{{ result.album.images[2].url }}" alt="" title="" >
+              <figcaption>
+                <p>{{ result.artists[0].name | limitTo: 11}}{{ result.artists[0].name.length > 11 ? '...' : '' }}</p>
+                <p><span>{{ result.name | limitTo: 11}}{{ result.name.length > 11 ? '...' : '' }}</span></p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <button class="right-arrow" ng-click="vm.pagination.prevPage()"></button>
+      </div>
     </section>
   </div>
   <div class="form-wrapper">
@@ -33,8 +37,8 @@
       <div class="content">
         <textarea id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.text" placeholder="Content"></textarea>
         <!-- <input type="text" ng-model="vm.moment.author" placeholder="Author" /> -->
-        <figure>
-          <img src="{{ vm.track.album.images[1].url || '../images/defaultAlbum.png' }}" alt="Album cover for {{ vm.track.artists[0].name }}" title="{{ vm.track.artists[0].name }}">
+        <figure ng-show="vm.track.artists.length > 0">
+          <img src="{{ vm.track.album.images[1].url || '../images/defaultAlbum.png'}}" alt="Album cover for {{ vm.track.artists[0].name }}" title="{{ vm.track.artists[0].name }}">
           <figcaption>
             <p class="moment-song">{{ vm.track.name}} <span>|</span> {{ vm.track.artists[0].name }}</p></figcaption>
         </figure>
