@@ -2,9 +2,13 @@ require('./momentform.filter.js');
 
 module.exports = function(app) {
 
-  app.controller('MomentFormController', ['SpotifySearchService', 'MomentsAPI','$anchorScroll', '$location', '$routeParams', '$log', '$filter', function(SpotifySearchService, MomentsAPI, $anchorScroll, $location, $routeParams, $log, $filter) {
+  app.controller('MomentFormController', ['SpotifySearchService', 'MomentsAPI','$anchorScroll', '$location', '$routeParams', '$log', '$filter', '$cookies', function(SpotifySearchService, MomentsAPI, $anchorScroll, $location, $routeParams, $log, $filter, $cookies) {
 
     var vm = this;
+
+    var token = $cookies.get('token');
+    if (!(token && token.length))
+      $location.path('/login');
 
     vm.search = searchSpotify;
 
@@ -19,7 +23,6 @@ module.exports = function(app) {
 
     vm.addTrack = function addTrack(data) {
       vm.track = data;
-      $log.info(vm.track);
     };
 
     vm.contentExpand = function() {
@@ -29,14 +32,10 @@ module.exports = function(app) {
     };
 
     function searchSpotify(q) {
-      $log.info(q);
       SpotifySearchService.get(q).then(successHandler, errorHandler);
 
       function successHandler(response) {
         vm.results = response.data.tracks.items;
-
-        $log.info('response', response);
-        $log.info(vm.results);
       }
 
       function errorHandler(response) {
@@ -46,8 +45,13 @@ module.exports = function(app) {
 
     function submitMoment() {
       var momentAPI = new MomentsAPI();
-      momentAPI.create(vm.moment).then(function(response){
-        $log.info(response.data);
+      vm.moment.title = vm.track.name;
+      vm.moment.spotifyResource = vm.track.id;
+      vm.moment.dateCreated = vm.date;
+      var formattedToken = token.replace(/"/g, '');
+      momentAPI.create(formattedToken, vm.moment, function(err, data){
+        if (err) $log.error('Error', err);
+        $log.info(data);
       });
     }
 
