@@ -4,7 +4,7 @@ var User = require('../user/user.model');
 exports.index = function(req, res) {
   Moment.find({}, function(err, moments) {
     if (err) return res.send(500, err);
-    res.json(200, moments);
+    res.status(200).json(moments);
   });
 };
 
@@ -12,7 +12,7 @@ exports.create = function(req, res, next) {
   var newMoment = new Moment(req.body);
   newMoment.save(function(err, moment) {
     if (err) return res.send(500, err);
-    res.json(200, moment);
+    res.status(200).json(moment);
   });
 };
 
@@ -21,7 +21,7 @@ exports.show = function(req, res, next) {
   Moment.findById(momentId, function(err, moment) {
     if (err) return next(err);
     if (!moment) return res.send(401);
-    res.json(200, moment);
+    res.status(200).json(moment);
   });
 };
 
@@ -33,7 +33,7 @@ exports.update = function(req, res) {
     var newMomentBody = req.body;
     Moment.update({_id: req.params.id}, newMomentBody, function(err, data) {
       if (err) return res.send(500, err);
-      res.json(200, data);
+      res.status(200).json(data);
     });
   });
 };

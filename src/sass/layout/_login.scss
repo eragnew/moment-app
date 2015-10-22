@@ -23,13 +23,11 @@
     margin: 2em 0;
   }
 
-  a {
-    margin: 2em 0;
-  }
-
   .btn-large-alt {
     border-color: color('base', 'base');
+    margin: 1em 0;
     span {
+
       color: color('primary', 'dark');
     }
     &:hover {

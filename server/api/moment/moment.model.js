@@ -7,8 +7,7 @@ var momentSchema = new mongoose.Schema({
     ref: 'User'
   },
   title: {
-    type: String,
-    required: true
+    type: String
   },
   spotifyResource: {
     type: Schema.Types.Mixed

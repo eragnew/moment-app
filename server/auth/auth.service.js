@@ -10,13 +10,16 @@ var validateJwt = expressJwt({secret: config.secrets.session});
 function isAuthenticated() {
   return compose()
     .use(function(req, res, next) {
-      if (req.query && req.query.hasOwnProperty('access_token')) {
-        req.headers.authorization = 'Bearer ' + req.query.access_token;
+      if ((req.query && req.query.hasOwnProperty('access_token')) || (req.body && req.body.hasOwnProperty('access_token'))) {
+        var formattedToken = req.query.access_token.replace(/"/g, '');
+        req.headers.authorization = 'Bearer ' + formattedToken;
       }
       validateJwt(req, res, next);
     })
     .use(function(req, res, next) {
-      User.findById(req.user._id, function(err, user) {
+      User.findOne({
+        _id: req.user._id
+      }, function(err, user) {
         if (err) return next(err);
         if (!user) return res.send(401);
 
@@ -48,7 +51,7 @@ function setTokenCookie(req, res) {
   console.log('setting token');
   console.log();
   if (!req.user) return res.status(404).json({message: 'something went wrong'});
-  var token = signToken(req.user._id, req.user.role);
+  var token = signToken(req.user._id);
   console.log(token);
   res.cookie('token', JSON.stringify(token));
   res.redirect('/');

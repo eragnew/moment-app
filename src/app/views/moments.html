@@ -1,6 +1,6 @@
 <div class="moment-banner">
   <h1>Chris, here are your moments!</h1>
-  <img class="image-profile" src="../images/tempUserPhoto.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <img class="image-profile" src="../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
     <li>15 <span>moments</span></li>
     <li>3 <span>tags</span></li>
@@ -8,10 +8,10 @@
   </ul>
 </div>
 <section class="timeline">
-  <a class="btn-large" href="">Create a moment</a>
+  <a class="btn-large" href="#/moments/new">Create a moment</a>
   <div class="timeline-header">
     <h2>Timeline</h2>
-    <input class="timeline-search" type="text" name="search" placeholder="SEARCH" data-ng-model="search">
+    <input class="search-light" type="text" name="search" placeholder="SEARCH" data-ng-model="search">
   </div>
   <section class="moments-list" data-ng-repeat="month in vm.moments.date">
     <h3>{{ moments.date | date:'M' }}</h3>
