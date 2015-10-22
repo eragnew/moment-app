@@ -4,6 +4,8 @@ module.exports = function(app) {
 
     vm.user = [];
 
+    getProfile();
+
     vm.currentPath = $location.path();
 
     var token = $cookies.get('token');
@@ -34,11 +36,13 @@ module.exports = function(app) {
 
     function getProfile() {
       SpotifyAPI.me(token).then(function(resp) {
-        vm.user = resp.data;
+        var name = resp.data.display_name.split(' ');
+
+        vm.user = [
+          name[0],
+          resp.data.images[0]
+        ];
       });
     }
-
-  getProfile();
-
   }]);
 };
