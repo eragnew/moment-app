@@ -56,7 +56,6 @@ module.exports = function(app) {
         return vm.pagination.currentPage * vm.pagination.perPage;
       },
       prevPage: function () {
-
         vm.pagination.currentPage--;
         console.log(vm.pagination.currentPage);
       },
