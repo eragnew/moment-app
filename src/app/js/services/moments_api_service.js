@@ -14,8 +14,21 @@ module.exports = function(app) {
   app.factory('MomentsAPI', ['$http', function($http) {
     var MomentsAPI = function() {};
 
-    MomentsAPI.prototype.create = function(data, callback) {
-      $http.post('/api/moments/new', data)
+    MomentsAPI.prototype.create = function(token, data, callback) {
+      // $http.post('/api/moments/new', data)
+      //   .then(handleSuccess(callback), handleFailure(callback));
+      $http({
+        method: 'POST',
+        url: '/api/moments/new',
+        data: data,
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      }).then(handleSuccess(callback), handleFailure(callback));
+    };
+
+    MomentsAPI.prototype.getOne = function(token, _id, callback) {
+      $http.get('/api/moments/' + _id + '?access_token=' + token)
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
@@ -24,14 +37,29 @@ module.exports = function(app) {
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
-    MomentsAPI.prototype.update = function(data, callback) {
-      $http.put('/api/moments/' + data._id, data)
-        .then(handleSuccess(callback), handleFailure(callback));
+    MomentsAPI.prototype.update = function(token, data, callback) {
+      // $http.put('/api/moments/' + data._id, data)
+      //   .then(handleSuccess(callback), handleFailure(callback));
+      $http({
+        method: 'PUT',
+        url: '/api/moments/' + data._id,
+        data: data,
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      }).then(handleSuccess(callback), handleFailure(callback));
     };
 
-    MomentsAPI.prototype.remove = function(data, callback) {
-      $http.delete('/api/moments/' + data._id)
-        .then(handleSuccess(callback), handleFailure(callback));
+    MomentsAPI.prototype.remove = function(token, data, callback) {
+      // $http.delete('/api/moments/' + data._id)
+      //   .then(handleSuccess(callback), handleFailure(callback));
+      $http({
+        method: 'DELETE',
+        url: '/api/moments/' + data._id,
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      }).then(handleSuccess(callback), handleFailure(callback));
     };
 
     MomentsAPI.prototype.me = function(token, callback) {
