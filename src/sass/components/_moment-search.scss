@@ -26,8 +26,6 @@
   form {
     order: 2;
     display: inline-block;
-    background-image: radial-gradient(closest-side, rgba(0,0,0,.2), rgba(0,0,0,0));
-    background-position: 0% 0%;
     padding: 2em 0;
     @media only screen and (min-width: $break) {
       padding-left: $base-line-height * 2;
