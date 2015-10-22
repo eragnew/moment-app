@@ -1,3 +1,5 @@
+require('./momentform.filter.js');
+
 module.exports = function(app) {
   app.controller('MomentFormController', ['SpotifySearchService', '$anchorScroll', '$location', '$routeParams', '$log', '$filter', function(SpotifySearchService, $anchorScroll, $location, $routeParams, $log, $filter) {
     var vm = this;
@@ -11,7 +13,6 @@ module.exports = function(app) {
     vm.addTrack = function addTrack(data) {
       vm.track = data;
       $log.info(vm.track);
-      $log.info(Object.keys(vm.track));
     };
 
     vm.contentExpand = function() {
@@ -35,6 +36,21 @@ module.exports = function(app) {
         $log.error('Error', response);
       }
     }
+
+    vm.pagination = {
+      currentPage: 0,
+      perPage: 3,
+      getOffset: function () {
+        return vm.pagination.currentPage * vm.pagination.perPage;
+      },
+      prevPage: function () {
+        vm.pagination.currentPage--;
+      },
+      nextPage: function () {
+        vm.pagination.currentPage++;
+      }
+    };
+
   }]);
 };
 
