@@ -1,5 +1,9 @@
 .results {
-  width: 49%;
+  padding: 0 0 2em 0;
+  @media only screen and (min-width: $break) {
+    max-width: 49%;
+    padding: 0;
+  }
 
   h2 {
     margin-bottom: $base-line-height;
@@ -14,6 +18,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0 0 1em 0;
+    @media only screen and (min-width: $break) {
+      padding: 0;
+    }
   }
   li {
     display: inline-block;
@@ -22,7 +30,9 @@
   }
   button {
     display: inline-block;
-    width: 20px;
-    height: 64px;
+    @media only screen and (min-width: $break) {
+      width: 20px;
+      height: 64px;
+    }
   }
 }
