@@ -39,15 +39,20 @@ module.exports = function(app) {
 
     vm.pagination = {
       currentPage: 0,
-      perPage: 3,
+      perPage: (window.innerWidth > 320 ? 3 : 2),
       getOffset: function () {
         return vm.pagination.currentPage * vm.pagination.perPage;
+        console.log('getOffset called, CURRENT PAGE: ' + vm.pagination.currentPage);
       },
       prevPage: function () {
-        vm.pagination.currentPage--;
+        if (vm.pagination.currentPage > 0)
+          vm.pagination.currentPage--;
+        console.log('prevPage called, CURRENT PAGE: ' + vm.pagination.currentPage);
       },
       nextPage: function () {
-        vm.pagination.currentPage++;
+        if (vm.pagination.currentPage + 1 <= (Math.floor(vm.results.length / vm.pagination.perPage)))
+          vm.pagination.currentPage++;
+        console.log('nextPage called, CURRENT PAGE: ' + vm.pagination.currentPage);
       }
     };
 
