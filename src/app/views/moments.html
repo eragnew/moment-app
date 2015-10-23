@@ -17,12 +17,12 @@
   <section class="moments-list">
     <h3>{{ vm.moments[0].dateModified | date: 'MMMM yyyy' }}</h3>
     <ul>
-      <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated' | filter: searchMoments">
+      <li ng-repeat="moment in vm.moments | orderBy:'-dateModified' | filter: searchMoments">
         <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 175 }}{{ moment.content.length > 175 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">
         <figure>
             <img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
-            <figcaption>21</figcaption>
+            <figcaption>{{vm.moments[0].dateModified | date: 'dd'}}</figcaption>
         </figure>
         </a>
       </li>

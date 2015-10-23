@@ -1,3 +1,15 @@
+@mixin moment-button-theme($color, $bg-color, $hover, $hover-bg) {
+  color: $color;
+  border-color: $color;
+  background-color: $bg-color;
+
+  &:hover {
+    color: $hover;
+    border-color: $hover-bg;
+    background-color: $hover-bg;
+  }
+}
+
 $button-border-width: 1px;
 $button-border-radius: type-scale(-1);
 
