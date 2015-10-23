@@ -2,11 +2,11 @@
   <div class="moment-detail-banner">
     <div class="moment-title-wrapper">
       <h1 class="moment-title">{{ vm.moment.title }}</h1>
-      <p>This is the artist name</p>
+      <p>{{ vm.spotifyDeats.artists[0].name }}</p>
     </div>
     <figure>
-      <img src="/images/eric.jpg">
-      <figcaption>Listen On Spotify</figcaption>
+      <img src="{{ vm.spotifyDeats.album.images[1].url }}">
+      <figcaption><a target="_blank" href="{{ vm.spotifyDeats.preview_url }}"><span class="icon-play"></span>Listen On Spotify</a></figcaption>
     </figure>
   </div>
   <section class="moment-detail">
@@ -15,9 +15,8 @@
       <p><span>{{ vm.moment.dateModified | date: 'yyyy' }}</span></p>
     </div>
     <ul class="moment-metadata">
+      <li class="tags" ng-repeat="tag in vm.moment.tags">{{tag}}</li>
       <li class="date">{{ vm.moment.dateModified | date:"h:mm a" }}</li>
-      <li>{{vm.moment.user}}</li>
-      <li>{{vm.moment.album}}</li>
     </ul>
     <section class="primary-content"> {{ vm.moment.content }} </section>
     <a class="btn-large" href="#/moments/">View All</a>

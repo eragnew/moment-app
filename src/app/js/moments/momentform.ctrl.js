@@ -39,7 +39,7 @@ module.exports = function(app) {
     };
 
     function searchSpotify(q) {
-      SpotifySearchService.get(q).then(successHandler, errorHandler);
+      SpotifySearchService.getTrack(q).then(successHandler, errorHandler);
 
       function successHandler(response) {
         vm.results = response.data.tracks.items;
