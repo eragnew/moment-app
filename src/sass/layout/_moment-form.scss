@@ -1,15 +1,5 @@
 .form-wrapper {
-  position: relative;
-  top: -$base-line-height * 2;
-  margin: 0 1em;
-  padding: $base-line-height * 2;
-  background-color: color(primary, base);
-  border-radius: .5rem;
-  box-shadow: 2px -2px 20px 10px rgba(0, 0, 0, 0.2);
-
-  @media only screen and (min-width: $break) {
-    margin: 0 6em;
-  }
+  @extend %card-wrapper;
 
   form {
     @include flex-box($direction: row, $wrap: wrap, $justify: space-between);
