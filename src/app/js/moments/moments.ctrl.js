@@ -1,9 +1,11 @@
 module.exports = function(app) {
-  app.controller('MomentsController', ['MomentsAPI', 'SpotifyAPI', '$scope', '$location', '$cookies', '$log', function(MomentsAPI, SpotifyAPI, $scope, $location, $cookies, $log) {
+  app.controller('MomentsController', ['MomentsAPI', 'SpotifyAPI', '$scope', '$location', '$cookies', '$log', '$q', function(MomentsAPI, SpotifyAPI, $scope, $location, $cookies, $log, $q) {
     var vm = this;
 
     vm.user = {};
     vm.moments = [];
+    vm.resources = [];
+    vm.albumArts = [];
     vm.currentPath = $location.path();
 
     var token = $cookies.get('token');
@@ -27,19 +29,26 @@ module.exports = function(app) {
           if (err) return errorHandler(err);
           for (var i = 0; i < data.length; i++) {
             vm.moments.push(data[i]);
-            // SpotifyAPI.getTrack(data[i].spotifyResource).then(function(resp) {
-            //   vm.moments[i].album_cover = resp.data.album.images[resp.data.album.images.length - 1].url;
-            // });
+            vm.resources.push(data[i].spotifyResource);
           }
-        });
+          angular.forEach(vm.resources, function(value, index) {
+            SpotifyAPI.getTrack(value).then(
+                function(resp) {
+                    vm.moments[index].album_art = resp.data.album.images[1].url;
+                }
+              );
+          });
+
         return data.profile;
       });
 
       vm.stats = momentsAPI.stats(token, function(err, data) {
+        console.log(data);
         vm.momentCount = data[0];
         vm.tagCount = data[1];
       });
-    };
+    });
+  };
 
     vm.initPage();
 
