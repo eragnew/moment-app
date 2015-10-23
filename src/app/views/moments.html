@@ -15,16 +15,34 @@
     <h2>Timeline</h2>
     <input class="search-light" type="text" name="search" placeholder="SEARCH" data-ng-model="search">
   </div>
-  <section ng-show='{{vm.moment.id}}' class="moments-list"><a href="#/moments/{{ vm.moment.id }}">
-    <h3>{{ vm.moment.dateModified | date: 'MM-yyyy' }}</h3>
+  <!-- <section ng-show='{{vm.moment.id}}' class="moments-list"><a href="#/moments/{{ vm.moment.id }}"> -->
+  <section class="moments-list">
+    <h3>{{ vm.moments[0].dateModified | date: 'MM-yyyy' }}</h3>
     <ul>
-      <li>
+
+      <li ng-repeat="moment in vm.moments">
+        <p><a href="#/moments/{{moment._id}}">{{moment.content}}</a></p>
+        <figure>
+          <!-- <img ng-src="{{moment.album_cover}}" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}"> -->
+          <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
+          <figcaption>21</figcaption>
+        </figure>
+      </li>
+
+<!--       <li>
         <p>{{ vm.moment.content | limitTo: 300 }}{{ blogpost.text.length > 300 ? '...' : '' }}</p>
         <figure>
           <img src="vm.spotifyDeats.album.images[1].url" alt="Album cover for {{ vm.spotifyDeats.album }}" title="{{ vm.spotifyDeats.album }}">
           <figcaption>{{vm.moment.dateModified | date: 'dd'}}</figcaption>
         </figure>
-      </li>
+      </li> -->
+<!--       <li>
+        <p>Great album. We had a sweet time listening to this back in 2012. So I decided to get the album again before the show. But we didn’t have time to finish listening, which was a little bit</p>
+        <figure>
+          <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
+          <figcaption>21</figcaption>
+        </figure>
+      </li> -->
     </ul>
   </a></section>
 </section>

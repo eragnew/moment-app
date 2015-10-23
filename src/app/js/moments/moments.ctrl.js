@@ -3,7 +3,7 @@ module.exports = function(app) {
     var vm = this;
 
     vm.user = {};
-
+    vm.moments = [];
     vm.currentPath = $location.path();
 
     var token = $cookies.get('token');
@@ -22,6 +22,15 @@ module.exports = function(app) {
           var name = resp.data.display_name.split(' ');
           vm.user.name = name[0];
           vm.user.profile_image = resp.data.images[0];
+        });
+        momentsAPI.getAll(token, function(err, data) {
+          if (err) return errorHandler(err);
+          for (var i = 0; i < data.length; i++) {
+            vm.moments.push(data[i]);
+            // SpotifyAPI.getTrack(data[i].spotifyResource).then(function(resp) {
+            //   vm.moments[i].album_cover = resp.data.album.images[resp.data.album.images.length - 1].url;
+            // });
+          }
         });
         return data.profile;
       });
