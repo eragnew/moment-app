@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.service('SpotifyAPI', ['MomentsAPI', '$http', '$location', '$cookies', function(MomentsAPI, $http, $location, $cookies) {
+  app.service('SpotifyReleaseAPI', ['MomentsAPI', '$http', '$location', '$cookies', function(MomentsAPI, $http, $location, $cookies) {
 
     var token = $cookies.get('token');
     if (!(token && token.length)) {
