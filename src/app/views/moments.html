@@ -4,8 +4,10 @@
   <img ng-show="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <img ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
-    <li ng-bind="vm.momentCount">15 <span>moments</span></li>
-    <li ng-bind="vm.tagCount">3 <span>tags</span></li>
+    <li ng-bind="vm.momentCount">15</li>
+    <li><span>moments</span></li>
+    <li ng-bind="vm.tagCount">3</li>
+    <li><span>tags</span></li>
     <li>10 <span>tracks</span></li>
   </ul>
 </div>
@@ -22,11 +24,13 @@
 
       <li ng-repeat="moment in vm.moments">
         <p><a href="#/moments/{{moment._id}}">{{moment.content}}</a></p>
+        <a href="#/moments/{{moment._id}}">
         <figure>
           <!-- <img ng-src="{{moment.album_cover}}" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}"> -->
           <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
           <figcaption>21</figcaption>
         </figure>
+        </a>
       </li>
 
 <!--       <li>
