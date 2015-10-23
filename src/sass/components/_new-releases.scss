@@ -4,5 +4,6 @@
     padding: $base-line-height;
     font-family: font-family(primary, light);
     font-weight: 100;
+    background: mix(black, color(primary, base), 25%);
   }
 }

@@ -1,17 +1,18 @@
 .user-stats {
   li {
-    font-family: font-family('primary', 'semibold');
-    @include vertical-rhythm(0);
+    font-family: font-family('primary', 'light');
+    @include vertical-rhythm(-1);
     @media only screen and (min-width: $break) {
       // @include vertical-rhythm(0);
-      @include vertical-rhythm(4);
+      @include vertical-rhythm(0);
     }
 
     span {
-      font-family: font-family('primary', 'light');
-      @include vertical-rhythm(-1);
+      font-family: font-family('primary', 'semibold');
+      @include vertical-rhythm(0);
+      padding-right: $base-line-height / 2;
       @media only screen and (min-width: $break) {
-        @include vertical-rhythm(0)
+        @include vertical-rhythm(4)
       }
     }
   }

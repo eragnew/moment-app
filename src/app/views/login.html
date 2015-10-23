@@ -9,9 +9,10 @@
   <h2>New Music</h2>
   <ul>
     <li ng-repeat="result in vm.results">
+      <a target="_blank" href="{{ result.external_urls.spotify }}" >
       <figure>
-        <img src="{{ result.images[1].url }}">
-      </figure>
+        <img src="{{ result.images[1].url }}" alt="album art for {{ result.name }}" title="{{ result.name }}">
+      </figure></a>
     </li>
   </ul>
 </section>
