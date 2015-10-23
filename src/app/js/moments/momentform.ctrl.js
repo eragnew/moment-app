@@ -48,7 +48,9 @@ module.exports = function(app) {
       vm.moment.title = vm.track.name;
       vm.moment.spotifyResource = vm.track.id;
       vm.moment.dateCreated = vm.date;
+      vm.moment.dateModified = vm.date;
       var formattedToken = token.replace(/"/g, '');
+      vm.moment.tags = vm.tags.split(',');
       momentAPI.create(formattedToken, vm.moment, function(err, data){
         if (err) $log.error('Error', err);
         $log.info(data);

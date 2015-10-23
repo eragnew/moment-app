@@ -54,8 +54,6 @@ exports.stats = function(req, res) {
   var statsArr = [];
   Moment.count(function(err, count) {
     if (err) return res.status(500).send(err);
-    console.log('WE ARE IN Moment.count! count:');
-    console.log(count);
     statsArr.push(count);
     Moment.find({}, function(err, moments) {
       var tagCount = 0;
