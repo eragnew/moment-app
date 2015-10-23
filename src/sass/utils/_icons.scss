@@ -17,7 +17,7 @@ $iconPrimary:
 (valid 2 "\ed6f" 100%)
 (arrowR 2 "\edba" 2em)
 (arrowL 2 "\edc2" 2em)
-(play 2 "\edc2" 2em);
+(play 2 "\ed7b" 2em);
 
 @each $iconP in $iconPrimary {
   .icon-#{nth($iconP, 1)} {
