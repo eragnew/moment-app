@@ -7,7 +7,8 @@ var router = express.Router();
 router.get('/',
   passport.authenticate('spotify', {
     scope: ['playlist-read-private', 'user-library-read', 'user-follow-read'],
-    session: false
+    session: false,
+    showDialog: true
   }),
   function(req, res) {
     // request will be redirected to Spotify, so this function will not be called
