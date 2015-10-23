@@ -62,6 +62,8 @@
       justify-content: space-between;
       padding-bottom: $base-line-height;
       padding-top: $base-line-height;
+      padding-left: $base-line-height / 2;
+      padding-right: $base-line-height / 2;
       border-bottom: 1px solid color('primary', 'light');
     }
     p {
