@@ -21,7 +21,6 @@
     <ul>
 
       <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated'">
-
         <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 250 }}{{ moment.content.length > 250 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">
         <figure>

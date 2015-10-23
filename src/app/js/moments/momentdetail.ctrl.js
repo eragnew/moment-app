@@ -24,18 +24,13 @@ module.exports = function(app) {
 
       start();
 
-      function deleteMoment(moment) {
-        momentAPI.remove(token, moment, function(err, resp) {
-
+      vm.deleteMoment = function() {
+        var formattedToken = token.replace(/"/g, '');
+        momentAPI.remove(formattedToken, vm.moment, function(err, resp) {
+          console.log('moment removed');
+          $location.path('/moments');
         });
-      }
-
-      function getMoments () {
-        BlogsService.get().then(function(resp) {
-        // Set the property 'blogs' (array) equal to an array of objects
-          vm.blogs = resp.data;
-        });
-      }
+      };
 
     }
   ]);
