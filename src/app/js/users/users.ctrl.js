@@ -1,32 +1,35 @@
 module.exports = function(app) {
-  app.controller('UserController', ['$scope', '$location', '$cookies', 'SpotifySearchService', '$filter', function($scope, $location, $cookies, SpotifySearchService, $filter) {
+  app.controller('UserController', ['$scope', '$location', '$cookies', 'SpotifySearchService', '$filter', '$log', function($scope, $location, $cookies, SpotifySearchService, $filter, $log) {
 
     var vm = this;
 
 
 
-    var year = function() {
+    var getYear = function() {
 
       var today = $filter('date')(Date.now(), 'yyyy-MM-dd');
-      today.split("-");
-      return today;
+
+        return today.split('-');
+
     };
 
-    console.log(year());
+    var year = getYear();
 
-    // vm.initPage = function searchSpotify() {
-    //   SpotifySearchService.get().then(successHandler, errorHandler);
+    vm.initPage = function searchSpotify() {
 
-    //   function successHandler(response) {
-    //     vm.results = response.data.tracks.items;
-    //   }
+      SpotifySearchService.getAlbums(year[0]).then(successHandler, errorHandler);
 
-    //   function errorHandler(response) {
-    //     $log.error('Error', response);
-    //   }
-    // };
+      function successHandler(response) {
+        vm.results = response.data.albums.items;
+        $log.info(vm.results);
+      }
 
-    // vm.initPage();
+      function errorHandler(response) {
+        $log.error('Error', response);
+      }
+    };
+
+    vm.initPage();
 
   }]);
 };
