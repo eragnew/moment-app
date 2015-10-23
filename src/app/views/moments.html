@@ -4,12 +4,10 @@
   <img ng-show="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <img ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
-    <li ng-bind="vm.momentCount"></li>
-    <li><span>moments</span></li>
-    <li ng-bind="vm.tagCount"></li>
-    <li><span>tags</span></li>
-    <li ng-bind="vm.tagCount"><span>tracks</span></li>
-  </ul>
+    <li><span ng-bind="vm.momentCount"></span>moments</li>
+    <li><span ng-bind="vm.tagCount"></span>tags</li>
+<!--     <li ng-bind="vm.tagCount"><span>tracks</span></li>
+ -->  </ul>
 </div>
 <section class="timeline">
   <a class="btn-large" href="#/moments/new">Create a moment</a>
@@ -19,10 +17,10 @@
   </div>
   <!-- <section ng-show='{{vm.moment.id}}' class="moments-list"><a href="#/moments/{{ vm.moment.id }}"> -->
   <section class="moments-list">
-    <h3>{{ vm.moments[0].dateModified | date: 'MM-yyyy' }}</h3>
+    <h3>{{ vm.moments[0].dateModified | date: 'MMMM yyyy' }}</h3>
     <ul>
 
-      <li ng-repeat="moment in vm.moments">
+      <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated'">
 
         <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 250 }}{{ moment.content.length > 250 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">

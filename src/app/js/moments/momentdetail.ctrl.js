@@ -3,6 +3,8 @@ module.exports = function(app) {
 
       var vm = this;
 
+      vm.delete = deleteMoment;
+
       var token = $cookies.get('token');
         if (!(token && token.length))
         $location.path('/login');
@@ -21,6 +23,19 @@ module.exports = function(app) {
       }
 
       start();
+
+      function deleteMoment(moment) {
+        momentAPI.remove(token, moment, function(err, resp) {
+
+        });
+      }
+
+      function getMoments () {
+        BlogsService.get().then(function(resp) {
+        // Set the property 'blogs' (array) equal to an array of objects
+          vm.blogs = resp.data;
+        });
+      }
 
     }
   ]);

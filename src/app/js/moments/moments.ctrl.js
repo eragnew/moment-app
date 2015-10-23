@@ -27,10 +27,8 @@ module.exports = function(app) {
           if (err) return errorHandler(err);
           for (var i = 0; i < data.length; i++) {
             vm.moments.push(data[i]);
-            // SpotifyAPI.getTrack(data[i].spotifyResource).then(function(resp) {
-            //   vm.moments[i].album_cover = resp.data.album.images[resp.data.album.images.length - 1].url;
-            // });
           }
+
         });
         // SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
         //     console.log(resp.data);
