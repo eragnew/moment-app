@@ -1,0 +1,14 @@
+.moment-detail {
+  @extend %card-wrapper;
+  font-family: font-family(primary, light);
+
+  h2 {
+    @include vertical-rhythm(3);
+
+  }
+  p {
+    @include vertical-rhythm(2);
+    line-height: 1;
+  }
+
+}

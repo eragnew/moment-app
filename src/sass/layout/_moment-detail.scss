@@ -1,0 +1,61 @@
+.moment-detail-banner {
+  @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
+  @include background('/images/mainBGdark.svg');
+  @media only screen and (min-width: $break) {
+    @include flex-box($wrap: wrap, $direction: row, $justify: space-between);
+    padding: 1em 2em 2em 2em;
+  }
+
+  h1 {
+    order: 1;
+    font-family: font-family('primary', 'light');
+    font-weight: 100;
+    text-align: center;
+    @include vertical-rhythm(4);
+    color: color('base', 'base');
+    padding: 0 0 2em 0;
+    @media only screen and (min-width: $break) {
+      order: 1;
+      text-align: left;
+      margin: 0 0 4em .5em;
+    }
+  }
+
+  figure {
+      order: 2;
+      align-self: auto;
+      position: relative;
+      display: inline-block;
+      margin: 0 $base-line-height;
+      vertical-align: top;
+      @media only screen and (min-width: $break) {
+        order: 2;
+        margin-left: $base-line-height;
+      }
+    }
+  figcaption {
+    position: relative;
+    display: inline-block;
+    bottom: $base-line-height / 2.5;
+    vertical-align: top;
+    font-family: font-family(primary, light);
+    font-size: type-scale(3);
+  }
+}
+.moment-detail {
+
+  @include flex-box($wrap: wrap, $justify: space-between);
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  li {
+    display: inline-block;
+  }
+
+  .primary-content {
+    flex-basis: 100%;
+  }
+}

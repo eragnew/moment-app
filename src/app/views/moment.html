@@ -1,16 +1,23 @@
 <article class="moment-summary">
-  <div class="moment-banner">
-    <h1><span class="moment-title">{{ vm.moment.title }}</span><span>|</span>{{ resp.data.artist[0].name }}</h1>
-    <img src="">{{vm.moment.cover}}<img>
+  <div class="moment-detail-banner">
+    <h1><span class="moment-title">{{ vm.moment.title }}</span><span>|</span>{{ resp.data.artists[0].name }}</h1>
+    <figure>
+      <img src="/images/eric.jpg">
+      <figcaption>Listen On Spotify</figcaption>
+    </figure>
   </div>
-  <p class="moment-song"> {{ vm.moment.song }} | {{vm.moment.artist}} </p>
-  <p> {{ vm.moment.content }}</p>
-  <ul class="moment-metadata">
-    <li class="date">{{ vm.date | date:"MM-dd-yyyy" }}</li>
-    <li>{{vm.moment.user}}</li>
-    <li>Listen On Spotify</li>
-    <li>{{vm.moment.album}}</li>
-  </ul>
-  <a class="btn-primary" href="#/moments/">View All</a>
-  <a class= "btn-small" href="#/moments/{{vm.moment._id}}/edit">Edit</a>
+  <section class="moment-detail">
+    <div class="moment-detail-header">
+      <h2>{{ vm.moment.dateModified | date: 'dd MMMM' }}</h2>
+      <p><span>{{ vm.moment.dateModified | date: 'yyyy' }}</span></p>
+    </div>
+    <ul class="moment-metadata">
+      <li class="date">{{ vm.moment.dateModified | date:"h:mm a" }}</li>
+      <li>{{vm.moment.user}}</li>
+      <li>{{vm.moment.album}}</li>
+    </ul>
+    <section class="primary-content"> {{ vm.moment.content }} </section>
+    <a class="btn-primary" href="#/moments/">View All</a>
+    <a class= "btn-small" href="#/moments/{{vm.moment._id}}/edit">Edit</a>
+  </section>
 </article>
