@@ -1,16 +1,16 @@
-<article ng-controller="" class="moment-summary">
+<article ng-controller="MomentDetailController" class="moment-summary">
   <div class="moment-banner">
-    <h1>{{ vm.moment.title }}</h1>
+    <h1><span class="moment-title">{{ vm.moment.title }}</span><span>|</span>{{ vm.moment.spotifyResource }}</h1>
   </div>
   <img src="">{{vm.moment.cover}}<img>
   <p class="moment-song"> {{ vm.moment.song }} | {{vm.moment.artist}} </p>
-  <p> {{ vm.moment.text }}</p>
+  <p> {{ vm.moment.content }}</p>
   <ul class="moment-metadata">
-    <li class="date">{{ vm.moment.date | date:"MM-dd-yyyy" }}</li>
+    <li class="date">{{ vm.date | date:"MM-dd-yyyy" }}</li>
     <li>{{vm.moment.user}}</li>
     <li>Listen On Spotify</li>
     <li>{{vm.moment.album}}</li>
   </ul>
-  <a class="btn-primary" href="#/moments/{{ moment._id }}">View All</a>
+  <a class="btn-primary" href="#/moments/">View All</a>
   <a class= "btn-small" href="#/moments/{{vm.moment._id}}/edit">Edit</a>
 </article>
