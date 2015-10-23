@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular-spotify": "^1.1.0",
     "body-parser": "^1.14.1",
@@ -49,5 +50,8 @@
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~1.0.0",
     "webpack-stream": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=0.10"
   }
 }
