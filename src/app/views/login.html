@@ -5,3 +5,10 @@
   <a class="btn-large-alt" href="/auth/spotify">Login With <span class="icon-spotify">Spotify</span></a>
   </section>
 </div>
+<section class="new-releases">
+  <h2>New Music</h2>
+  <ul>
+    <li ng-repeat="release in vm.releases">{{ release.image }}</li>
+  </ul>
+</section>
+
