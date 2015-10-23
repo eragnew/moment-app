@@ -18,13 +18,21 @@
   <section class="moments-list"><a href="">
     <h3>October 2015</h3>
     <ul>
-      <li>
+      <li ng-repeat="moment in vm.moments">
+        <p>{{moment.content}}</p>
+        <figure>
+          <!-- <img ng-src="{{moment.album_cover}}" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}"> -->
+          <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
+          <figcaption>21</figcaption>
+        </figure>
+      </li>
+<!--       <li>
         <p>Great album. We had a sweet time listening to this back in 2012. So I decided to get the album again before the show. But we didn’t have time to finish listening, which was a little bit</p>
         <figure>
           <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
           <figcaption>21</figcaption>
         </figure>
-      </li>
+      </li> -->
     </ul>
   </a></section>
 </section>
