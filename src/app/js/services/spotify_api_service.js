@@ -29,6 +29,21 @@ module.exports = function(app) {
           }
         };
         return $http(req);
+      },
+      getTracks: function(spotifyIDArray) {
+        var ids = '';
+        spotifyIDArray.forEach(function(element, index, array) {
+          ids += ',' + element;
+        });
+        var idString = ids.slice(1);
+        var req = {
+          method: 'GET',
+          url: urlRoot + '/tracks?ids=' + idString,
+          headers: {
+            'Authorization': 'Bearer ' + window.sessionStorage.getItem('access_token')
+          }
+        };
+        return $http(req);
       }
     };
 
