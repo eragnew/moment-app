@@ -1,8 +1,8 @@
 <article ng-controller="MomentDetailController" class="moment-summary">
   <div class="moment-banner">
-    <h1><span class="moment-title">{{ vm.moment.title }}</span><span>|</span>{{ vm.moment.spotifyResource }}</h1>
+    <h1><span class="moment-title">{{ vm.moment.title }}</span><span>|</span>{{ resp.data.artist[0].name }}</h1>
+    <img src="">{{vm.moment.cover}}<img>
   </div>
-  <img src="">{{vm.moment.cover}}<img>
   <p class="moment-song"> {{ vm.moment.song }} | {{vm.moment.artist}} </p>
   <p> {{ vm.moment.content }}</p>
   <ul class="moment-metadata">
