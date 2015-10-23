@@ -13,10 +13,6 @@ module.exports = function(momentApp) {
         templateUrl: 'views/login.html',
         controller: 'UserController as vm'
       })
-      .when('/moments/:id', {
-        templateUrl: 'views/moment.html',
-        controller: 'MomentDetailController as vm'
-      })
       .otherwise({
         redirectTo: '/moments'
       });
