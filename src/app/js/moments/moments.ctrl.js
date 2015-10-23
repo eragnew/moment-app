@@ -32,6 +32,10 @@ module.exports = function(app) {
             // });
           }
         });
+        // SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
+        //     console.log(resp.data);
+        //     vm.spotifyDeats = resp.data;
+        //   });
         return data.profile;
       });
 
