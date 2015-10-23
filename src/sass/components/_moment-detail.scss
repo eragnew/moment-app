@@ -17,10 +17,29 @@
     &:before {
       content: "•";
       padding-right: $base-line-height / 3;
+      color: color(base, base);
     }
     &:first-child:before {
       display: none;
     }
   }
 
+}
+
+.moment-summary {
+  figure {
+    a {
+      color: color(base, base);
+    }
+    span {
+      padding-right: $base-line-height / 3;
+      color: color(base, base);
+    }
+    figcaption:hover {
+      cursor: pointer;
+      span {
+        color: color(primary, dark);
+      }
+    }
+  }
 }
