@@ -4,6 +4,7 @@ module.exports = function(app) {
 
     vm.user = {};
     vm.moments = [];
+    vm.albumArts = [];
     vm.currentPath = $location.path();
 
     var token = $cookies.get('token');
@@ -28,12 +29,17 @@ module.exports = function(app) {
           for (var i = 0; i < data.length; i++) {
             vm.moments.push(data[i]);
           }
-
+          // for (var x = 0; x < data.length; x++) {
+          //   SpotifyAPI.getTrack(data[x].spotifyResource).then(
+          //     (function(resp) {
+          //       vm.albumArts.push(resp.data.album.images[1].url);
+          //     })()
+          //   );
+          // }
+          console.log(vm.moments);
+          console.log(vm.albumArts);
         });
-        // SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
-        //     console.log(resp.data);
-        //     vm.spotifyDeats = resp.data;
-        //   });
+
         return data.profile;
       });
 
