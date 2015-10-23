@@ -18,13 +18,14 @@ module.exports = function(app) {
         if (err) return errorHandler(err);
         window.sessionStorage.setItem('access_token', data.accessToken);
         window.sessionStorage.setItem('profile', JSON.stringify(data.profile));
+        SpotifyAPI.me(token).then(function(resp) {
+          var name = resp.data.display_name.split(' ');
+          vm.user.name = name[0];
+          vm.user.profile_image = resp.data.images[0];
+        });
         return data.profile;
       });
-      SpotifyAPI.me(token).then(function(resp) {
-        var name = resp.data.display_name.split(' ');
-        vm.user.name = name[0];
-        vm.user.profile_image = resp.data.images[0];
-      });
+
       vm.stats = momentsAPI.stats(token, function(err, data) {
         vm.momentCount = data[0];
         vm.tagCount = data[1];

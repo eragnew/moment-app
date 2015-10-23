@@ -57,7 +57,8 @@ module.exports = function(app) {
       vm.moment.dateCreated = vm.date;
       vm.moment.dateModified = vm.date;
       var formattedToken = token.replace(/"/g, '');
-      vm.moment.tags = vm.tags.split(',');
+      if (vm.tags)
+        vm.moment.tags = vm.tags.split(',');
       momentAPI.create(formattedToken, vm.moment, function(err, data){
         if (err) $log.error('Error', err);
         $log.info(data);
