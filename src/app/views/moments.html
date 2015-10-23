@@ -22,7 +22,7 @@
     <h3>{{ vm.moments[0].dateModified | date: 'MM-yyyy' }}</h3>
     <ul>
 
-      <li ng-repeat="moment in vm.moments">
+      <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated'">
         <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 250 }}{{ moment.content.length > 250 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">
         <figure>
