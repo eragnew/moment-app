@@ -52,6 +52,7 @@ module.exports = function(app) {
       momentAPI.create(formattedToken, vm.moment, function(err, data){
         if (err) $log.error('Error', err);
         $log.info(data);
+        $location.path('/moments/' + data._id);
       });
     }
 
