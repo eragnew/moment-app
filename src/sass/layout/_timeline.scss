@@ -62,9 +62,12 @@
       justify-content: space-between;
       padding-bottom: $base-line-height;
       padding-top: $base-line-height;
+      padding-left: $base-line-height / 2;
+      padding-right: $base-line-height / 2;
       border-bottom: 1px solid color('primary', 'light');
     }
     p {
+      flex-basis: 70%;
       @include vertical-rhythm(0);
 
       @media only screen and (min-width: $break) {
@@ -72,7 +75,11 @@
         line-height: line-height(1) / 1.5;
       }
     }
-    figure {
+
+    a {
+      flex-basis: 30%;
+
+      figure {
       position: relative;
       align-self: baseline;
       margin-left: $base-line-height;
@@ -83,15 +90,11 @@
         right: 0;
         bottom: 5px;
         left: 0;
-        box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,.3);
-      }
-      img {
-        min-width: 80px;
-        @media only screen and (min-width: $break) {
-          max-width: 100px;
+        box-shadow: inset 0px 0px 45px 15px rgba(0,0,0,.3);
         }
       }
     }
+
     figcaption {
       position: absolute;
       bottom: $base-line-height / 2.5;
