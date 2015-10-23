@@ -61,6 +61,11 @@ module.exports = function(app) {
         .then(handleSuccess(callback), handleFailure(callback));
     };
 
+    MomentsAPI.prototype.stats = function(token, callback) {
+      $http.get('/api/moments/stats?access_token=' + token)
+        .then(handleSuccess(callback), handleFailure(callback));
+    };
+
     return function() {
       return new MomentsAPI();
     };

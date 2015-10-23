@@ -19,6 +19,16 @@ module.exports = function(app) {
           }
         };
         return $http(req);
+      },
+      getTrack: function(spotifyID) {
+        var req = {
+          method: 'GET',
+          url: urlRoot + '/tracks/' + spotifyID,
+          headers: {
+            'Authorization': 'Bearer ' + window.sessionStorage.getItem('access_token')
+          }
+        };
+        return $http(req);
       }
     };
 

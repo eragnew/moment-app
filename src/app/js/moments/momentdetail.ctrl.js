@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.controller('MomentDetailController', ['MomentsAPI', '$location', '$routeParams', '$cookies', '$log', function(MomentsAPI, $location, $routeParams, $cookies, $log) {
+  app.controller('MomentDetailController', ['MomentsAPI', 'SpotifyAPI', '$location', '$routeParams', '$cookies', '$log', function(MomentsAPI, SpotifyAPI, $location, $routeParams, $cookies, $log) {
 
       var vm = this;
 
@@ -15,8 +15,12 @@ module.exports = function(app) {
         momentAPI.getOne(token, $routeParams.id, function(err, resp){
           vm.moment = resp;
           $log.info(resp);
+          SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
+            console.log(resp);
+          });
         });
       }
+
     }
   ]);
 };
