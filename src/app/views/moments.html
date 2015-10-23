@@ -2,7 +2,7 @@
   <h1 class="ng-cloak" ng-show="{{vm.user.name !== null}}">{{vm.user.name}}, here are your moments!</h1>
   <h1 class="ng-cloak" ng-hide="{{vm.user.name !== null}}">Hello, here are your moments!</h1>
   <img ng-show="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-  <img ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <img ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" ng-src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
     <li><span ng-bind="vm.momentCount"></span>moments</li>
     <li><span ng-bind="vm.tagCount"></span>tags</li>
