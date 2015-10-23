@@ -11,10 +11,17 @@
   }
 
   h1 {
+    @include vertical-rhythm(4);
+
     font-family: font-family('primary', 'light');
     font-weight: 100;
-    @include vertical-rhythm(4);
     color: color('base', 'base');
+
+    opacity:0;
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:1s;
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   }
 
   p {
@@ -40,4 +47,40 @@
   //   @extend %button;
   //   @include moment-button-theme(color(primary, base), color(accent, base));
   // }
+}
+
+.new-releases {
+  position: relative;
+  h2 {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+  ul {
+    @include flex-box($wrap: wrap);
+    li {
+      flex-grow: 1;
+    }
+    figure {
+      position: relative;
+      width: 100%;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.5);
+      }
+      &:hover {
+        &:before {
+          background-color: rgba(0,0,0,.1);
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
 }

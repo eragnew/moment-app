@@ -5,9 +5,10 @@ html {
 body {
   min-height: 100%;
   color: color(base, base);
-  background-image: radial-gradient(circle farthest-side, color(primary, light), color(primary, dark));
+  background-image: radial-gradient(circle farthest-side, color(primary, base), color(primary, dark));
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

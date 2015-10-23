@@ -1,42 +1,9 @@
 .new-releases {
-  position: relative;
   h2 {
     @include vertical-rhythm(4);
-    position: absolute;
-    top: 0;
     padding: $base-line-height;
     font-family: font-family(primary, light);
     font-weight: 100;
-    z-index: 10;
 
-  }
-  ul {
-    @include flex-box($wrap: wrap);
-
-    li {
-      flex-grow: 1;
-
-    }
-    figure {
-      position: relative;
-      width: 100%;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0,0,0,.5);
-      }
-      &:hover {
-        &:before {
-          background-color: rgba(0,0,0,.1);
-        }
-      }
-    }
-    img {
-      width: 100%;
-    }
   }
 }
