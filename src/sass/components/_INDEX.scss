@@ -1,13 +1,6 @@
-@import "buttons";
+@import "buttons/index";
 @import "forms/index";
-@import "header-logo";
-@import "header-username";
-@import "header-nav";
+@import "header/index";
 @import "page-banner";
-@import "moment-date";
-@import "moment-search";
-@import "moment-content";
-@import "search-results";
-@import "moments-list";
+@import "moments/index";
 @import "new-releases";
-@import "moment-detail";
