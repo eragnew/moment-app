@@ -21,30 +21,15 @@
     <ul>
 
       <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated' | filter: searchMoments">
-        <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 200 }}{{ moment.content.length > 200 ? '...' : ''}}</a></p>
+        <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 150 }}{{ moment.content.length > 150 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">
-        <figure>
-          <!-- <img ng-src="{{moment.album_cover}}" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}"> -->
-          <img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
-          <figcaption>21</figcaption>
-        </figure>
+          <figure>
+            <!-- <img ng-src="{{moment.album_cover}}" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}"> -->
+            <img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
+            <figcaption>21</figcaption>
+          </figure>
         </a>
       </li>
-
-<!--       <li>
-        <p>{{ vm.moment.content | limitTo: 300 }}{{ blogpost.text.length > 300 ? '...' : '' }}</p>
-        <figure>
-          <img src="vm.spotifyDeats.album.images[1].url" alt="Album cover for {{ vm.spotifyDeats.album }}" title="{{ vm.spotifyDeats.album }}">
-          <figcaption>{{vm.moment.dateModified | date: 'dd'}}</figcaption>
-        </figure>
-      </li> -->
-<!--       <li>
-        <p>Great album. We had a sweet time listening to this back in 2012. So I decided to get the album again before the show. But we didn’t have time to finish listening, which was a little bit</p>
-        <figure>
-          <img src="images/eric.jpg" alt="Album cover for {{ moment.album }}" title="{{ moment.album }}">
-          <figcaption>21</figcaption>
-        </figure>
-      </li> -->
     </ul>
   </section>
 </section>
