@@ -13,7 +13,7 @@
         <ul>
           <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | pager:vm.pagination">
             <figure>
-              <img src="{{ result.album.images[2].url }}" alt="" title="" >
+              <img ng-src="{{ result.album.images[2].url }}" alt="" title="" >
               <figcaption>
                 <p>{{ result.artists[0].name | limitTo: 11}}{{ result.artists[0].name.length > 11 ? '...' : '' }}</p>
                 <p><span>{{ result.name | limitTo: 11}}{{ result.name.length > 11 ? '...' : '' }}</span></p>
