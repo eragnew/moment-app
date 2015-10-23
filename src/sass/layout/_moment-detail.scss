@@ -3,43 +3,55 @@
   @include background('/images/mainBGdark.svg');
   @media only screen and (min-width: $break) {
     @include flex-box($wrap: wrap, $direction: row, $justify: space-between);
-    padding: 1em 2em 2em 2em;
+    padding: 1em 6em 2em 4em;
   }
 
-  h1 {
+  .moment-title-wrapper {
     order: 1;
-    font-family: font-family('primary', 'light');
-    font-weight: 100;
-    text-align: center;
-    @include vertical-rhythm(4);
-    color: color('base', 'base');
-    padding: 0 0 2em 0;
-    @media only screen and (min-width: $break) {
-      order: 1;
-      text-align: left;
-      margin: 0 0 4em .5em;
+    h1 {
+      font-family: font-family('primary', 'light');
+      font-weight: 100;
+      text-align: center;
+      @include vertical-rhythm(4);
+      color: color('base', 'base');
+      @media only screen and (min-width: $break) {
+        padding: 0em;
+        text-align: left;
+        margin: 0 0 0 1em;
+      }
+    }
+
+    p {
+      font-family: font-family('primary', 'semibold');
+      text-align: center;
+      @include vertical-rhythm(1);
+      color: color('base', 'base');
+      padding: 0 0 1em 0;
+      @media only screen and (min-width: $break) {
+        text-align: left;
+        margin: 0 0 4em 2em;
+      }
     }
   }
 
   figure {
       order: 2;
-      align-self: auto;
-      position: relative;
-      display: inline-block;
+      @include flex-box($align: center, $direction: column);
       margin: 0 $base-line-height;
       vertical-align: top;
+      padding: 1em 0 0 0;
+      margin: 1em 0 3em 0;
       @media only screen and (min-width: $break) {
         order: 2;
-        margin-left: $base-line-height;
+        padding: 1em;
+        margin: 0;
       }
     }
   figcaption {
     position: relative;
     display: inline-block;
-    bottom: $base-line-height / 2.5;
-    vertical-align: top;
     font-family: font-family(primary, light);
-    font-size: type-scale(3);
+    font-size: type-scale(1);
   }
 }
 .moment-detail {
@@ -57,5 +69,14 @@
 
   .primary-content {
     flex-basis: 100%;
+    margin: 1em 0;
+  }
+
+  .btn-large {
+    width: 10em;
+    margin: 1em auto;
+    @media only screen and (min-width: $break) {
+      margin: 2em 0 0 0;
+    }
   }
 }

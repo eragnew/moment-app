@@ -8,7 +8,11 @@
 <section class="new-releases">
   <h2>New Music</h2>
   <ul>
-    <li ng-repeat="release in vm.releases">{{ release.image }}</li>
+    <li ng-repeat="result in vm.results">
+      <figure>
+        <img src="{{ result.images[1].url }}">
+      </figure>
+    </li>
   </ul>
 </section>
 

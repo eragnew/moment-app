@@ -11,7 +11,7 @@ module.exports = function(momentApp) {
       })
       .when('/moments/:id', {
         templateUrl: 'views/moment.html',
-        controller: 'MomentDetailController'
+        controller: 'MomentDetailController as vm'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
