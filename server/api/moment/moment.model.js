@@ -23,7 +23,7 @@ var momentSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  tags: [{tag: String}]
+  tags: [String]
 });
 
 module.exports = mongoose.model('Moment', momentSchema);
