@@ -9,19 +9,18 @@ module.exports = function(app) {
 
       var momentAPI = new MomentsAPI();
 
+      function start() {
+        momentAPI.getOne(token, $routeParams.id, function(err, resp){
+          vm.moment = resp;
+          $log.info(resp);
+          SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
+            console.log(resp.data);
+            vm.spotifyDeats = resp.data;
+          });
+        });
+      }
 
-
-      console.log(SpotifyAPI.me());
-
-      // function start() {
-      //   momentAPI.getOne(token, $routeParams.id, function(err, resp){
-      //     vm.moment = resp;
-      //     $log.info(resp);
-      //     SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
-      //       console.log(resp);
-      //     });
-      //   });
-      // }
+      start();
 
     }
   ]);

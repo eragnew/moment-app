@@ -11,4 +11,16 @@
     line-height: 1;
   }
 
+  .tags {
+    color: color(secondary, light);
+    padding-right: $base-line-height / 2;
+    &:before {
+      content: "•";
+      padding-right: $base-line-height / 3;
+    }
+    &:first-child:before {
+      display: none;
+    }
+  }
+
 }
