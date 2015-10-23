@@ -7,7 +7,7 @@
   text-align: center;
   padding: 2em;
   @media only screen and (min-width: $break) {
-    padding: 10em 0;
+    padding: 6em 0;
   }
 
   h1 {
@@ -43,23 +43,21 @@
       }
     }
   }
-  // a {
-  //   @extend %button;
-  //   @include moment-button-theme(color(primary, base), color(accent, base));
-  // }
 }
 
 .new-releases {
   position: relative;
   h2 {
-    position: absolute;
-    top: 0;
+    text-align: center;
     z-index: 10;
   }
   ul {
     @include flex-box($wrap: wrap);
     li {
-      flex-grow: 1;
+      flex-basis: 20%;
+      @media only screen and (min-width: $break) {
+        flex-basis: 25%;
+      }
     }
     figure {
       position: relative;
