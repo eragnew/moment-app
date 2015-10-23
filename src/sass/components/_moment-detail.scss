@@ -1,6 +1,6 @@
 .moment-detail {
   @extend %card-wrapper;
-  font-family: font-family(primary, light);
+  font-family: font-family('primary', 'light');
 
   h2 {
     @include vertical-rhythm(3);
@@ -12,12 +12,12 @@
   }
 
   .tags {
-    color: color(secondary, light);
+    color: color('secondary', 'light');
     padding-right: $base-line-height / 2;
     &:before {
       content: "•";
       padding-right: $base-line-height / 3;
-      color: color(base, base);
+      color: color('base', 'base');
     }
     &:first-child:before {
       display: none;
@@ -27,18 +27,24 @@
 }
 
 .moment-summary {
-  figure {
+  figcaption {
     a {
-      color: color(base, base);
+      color: color('base', 'base');
+      display: inline-flex;
+      align-items: center;
+      margin: .5rem auto;
+      &:hover {
+        cursor: pointer;
+        color: color('primary', 'dark');
+      }
     }
     span {
-      padding-right: $base-line-height / 3;
-      color: color(base, base);
-    }
-    figcaption:hover {
-      cursor: pointer;
-      span {
-        color: color(primary, dark);
+      color: color('base', 'base');
+      text-align: center;
+      margin: .25em 0 0 0;
+      &:hover {
+        cursor: pointer;
+        color: color('primary', 'dark');
       }
     }
   }
