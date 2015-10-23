@@ -12,17 +12,16 @@
   <a class="btn-large" href="#/moments/new">Create a moment</a>
   <div class="timeline-header">
     <h2>Timeline</h2>
-    <input class="search-light" type="text" name="search" placeholder="SEARCH" data-ng-model="search">
+    <input class="search-light" type="text" name="search" placeholder="SEARCH" ng-model="searchMoments">
   </div>
   <section class="moments-list">
     <h3>{{ vm.moments[0].dateModified | date: 'MMMM yyyy' }}</h3>
     <ul>
-
-      <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated'">
+      <li ng-repeat="moment in vm.moments | orderBy:'-dateCreated' | filter: searchMoments">
         <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 175 }}{{ moment.content.length > 175 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">
         <figure>
-            <img src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
+            <img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
             <figcaption>21</figcaption>
         </figure>
         </a>

@@ -11,7 +11,7 @@
     <li ng-repeat="result in vm.results">
       <a target="_blank" href="{{ result.external_urls.spotify }}" >
       <figure>
-        <img src="{{ result.images[1].url }}" alt="album art for {{ result.name }}" title="{{ result.name }}">
+        <img ng-src="{{ result.images[1].url }}" alt="album art for {{ result.name }}" title="{{ result.name }}">
       </figure></a>
     </li>
   </ul>
