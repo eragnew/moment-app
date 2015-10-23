@@ -25,6 +25,12 @@ module.exports = function(app) {
         vm.user.name = name[0];
         vm.user.profile_image = resp.data.images[0];
       });
+      vm.stats = momentsAPI.stats(token, function(err, data) {
+        console.log('WE GOT STATS! data:');
+        console.log(data);
+        vm.momentCount = data[0];
+        vm.tagCount = data.stats[1];
+      });
     };
 
     vm.initPage();
