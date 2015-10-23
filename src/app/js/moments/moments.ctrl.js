@@ -1,9 +1,10 @@
 module.exports = function(app) {
-  app.controller('MomentsController', ['MomentsAPI', 'SpotifyAPI', '$scope', '$location', '$cookies', '$log', function(MomentsAPI, SpotifyAPI, $scope, $location, $cookies, $log) {
+  app.controller('MomentsController', ['MomentsAPI', 'SpotifyAPI', '$scope', '$location', '$cookies', '$log', '$q', function(MomentsAPI, SpotifyAPI, $scope, $location, $cookies, $log, $q) {
     var vm = this;
 
     vm.user = {};
     vm.moments = [];
+    vm.resources = [];
     vm.albumArts = [];
     vm.currentPath = $location.path();
 
@@ -28,17 +29,15 @@ module.exports = function(app) {
           if (err) return errorHandler(err);
           for (var i = 0; i < data.length; i++) {
             vm.moments.push(data[i]);
+            vm.resources.push(data[i].spotifyResource);
           }
-          // for (var x = 0; x < data.length; x++) {
-          //   SpotifyAPI.getTrack(data[x].spotifyResource).then(
-          //     (function(resp) {
-          //       vm.albumArts.push(resp.data.album.images[1].url);
-          //     })()
-          //   );
-          // }
-          console.log(vm.moments);
-          console.log(vm.albumArts);
-        });
+          angular.forEach(vm.resources, function(value, index) {
+            SpotifyAPI.getTrack(value).then(
+                function(resp) {
+                    vm.moments[index].album_art = resp.data.album.images[1].url;
+                }
+              );
+          });
 
         return data.profile;
       });
@@ -48,7 +47,8 @@ module.exports = function(app) {
         vm.momentCount = data[0];
         vm.tagCount = data[1];
       });
-    };
+    });
+  };
 
     vm.initPage();
 

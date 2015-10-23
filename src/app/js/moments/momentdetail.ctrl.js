@@ -3,8 +3,6 @@ module.exports = function(app) {
 
       var vm = this;
 
-      vm.delete = deleteMoment;
-
       var token = $cookies.get('token');
         if (!(token && token.length))
         $location.path('/login');

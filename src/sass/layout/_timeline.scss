@@ -43,7 +43,6 @@
   .moments-list {
     order: 3;
     flex-basis: 95%;
-    border-bottom: 1px solid color('primary', 'light');
     @media only screen and (min-width: $break) {
       flex-basis: 50%;
     }
@@ -63,6 +62,7 @@
       justify-content: space-between;
       padding-bottom: $base-line-height;
       padding-top: $base-line-height;
+      border-bottom: 1px solid color('primary', 'light');
     }
     p {
       @include vertical-rhythm(0);
@@ -85,9 +85,12 @@
         left: 0;
         box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,.3);
       }
-      // img {
-      //   max-width: 100px;
-      // }
+      img {
+        min-width: 80px;
+        @media only screen and (min-width: $break) {
+          max-width: 100px;
+        }
+      }
     }
     figcaption {
       position: absolute;
