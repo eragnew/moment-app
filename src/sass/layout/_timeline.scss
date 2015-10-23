@@ -43,6 +43,7 @@
   .moments-list {
     order: 3;
     flex-basis: 95%;
+    border-bottom: 1px solid color('primary', 'light');
     @media only screen and (min-width: $break) {
       flex-basis: 50%;
     }
@@ -62,7 +63,6 @@
       justify-content: space-between;
       padding-bottom: $base-line-height;
       padding-top: $base-line-height;
-      border-bottom: 1px solid color('primary', 'light');
     }
     p {
       @include vertical-rhythm(0);
