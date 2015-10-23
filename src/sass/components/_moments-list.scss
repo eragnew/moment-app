@@ -1,13 +1,15 @@
 .moments-list {
   font-family: font-family(primary, light);
   padding: 1em;
-  border: 2px solid transparent;
-  &:hover {
-    border-color: color('secondary', 'base');
-  }
-
   a {
     text-decoration: none;
     color: color('base', 'base');
+  }
+
+  li {
+    border: 2px solid transparent;
+    &:hover {
+      border-color: color('secondary', 'base');
+    }
   }
 }
