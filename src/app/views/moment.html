@@ -1,6 +1,9 @@
 <article class="moment-summary">
   <div class="moment-detail-banner">
-    <h1><span class="moment-title">{{ vm.moment.title }}</span><span>|</span>{{ resp.data.artists[0].name }}</h1>
+    <div class="moment-title-wrapper">
+      <h1 class="moment-title">{{ vm.moment.title }}</h1>
+      <p>This is the artist name</p>
+    </div>
     <figure>
       <img src="/images/eric.jpg">
       <figcaption>Listen On Spotify</figcaption>
@@ -17,7 +20,7 @@
       <li>{{vm.moment.album}}</li>
     </ul>
     <section class="primary-content"> {{ vm.moment.content }} </section>
-    <a class="btn-primary" href="#/moments/">View All</a>
-    <a class= "btn-small" href="#/moments/{{vm.moment._id}}/edit">Edit</a>
+    <a class="btn-large" href="#/moments/">View All</a>
+    <a class= "btn-large" href="#/moments/{{vm.moment._id}}/edit">Edit</a>
   </section>
 </article>
