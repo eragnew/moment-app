@@ -38,7 +38,7 @@ module.exports = function(app) {
                 }
               );
           });
-
+          console.log(vm.moments);
         return data.profile;
       });
 
