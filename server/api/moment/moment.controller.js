@@ -52,10 +52,10 @@ exports.destroy = function(req, res) {
 
 exports.stats = function(req, res) {
   var statsArr = [];
-  Moment.count(function(err, count) {
+  Moment.where({userID: req.user._id}).count(function(err, count) {
     if (err) return res.status(500).send(err);
     statsArr.push(count);
-    Moment.find({}, function(err, moments) {
+    Moment.find({userID: req.user._id}, function(err, moments) {
       var tagCount = 0;
       for (var i = 0; i < moments.length; i++) {
         tagCount += moments[i].tags.length;
