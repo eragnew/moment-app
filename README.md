@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/eragnew/moment-app.png?label=ready&title=Ready)](https://waffle.io/eragnew/moment-app)
 # Moment Music App
 
 Your *personal* music collection.
