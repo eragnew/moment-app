@@ -17,7 +17,7 @@
   <section class="moments-list">
     <h3>{{ vm.moments[0].dateModified | date: 'MMMM yyyy' }}</h3>
     <ul>
-      <li ng-repeat="moment in vm.moments | orderBy:'-vm.dateModified' | filter: searchMoments">
+      <li ng-repeat="moment in vm.moments | orderBy: 'dateModified':true | filter: searchMoments">
         <p><a href="#/moments/{{moment._id}}">{{moment.content | limitTo: 175 }}{{ moment.content.length > 175 ? '...' : ''}}</a></p>
         <a href="#/moments/{{moment._id}}">
         <figure>
