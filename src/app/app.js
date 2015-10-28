@@ -1,7 +1,8 @@
 require('angular/angular');
 require('angular-route');
 require('angular-cookies');
-
+require('showdown');
+// require('ng-showdown');
 
 var momentApp = angular.module('momentApp', ['ngRoute', 'ngCookies']);
 

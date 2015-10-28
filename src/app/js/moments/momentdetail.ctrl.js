@@ -3,6 +3,10 @@ module.exports = function(app) {
 
       var vm = this;
 
+      // var toHtml = function(text) {
+      //   ShowdownService.stripHtml(text);
+      // };
+
       var token = $cookies.get('token');
         if (!(token && token.length))
         $location.path('/login');
