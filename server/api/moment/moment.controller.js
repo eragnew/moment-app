@@ -2,7 +2,7 @@ var Moment = require('./moment.model');
 var User = require('../user/user.model');
 
 exports.index = function(req, res) {
-  Moment.find({}, function(err, moments) {
+  Moment.find({userID: req.user._id}, function(err, moments) {
     if (err) return res.send(500, err);
     res.status(200).json(moments);
   });

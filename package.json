@@ -23,9 +23,7 @@
     "mongoose-findorcreate": "^0.1.2",
     "node-bourbon": "^4.2.3",
     "passport": "^0.3.0",
-    "passport-spotify": "^0.3.0"
-  },
-  "devDependencies": {
+    "passport-spotify": "^0.3.0",
     "angular": "^1.4.7",
     "angular-cookies": "^1.4.7",
     "angular-route": "^1.4.7",
