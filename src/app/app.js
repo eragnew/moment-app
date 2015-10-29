@@ -1,10 +1,11 @@
 require('angular/angular');
 require('angular-route');
 require('angular-cookies');
+require('angular-sanitize');
 require('showdown');
 // require('ng-showdown');
 
-var momentApp = angular.module('momentApp', ['ngRoute', 'ngCookies']);
+var momentApp = angular.module('momentApp', ['ngRoute', 'ngCookies', 'ngSanitize']);
 
 require('./js/services/services')(momentApp);
 require('./js/moments/moments')(momentApp);
