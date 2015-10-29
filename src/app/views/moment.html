@@ -10,6 +10,7 @@
     </figure>
   </div>
   <section class="moment-detail">
+    <a class="icon-danger" title="Delete Moment" href ng-click="vm.deleteMoment()"></a>
     <div class="moment-detail-header">
       <h2>{{ vm.moment.dateModified | date: 'dd MMMM' }}</h2>
       <p><span>{{ vm.moment.dateModified | date: 'yyyy' }}</span></p>
@@ -22,6 +23,6 @@
     <a class="btn-large" href="#/moments/">View All</a>
 
     <!-- <a class= "btn-large" href="#/moments/{{vm.moment._id}}/edit">Edit</a> -->
-    <a class="btn-large" href ng-click="vm.deleteMoment()">Delete</a>
+
   </section>
 </article>
