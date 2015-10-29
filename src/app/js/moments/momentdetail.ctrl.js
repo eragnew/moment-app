@@ -23,11 +23,13 @@ module.exports = function(app) {
       start();
 
       vm.deleteMoment = function() {
-        var formattedToken = token.replace(/"/g, '');
-        momentAPI.remove(formattedToken, vm.moment, function(err, resp) {
-          console.log('moment removed');
-          $location.path('/moments');
-        });
+        if (confirm("Are you sure you want to delete this moment?")) {
+          var formattedToken = token.replace(/"/g, '');
+          momentAPI.remove(formattedToken, vm.moment, function(err, resp) {
+            console.log('moment removed');
+            $location.path('/moments');
+          });
+        }
       };
 
     }
