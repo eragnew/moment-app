@@ -11,9 +11,11 @@ module.exports = function(app) {
     var convertHTML = {
       makeHtml: function(text) {
         console.log(text);
+        MDconverter.setOption('tables', true);
         return MDconverter.makeHtml(text);
       }
     };
+
 
     return convertHTML;
 

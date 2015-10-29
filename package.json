@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "angular-sanitize": "^1.4.7",
     "angular-spotify": "^1.1.0",
     "body-parser": "^1.14.1",
     "composable-middleware": "^0.3.0",
