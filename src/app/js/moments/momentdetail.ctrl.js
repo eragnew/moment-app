@@ -1,11 +1,11 @@
 module.exports = function(app) {
-  app.controller('MomentDetailController', ['MomentsAPI', 'SpotifyAPI', '$location', '$routeParams', '$cookies', '$log', function(MomentsAPI, SpotifyAPI, $location, $routeParams, $cookies, $log) {
+  app.controller('MomentDetailController', ['MomentsAPI', 'SpotifyAPI', '$location', '$routeParams', '$cookies', '$log', 'ShowdownService', function(MomentsAPI, SpotifyAPI, $location, $routeParams, $cookies, $log, ShowdownService) {
 
       var vm = this;
 
-      // var toHtml = function(text) {
-      //   ShowdownService.stripHtml(text);
-      // };
+      var toHtml = function(text) {
+        ShowdownService.makeHtml(text);
+      };
 
       var token = $cookies.get('token');
         if (!(token && token.length))
@@ -16,7 +16,8 @@ module.exports = function(app) {
       function start() {
         momentAPI.getOne(token, $routeParams.id, function(err, resp){
           vm.moment = resp;
-          $log.info(resp);
+          vm.momentContent = ShowdownService.makeHtml(resp.content);
+          $log.info(vm.momentContent);
           SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
             console.log(resp.data);
             vm.spotifyDeats = resp.data;

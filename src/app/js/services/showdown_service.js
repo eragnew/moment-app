@@ -8,12 +8,14 @@ module.exports = function(app) {
 
     var MDconverter = new showdown.Converter();
 
-    MDconverter.makeHtml = function makeHtml(markdown) {
-      console.log(markdown);
-      return MDconverter.makeHtml(markdown);
+    var convertHTML = {
+      makeHtml: function(text) {
+        console.log(text);
+        return MDconverter.makeHtml(text);
+      }
     };
 
-    return MDconverter;
+    return convertHTML;
 
   }]);
 
