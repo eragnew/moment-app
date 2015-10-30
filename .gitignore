@@ -28,3 +28,6 @@ build
 
 # Strategy Directory
 strategy
+
+# Mac OS X artifact
+.DS_Store
