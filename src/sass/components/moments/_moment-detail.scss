@@ -49,6 +49,7 @@
     }
 
     pre {
+      @include vertical-rhythm(0);
       padding: $base-line-height / 4;
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -56,7 +57,6 @@
     }
 
     code {
-      @include vertical-rhythm(-1);
       font-family: font-family('secondary', 'regular');
       color: color('tertiary', 'base');
     }

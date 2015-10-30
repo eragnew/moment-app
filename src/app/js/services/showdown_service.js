@@ -5,13 +5,14 @@ module.exports = function(app) {
   app.service("ShowdownService", [function() {
 
     var showdown = require ('showdown');
+    showdown.setOption('tables', true);
+    showdown.setOption('strikethrough', true);
 
     var MDconverter = new showdown.Converter();
 
     var convertHTML = {
       makeHtml: function(text) {
         console.log(text);
-        MDconverter.setOption('tables', true);
         return MDconverter.makeHtml(text);
       }
     };
