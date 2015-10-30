@@ -19,7 +19,7 @@
       <li class="tags" ng-repeat="tag in vm.moment.tags">{{tag}}</li>
       <li class="date">{{ vm.moment.dateModified | date:"h:mm a" }}</li>
     </ul>
-    <section class="primary-content"> {{ vm.moment.content }} </section>
+    <section class="primary-content" ng-bind="vm.moment.content"></section>
     <a class="btn-large" href="#/moments/">View All</a>
 
     <!-- <a class= "btn-large" href="#/moments/{{vm.moment._id}}/edit">Edit</a> -->
