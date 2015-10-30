@@ -3,7 +3,7 @@ var User = require('../user/user.model');
 
 exports.index = function(req, res) {
   Moment.find({userID: req.user._id}, function(err, moments) {
-    if (err) return res.send(500, err);
+    if (err) return res.status(500).send(err);
     res.status(200).json(moments);
   });
 };
@@ -21,7 +21,7 @@ exports.show = function(req, res, next) {
   var momentId = req.params.id;
   Moment.findById(momentId, function(err, moment) {
     if (err) return next(err);
-    if (!moment) return res.send(401);
+    if (!moment) return res.status(401);
     res.status(200).json(moment);
   });
 };
@@ -29,11 +29,11 @@ exports.show = function(req, res, next) {
 exports.update = function(req, res) {
   if (req.body._id) delete req.body._id;
   Moment.findById(req.params.id, function(err, moment) {
-    if (err) return res.send(500, err);
-    if (!moment) return res.send(404);
+    if (err) return res.status(500).send(err);
+    if (!moment) return res.status(404);
     var newMomentBody = req.body;
     Moment.update({_id: req.params.id}, newMomentBody, function(err, data) {
-      if (err) return res.send(500, err);
+      if (err) return res.status(500).send(err);
       res.status(200).json(data);
     });
   });
@@ -41,11 +41,11 @@ exports.update = function(req, res) {
 
 exports.destroy = function(req, res) {
   Moment.findById(req.params.id, function(err, moment) {
-    if (err) return res.send(500, err);
-    if (!moment) return res.send(404);
+    if (err) return res.status(500).send(err);
+    if (!moment) return res.status(404);
     moment.remove(function(err) {
-      if (err) return res.send(500, err);
-      return res.send(204);
+      if (err) return res.status(500).send(err);
+      return res.status(204);
     });
   });
 };
