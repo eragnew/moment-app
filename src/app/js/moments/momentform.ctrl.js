@@ -2,7 +2,7 @@ require('./momentform.filter.js');
 
 module.exports = function(app) {
 
-  app.controller('MomentFormController', ['SpotifySearchService', 'MomentsAPI','$anchorScroll', '$location', '$routeParams', '$log', '$filter', '$cookies', function(SpotifySearchService, MomentsAPI, $anchorScroll, $location, $routeParams, $log, $filter, $cookies) {
+  app.controller('MomentFormController', ['SpotifySearchService', 'MomentsAPI','SpotifyAPI', '$anchorScroll', '$location', '$routeParams', '$log', '$filter', '$cookies', function(SpotifySearchService, MomentsAPI, SpotifyAPI, $anchorScroll, $location, $routeParams, $log, $filter, $cookies) {
 
     var vm = this;
 
@@ -13,6 +13,8 @@ module.exports = function(app) {
     vm.search = searchSpotify;
 
     vm.save = submitMoment;
+
+    vm.update = updateMoment;
 
     vm.date = $filter('date')(Date.now(), 'yyyy-MM-dd');
     vm.today = new Date(vm.date);
@@ -25,6 +27,27 @@ module.exports = function(app) {
     function showDate () {
       console.log(vm.date);
     }
+
+    function start() {
+      var momentAPI = new MomentsAPI();
+      momentAPI.getOne(token, $routeParams.id, function(err, resp){
+        vm.moment = resp;
+        if (vm.moment.tags) {
+          var output = "";
+          for (var i=0; i < vm.moment.tags.length; i++) {
+            output += vm.moment.tags[i] + ",";
+          }
+          vm.moment.tags = output.substring(0, output.length -1);
+        }
+        $log.info(resp);
+        SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
+          console.log(resp.data);
+          vm.spotifyDeats = resp.data;
+        });
+      });
+    }
+
+    start();
 
     var pageNumber;
 
@@ -63,6 +86,21 @@ module.exports = function(app) {
         if (err) $log.error('Error', err);
         $log.info(data);
         $location.path('/moments/' + data._id);
+      });
+    }
+
+    function updateMoment(){
+      var momentAPI = new MomentsAPI();
+
+      vm.moment.dateModified = vm.date;
+      var formattedToken = token.replace(/"/g, '');
+      if (vm.moment.tags) {
+        vm.moment.tags = vm.moment.tags.split(',');
+      }
+      momentAPI.update(formattedToken, vm.moment, function(err, data){
+        if (err) $log.error('Error', err);
+        $log.info(data);
+        $location.path('/moments/' + vm.moment._id);
       });
     }
 
