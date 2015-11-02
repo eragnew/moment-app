@@ -11,14 +11,12 @@ module.exports = function(app) {
       $location.path('/login');
 
     vm.search = searchSpotify;
-
     vm.save = submitMoment;
-
     vm.date = $filter('date')(Date.now(), 'yyyy-MM-dd');
     vm.today = new Date(vm.date);
-
     vm.moment = {};
     vm.track = {};
+    vm.tab = 1;
 
     showDate();
 
@@ -80,6 +78,14 @@ module.exports = function(app) {
         if (vm.pagination.currentPage + 1 <= (Math.floor(vm.results.length / vm.pagination.perPage)))
           vm.pagination.currentPage++;
       }
+    };
+
+    vm.isSelected = function(tabNumber) {
+      return vm.tab === tabNumber;
+    };
+
+    vm.selectTab = function(setTab) {
+      vm.tab = setTab;
     };
 
   }]);

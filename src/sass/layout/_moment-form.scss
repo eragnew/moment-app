@@ -19,15 +19,32 @@
         cursor: pointer;
       }
     }
+    .content-tabs {
+      order: 2;
+      align-self: flex-end;
+      margin-top: $base-line-height;
+      li {
+        display: inline-block;
+        padding-left: $base-line-height / 4;
+        border-left: 1px solid mix(black, color('base', 'dark'), 50%);
+      }
+      li:first-child {
+        padding-left: 0;
+        border-left: none;
+      }
+      @media only screen and (min-width: $break) {
+        order: 3;
+        flex-basis: 100%;
+      }
+    }
     .content {
       order: 2;
       @include flex-box($direction: column, $justify: center);
-      text-align: center;
       flex-basis: 100%;
-      margin-top: $base-line-height;
+      margin-top: $base-line-height / 2;
       @media only screen and (min-width: $break) {
-        order: 3;
-        @include flex-box($direction: row, $justify: center);
+        order: 4;
+        @include flex-box($direction: row, $justify: space-between);
         text-align: left;
       }
     }
@@ -35,25 +52,27 @@
       order: 3;
       margin: 0 auto;
       @media only screen and (min-width: $break) {
-        order: 4;
+        order: 5;
         margin: 0;
       }
     }
     figure {
       order: 5;
       display: inline-block;
-      margin: 0 auto;
       vertical-align: top;
       @media only screen and (min-width: $break) {
-        order: 5;
+        order: 6;
         margin-left: $base-line-height;
       }
+    }
+    figcaption {
+      text-align: center;
     }
     .moment-tags {
       order: 4;
       flex-basis: 100%;
       @media only screen and (min-width: $break) {
-        order: 5;
+        order: 7;
         flex-basis: 20%;
       }
     }

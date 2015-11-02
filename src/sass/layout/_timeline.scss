@@ -58,13 +58,15 @@
       background-position: bottom;
     }
     li {
-      display: flex;
-      justify-content: space-between;
       padding-bottom: $base-line-height;
       padding-top: $base-line-height;
       padding-left: $base-line-height / 2;
       padding-right: $base-line-height / 2;
       border-bottom: 1px solid color('primary', 'light');
+    }
+    a {
+      display: flex;
+      justify-content: space-between;
     }
     p {
       flex-basis: 70%;
@@ -76,10 +78,8 @@
       }
     }
 
-    a {
+    figure {
       flex-basis: 30%;
-
-      figure {
       position: relative;
       align-self: baseline;
       margin-left: $base-line-height;
@@ -91,14 +91,13 @@
         bottom: 5px;
         left: 0;
         box-shadow: inset 0px 0px 45px 15px rgba(0,0,0,.3);
-        }
       }
     }
 
     figcaption {
       position: absolute;
       bottom: $base-line-height / 2.5;
-      right: 0;
+      right: 5px;
       font-family: font-family(primary, regular);
       font-size: type-scale(3);
     }

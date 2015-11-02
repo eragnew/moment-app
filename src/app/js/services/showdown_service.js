@@ -12,11 +12,9 @@ module.exports = function(app) {
 
     var convertHTML = {
       makeHtml: function(text) {
-        console.log(text);
         return MDconverter.makeHtml(text);
       }
     };
-
 
     return convertHTML;
 

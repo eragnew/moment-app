@@ -17,9 +17,7 @@ module.exports = function(app) {
         momentAPI.getOne(token, $routeParams.id, function(err, resp){
           vm.moment = resp;
           vm.momentContent = ShowdownService.makeHtml(resp.content);
-          $log.info(vm.momentContent);
           SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
-            console.log(resp.data);
             vm.spotifyDeats = resp.data;
           });
         });

@@ -23,66 +23,65 @@
       display: none;
     }
   }
+}
 
-  .primary-content {
-    font-family: font-family('primary', 'light');
+.primary-content {
+  font-family: font-family('primary', 'light');
 
-    h1 {
-      @include vertical-rhythm(4);
-      margin-bottom: $base-line-height;
-      font-family: font-family('primary', 'semibold');
-      border-bottom: 1px solid color('primary', 'light');
-    }
-    h2 {
-      @include vertical-rhythm(2);
-    }
-    h3, h4, h5, h6 {
-      @include vertical-rhythm(1);
-    }
+  h1 {
+    @include vertical-rhythm(4);
+    margin-bottom: $base-line-height;
+    font-family: font-family('primary', 'semibold');
+    border-bottom: 1px solid color('primary', 'light');
+  }
+  h2 {
+    @include vertical-rhythm(2);
+  }
+  h3, h4, h5, h6 {
+    @include vertical-rhythm(1);
+  }
 
-    p {
-      @include vertical-rhythm(1);
-    }
+  p {
+    @include vertical-rhythm(1);
+  }
 
-    a {
-      color: color('secondary', 'light');
-    }
+  a {
+    color: color('secondary', 'light');
+  }
 
-    pre {
-      @include vertical-rhythm(0);
-      padding: $base-line-height / 4;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      background: mix(black, color('primary', 'light'), 50%);
-    }
+  pre {
+    @include vertical-rhythm(0);
+    padding: $base-line-height / 4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: mix(black, color('primary', 'light'), 50%);
+  }
 
-    code {
-      font-family: font-family('secondary', 'regular');
-      color: color('tertiary', 'base');
-    }
+  code {
+    font-family: font-family('secondary', 'regular');
+    color: color('tertiary', 'base');
+  }
 
-    ul {
-      list-style: disc outside;
-      display: block;
-      margin-left: $base-line-height;
-      li {
-        list-style-type: disc;
-        display: list-item;
-      }
-    }
-
-    table {
-      border: 1px solid color('primary', 'light');
-      table-layout: auto;
-      td {
-        padding: $base-line-height / 4;
-      }
-      thead, tr:nth-of-type(even) {
-        background: mix(black, color('primary', 'light'), 50%);
-      }
+  ul {
+    list-style: disc outside;
+    display: block;
+    margin-left: $base-line-height;
+    li {
+      list-style-type: disc;
+      display: list-item;
     }
   }
 
+  table {
+    border: 1px solid color('primary', 'light');
+    table-layout: auto;
+    td {
+      padding: $base-line-height / 4;
+    }
+    thead, tr:nth-of-type(even) {
+      background: mix(black, color('primary', 'light'), 50%);
+    }
+  }
 }
 
 .moment-summary {
