@@ -1,5 +1,7 @@
 .moment-detail {
   @extend %card-wrapper;
+  padding-left: $base-line-height;
+  padding-right: $base-line-height;
   font-family: font-family('primary', 'light');
 
   h2 {
