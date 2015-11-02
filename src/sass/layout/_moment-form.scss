@@ -10,7 +10,7 @@
     }
     .btn-primary-alt {
       order: 6;
-      margin: 1em auto;
+      margin: .5em auto 1em;
       @media only screen and (min-width: $break) {
         order: 2;
         margin: 0;
@@ -59,6 +59,7 @@
     figure {
       order: 5;
       display: inline-block;
+      align-self: center;
       vertical-align: top;
       @media only screen and (min-width: $break) {
         order: 6;
@@ -74,6 +75,15 @@
       @media only screen and (min-width: $break) {
         order: 7;
         flex-basis: 20%;
+      }
+    }
+    .content-link {
+      order: 7;
+      align-self: flex-end;
+      flex-basis: 100%;
+      @media only screen and (min-width: $break) {
+        order: 8;
+        flex-basis: auto;
       }
     }
   }
