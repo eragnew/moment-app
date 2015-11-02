@@ -8,6 +8,7 @@ module.exports = function(app) {
     showdown.setOption('tables', true);
     showdown.setOption('strikethrough', true);
 
+
     var MDconverter = new showdown.Converter();
 
     var convertHTML = {
