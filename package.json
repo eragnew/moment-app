@@ -10,7 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "angular-sanitize": "^1.4.7",
     "angular-spotify": "^1.1.0",
     "body-parser": "^1.14.1",
     "composable-middleware": "^0.3.0",
@@ -22,7 +21,6 @@
     "jsonwebtoken": "^5.4.0",
     "mongoose": "^4.1.11",
     "mongoose-findorcreate": "^0.1.2",
-    "ng-showdown": "^1.0.0",
     "node-bourbon": "^4.2.3",
     "passport": "^0.3.0",
     "passport-spotify": "^0.3.0",
@@ -32,6 +30,7 @@
     "angular": "^1.4.7",
     "angular-cookies": "^1.4.7",
     "angular-route": "^1.4.7",
+    "angular-sanitize": "^1.4.7",
     "chai": "^3.4.0",
     "chai-http": "^1.0.0",
     "gulp": "^3.9.0",
