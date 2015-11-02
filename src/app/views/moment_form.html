@@ -38,7 +38,8 @@
           <a href ng-click="vm.selectTab(1)">Edit</a>
         </li>
         <li ng-class="{'active-tab': vm.isSelected(2)}">
-          <a href ng-click="vm.selectTab(2)">Preview</a>
+          <a href ng-show="vm.moment.content.length > 0" ng-click="vm.selectTab(2)">Preview</a>
+          <p ng-hide="vm.moment.content.length > 0">Preview</p>
         </li>
       </ul>
       <div class="content">
