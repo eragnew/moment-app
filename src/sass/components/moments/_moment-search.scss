@@ -13,9 +13,17 @@
   .page-banner {
     order: 1;
     padding: 2em 1em 0 1em;
+    .moment-edit & {
+        padding: 0em 1em 8em 1em;
+        margin: 2.25em;
+      }
     @media only screen and (min-width: $break) {
       padding: 2em 1em;
       flex-basis: 100%;
+      .moment-edit & {
+        padding: 2em 1em 6em 1em;
+        margin: 0;
+      }
     }
     h1 {
       @include vertical-rhythm(4);
@@ -24,6 +32,9 @@
       color: color('base', 'base');
       @media only screen and (min-width: $break) {
         padding: 0 0 2em 0;
+        .moment-edit & {
+          padding: 0 0 6em 0;
+        }
       }
     }
   }
