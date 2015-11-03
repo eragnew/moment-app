@@ -47,12 +47,10 @@
       flex-basis: 50%;
     }
 
-    h3 {
+    > h3 {
       @include vertical-rhythm(1);
       text-align: left;
-      // background: linear-gradient(to left, color(primary, base) 0%, rgba(255,255,255,.2) 50%, color(primary, base) 100%);
       background: linear-gradient(to right, rgba(255,255,255,.2) 0%, color(primary, base) 50%);
-
       background-repeat: no-repeat;
       background-size: 100% 1px;
       background-position: bottom;
