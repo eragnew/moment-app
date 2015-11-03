@@ -13,6 +13,10 @@ module.exports = function(momentApp) {
         templateUrl: 'views/moment.html',
         controller: 'MomentDetailController as vm'
       })
+      .when('/moments/:id/edit', {
+        templateUrl: 'views/moment_form_update.html',
+        controller: 'MomentFormController as vm'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'UserController as vm'
