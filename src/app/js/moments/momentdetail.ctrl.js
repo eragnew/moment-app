@@ -16,6 +16,7 @@ module.exports = function(app) {
 
           SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
             vm.spotifyDeats = resp.data;
+						console.log(vm.moment);
           });
         });
       }

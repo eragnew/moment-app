@@ -14,20 +14,20 @@
     <h2>Timeline</h2>
     <input class="search-light" type="text" name="search" placeholder="SEARCH" ng-model="searchMoments">
   </div>
-	<div class="moments-list-wrapper">
-		<section class="moments-list" ng-repeat="month in vm.months">
-			<h3>{{ month[0].dateModified | date: 'MMMM yyyy' }}</h3>
-			<ul>
-				<li class="moments-list-detail" ng-repeat="moment in month | orderBy: 'dateModified':true | filter: searchMoments">
-					<a href="#/moments/{{moment._id}}">
-						<p ng-bind-html="moment.content | limitTo: 175 | markdown"></p>
-						<figure>
-								<img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
-								<figcaption>{{ moment.dateModified | date: 'dd'}}</figcaption>
-						</figure>
-					</a>
-				</li>
-			</ul>
-		</section>
-	</div>
+  <div class="moments-list-wrapper">
+    <section class="moments-list" ng-repeat="month in vm.months">
+      <h3>{{ month[0].dateModified | date: 'MMMM yyyy' }}</h3>
+      <ul>
+        <li class="moments-list-detail" ng-repeat="moment in month | orderBy: 'dateModified':true | filter: searchMoments">
+          <a href="#/moments/{{moment._id}}">
+            <p ng-bind-html="moment.content | limitTo: 175 | markdown"></p>
+            <figure>
+              <img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
+              <figcaption>{{ moment.dateModified | date: 'dd'}}</figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </section>

@@ -12,7 +12,7 @@
   <section class="moment-detail">
     <a class="icon-danger" title="Delete Moment" href ng-click="vm.deleteMoment()"></a>
     <div class="moment-detail-header">
-      <h2>{{ vm.moment.dateModified | date: 'dd MMMM' }}</h2>
+      <h2>{{ vm.moment.dateModified | date:'dd MMMM' : '+0001' }}</h2>
       <p><span>{{ vm.moment.dateModified | date: 'yyyy' }}</span></p>
     </div>
     <ul class="moment-metadata">
