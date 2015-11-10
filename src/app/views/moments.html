@@ -1,28 +1,28 @@
 <div class="moment-banner">
-  <h1 class="ng-cloak" ng-show="{{vm.user.name !== null}}">{{vm.user.name}}, here are your moments!</h1>
-  <h1 class="ng-cloak" ng-hide="{{vm.user.name !== null}}">Hello, here are your moments!</h1>
-  <img ng-show="{{vm.user.profile_image}}" class="ng-cloak image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
-  <img ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" ng-src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <h1 class="ng-cloak" data-ng-show="{{vm.user.name !== null}}">{{vm.user.name}}, here are your moments!</h1>
+  <h1 class="ng-cloak" data-ng-hide="{{vm.user.name !== null}}">Hello, here are your moments!</h1>
+  <img data-ng-show="{{vm.user.profile_image}}" class="data-ng-cloak image-profile" src="../../images/defaultUser.jpg" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
+  <img data-ng-hide="{{vm.user.profile_image}}" class="ng-cloak image-profile" data-ng-src="{{ vm.user.profile_image.url }}" alt="Image of {{ vm.user.name }}" title="{{ vm.username }}">
   <ul class="user-stats">
-    <li><span ng-bind="vm.momentCount"></span>moments</li>
-    <li><span ng-bind="vm.tagCount"></span>tags</li>
+    <li><span data-ng-bind="vm.momentCount"></span>moments</li>
+    <li><span data-ng-bind="vm.tagCount"></span>tags</li>
   </ul>
 </div>
 <section class="timeline">
   <a class="btn-large" href="#/moments/new">Create a moment</a>
   <div class="timeline-header">
     <h2>Timeline</h2>
-    <input class="search-light" type="text" name="search" placeholder="SEARCH" ng-model="searchMoments">
+    <input class="search-light" type="text" name="search" placeholder="SEARCH" data-ng-model="searchMoments">
   </div>
   <div class="moments-list-wrapper">
-    <section class="moments-list" ng-repeat="month in vm.months">
+    <section class="moments-list" data-ng-repeat="month in vm.months">
       <h3>{{ month[0].dateModified | date: 'MMMM yyyy' }}</h3>
       <ul>
-        <li class="moments-list-detail" ng-repeat="moment in month | orderBy: 'dateModified':true | filter: searchMoments">
+        <li class="moments-list-detail" data-ng-repeat="moment in month | orderBy: 'dateModified':true | filter: searchMoments">
           <a href="#/moments/{{moment._id}}">
-            <p ng-bind-html="moment.content | limitTo: 175 | markdown"></p>
+            <p data-ng-bind-html="moment.content | limitTo: 175 | markdown"></p>
             <figure>
-              <img ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
+              <img data-ng-src="{{ moment.album_art }}" alt="Album cover for {{ moment.album_art }}" title="{{ moment.album_art }}">
               <figcaption>{{ moment.dateModified | date: 'dd'}}</figcaption>
             </figure>
           </a>
