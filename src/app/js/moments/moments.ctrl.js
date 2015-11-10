@@ -40,7 +40,6 @@ module.exports = function(app) {
           for (var i = 0; i < data.length; i++) {
             vm.moments.push(data[i]);
             vm.resources.push(data[i].spotifyResource);
-            console.log(vm.moments[i].dateModified);
           }
           angular.forEach(vm.resources, function(value, index) {
             SpotifyAPI.getTrack(value).then(
@@ -60,15 +59,12 @@ module.exports = function(app) {
             if (month !== monthChecker[i - 1]) {
               var monthChunk = vm.moments.slice(monthChecker.indexOf(monthChecker[i - 1]), i);
               vm.months.push(monthChunk);
-              console.log(vm.months);
               if (i === vm.moments.length - 1) {
                 vm.months.push(vm.moments.slice(vm.moments.indexOf(month)));
               }
             }
           }
           vm.months.reverse();
-          console.log(vm.months);
-          console.log(vm.moments);
         return data.profile;
       });
 
