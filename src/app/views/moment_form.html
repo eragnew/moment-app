@@ -13,7 +13,7 @@
         <ul>
           <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | pager:vm.pagination">
             <figure>
-              <img ng-src="{{ result.album.images[2].url }}" alt="" title="" >
+              <img data-ng-src="{{ result.album.images[2].url }}" alt="{{ result.name }} by {{ result.artists[0].name }}" title="{{ result.name }}" >
               <figcaption>
                 <p>{{ result.artists[0].name | limitTo: 11}}{{ result.artists[0].name.length > 11 ? '...' : '' }}</p>
                 <p><span>{{ result.name | limitTo: 11}}{{ result.name.length > 11 ? '...' : '' }}</span></p>
@@ -21,7 +21,7 @@
             </figure>
           </li>
         </ul>
-        <a class="icon-arrowR" ng-click="vm.pagination.nextPage()"></a>
+        <a class="icon-arrowR" data-ng-click="vm.pagination.nextPage()"></a>
       </div>
     </section>
   </div>
