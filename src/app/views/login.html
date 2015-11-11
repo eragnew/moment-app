@@ -8,11 +8,12 @@
 <section class="new-releases">
   <h2>New Music</h2>
   <ul>
-    <li ng-repeat="result in vm.results">
+    <li data-ng-repeat="result in vm.results">
       <a target="_blank" href="{{ result.external_urls.spotify }}" >
-      <figure>
-        <img ng-src="{{ result.images[1].url }}" alt="album art for {{ result.name }}" title="{{ result.name }}">
-      </figure></a>
+        <figure>
+         <img data-ng-src="{{ result.images[1].url }}" alt="album art for {{ result.name }}" title="{{ result.name }}">
+        </figure>
+      </a>
     </li>
   </ul>
 </section>

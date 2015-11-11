@@ -56,24 +56,30 @@ module.exports = function(app) {
             var createDate = new Date(vm.moments[i].dateModified);
             var month = createDate.getMonth();
             monthChecker.push(month);
+            console.log(month);
             if (month !== monthChecker[i - 1]) {
               var monthChunk = vm.moments.slice(monthChecker.indexOf(monthChecker[i - 1]), i);
               vm.months.push(monthChunk);
               if (i === vm.moments.length - 1) {
                 vm.months.push(vm.moments.slice(vm.moments.indexOf(month)));
               }
+            } else if (i === vm.moments.length - 1) {
+              vm.months.push(vm.moments.slice(monthChecker.indexOf(month)));
             }
           }
           vm.months.reverse();
-        return data.profile;
-      });
+          console.log(monthChecker);
+          console.log(vm.moments);
+          console.log(vm.months);
+          return data.profile;
+        });
 
-      vm.stats = momentsAPI.stats(token, function(err, data) {
-        vm.momentCount = data[0];
-        vm.tagCount = data[1];
+        vm.stats = momentsAPI.stats(token, function(err, data) {
+          vm.momentCount = data[0];
+          vm.tagCount = data[1];
+        });
       });
-    });
-  };
+    };
 
     vm.initPage();
 

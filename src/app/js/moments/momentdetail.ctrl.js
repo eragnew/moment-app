@@ -16,7 +16,7 @@ module.exports = function(app) {
 
           SpotifyAPI.getTrack(vm.moment.spotifyResource).then(function(resp) {
             vm.spotifyDeats = resp.data;
-						console.log(vm.moment);
+            console.log(vm.moment);
           });
         });
       }
@@ -28,7 +28,7 @@ module.exports = function(app) {
           var formattedToken = token.replace(/"/g, '');
           momentAPI.remove(formattedToken, vm.moment, function(err, resp) {
             console.log('moment removed');
-            $location.path('/moments');
+            $location.path('/moments/');
           });
         }
       };

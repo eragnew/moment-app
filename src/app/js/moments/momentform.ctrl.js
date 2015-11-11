@@ -91,7 +91,7 @@ module.exports = function(app) {
     function updateMoment(){
       var momentAPI = new MomentsAPI();
 
-      vm.moment.dateModified = vm.date;
+      vm.moment.dateModified = vm.today;
       var formattedToken = token.replace(/"/g, '');
       if (vm.moment.tags) {
         vm.moment.tags = vm.moment.tags.split(',');
