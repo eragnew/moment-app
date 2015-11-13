@@ -49,6 +49,9 @@ module.exports = function(app) {
               );
           });
           var monthChecker = [];
+          var monthChunk = function(index1, index2) {
+            return vm.moments.slice(monthChecker.indexOf(index1), index2);
+          };
           for (i = 0; i < vm.moments.length; i++) {
             var createDate = new Date(vm.moments[i].dateModified);
             var month = createDate.getMonth();
@@ -57,19 +60,16 @@ module.exports = function(app) {
               vm.months.push(vm.moments.slice(0)); 
             } else if (i !== 0) {
               if (month !== monthChecker[i - 1] && i !== vm.moments.length - 1) {
-                var monthChunk = vm.moments.slice(monthChecker.indexOf(monthChecker[i - 1]), i);
-                vm.months.push(monthChunk);
+                vm.months.push(monthChunk(monthChecker[i - 1], i));
               } else if (month !== monthChecker[i - 1] && i === vm.moments.length - 1) {
-                vm.months.push(vm.moments.slice(monthChecker.indexOf(monthChecker[i - 1]), i));
-                vm.months.push(vm.moments.slice(monthChecker.indexOf(month))); 
+                vm.months.push(monthChunk(monthChecker[i - 1], i));
+                vm.months.push(monthChunk(month)); 
               } else if (i === vm.moments.length - 1) {
-                vm.months.push(vm.moments.slice(monthChecker.indexOf(month))); 
+                vm.months.push(monthChunk(month)); 
               } 
             } 
           }
           vm.months.reverse();
-          console.log(monthChecker);
-          console.log(vm.moments);
           console.log(vm.months);
           return data.profile;
         });
