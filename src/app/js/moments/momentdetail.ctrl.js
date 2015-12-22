@@ -27,8 +27,8 @@ module.exports = function(app) {
           var formattedToken = token.replace(/"/g, '');
           momentAPI.remove(formattedToken, vm.moment, function(err, resp) {
             console.log('moment removed');
-            $location.path('/moments');
           });
+          $location.path('/moments');
         }
       };
 
