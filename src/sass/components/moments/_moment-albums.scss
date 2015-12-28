@@ -1,0 +1,73 @@
+.moment-albums {
+  order: 4;
+
+  h3 {
+    text-align: center;
+    font-family: font-family('primary', 'semibold');
+    @include vertical-rhythm(1);
+  }
+  ul {
+    @include flex-box($wrap: wrap);
+    li {
+      flex-basis: 50%;
+      @media only screen and (min-width: $break) {
+        flex-basis: 25%;
+      }
+
+      figure {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0,0,0,.1);
+        }
+        &:hover {
+          &:before {
+            background-color: rgba(0,0,0,.5);
+          }
+        }
+        figcaption {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          bottom: 50%;
+          top: 25%;
+          left: 5%;
+          right: 5%;
+          font-family: font-family(primary, regular);
+          font-size: type-scale(1);
+          text-align: center;
+
+          @media only screen and (min-width: 50em) {
+            position: absolute;
+            height: 150%;
+            bottom: 50%;
+            top: 25%;
+            left: 0;
+            right: 0;
+            font-family: font-family(primary, regular);
+            font-size: type-scale(2);
+            text-align: center;
+            margin-top: -5em;
+            transition: all 0.3s ease;
+
+            &:hover {
+              margin-top: 0em;
+              transition: all 0.3s ease;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
