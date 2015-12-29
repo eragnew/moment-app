@@ -13,9 +13,9 @@
   <div class="timeline-header">
     <h2>Timeline</h2>
     <input class="search-light" type="text" name="search" placeholder="SEARCH" ng-model="searchMoments">
+    <a class="btn-small-alt" href="#/moments"><span class="icon-album" ></span>Change View</a>
   </div>
   <section class="moment-albums">
-    <h3>{{ vm.moments[0].dateModified | date: 'MMMM yyyy' }}</h3>
     <ul>
       <li ng-repeat="moment in vm.moments | orderBy: 'dateModified':true | filter: searchMoments">
         <a href="#/moments/{{moment._id}}">
