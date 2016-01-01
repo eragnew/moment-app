@@ -38,12 +38,10 @@ module.exports = function(app) {
                 }
               );
           });
-          console.log(vm.moments);
         return data.profile;
       });
 
       vm.stats = momentsAPI.stats(token, function(err, data) {
-        console.log(data);
         vm.momentCount = data[0];
         vm.tagCount = data[1];
       });

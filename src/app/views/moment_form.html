@@ -33,8 +33,18 @@
         <input type="date" ng-model="vm.date" value="{{ vm.date }}" required>
       </div>
       <input class="btn-primary-alt" type="submit" name="Submit" value="Save">
+      <ul class="content-tabs">
+        <li ng-class="{'active-tab': vm.isSelected(1)}">
+          <a href ng-click="vm.selectTab(1)">Edit</a>
+        </li>
+        <li ng-class="{'active-tab': vm.isSelected(2)}">
+          <a href ng-show="vm.moment.content.length > 0" ng-click="vm.selectTab(2)">Preview</a>
+          <p ng-hide="vm.moment.content.length > 0">Preview</p>
+        </li>
+      </ul>
       <div class="content">
-        <textarea id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.content" placeholder="Content" required></textarea>
+        <textarea ng-show="vm.isSelected(1)" id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.content" placeholder="Content" required></textarea>
+        <section class="content-preview primary-content" ng-show="vm.isSelected(2)" ng-bind-html="vm.moment.content | markdown"></section>
         <figure>
           <img src="{{ vm.track.album.images[1].url || '../images/defaultAlbum.png'}}" alt="Album cover for {{ vm.track.artists[0].name }}" title="{{ vm.track.artists[0].name }}">
           <figcaption ng-show="vm.track.artists.length > 0">
@@ -42,6 +52,7 @@
         </figure>
       </div>
       <input class="moment-tags search-light" type="text" ng-model="vm.tags" placeholder="Tags" >
+      <a class="content-link" href="https://help.github.com/articles/markdown-basics/" target="_blank">Markdown supported. What is Markdown?</a>
     </form>
   </div>
 </section>

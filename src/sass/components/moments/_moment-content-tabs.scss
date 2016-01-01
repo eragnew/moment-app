@@ -1,0 +1,15 @@
+.content-tabs {
+  font-family: font-family('primary', 'light');
+
+  .active-tab {
+    a {
+      color: color('secondary', 'base');
+    }
+  }
+  a {
+    color: color('primary', 'light');
+  }
+  p {
+    color: mix(black, color('primary', 'light'), 40%);
+  }
+}
