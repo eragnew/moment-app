@@ -40,19 +40,23 @@
     }
   }
 
-  .moments-list {
-    order: 3;
-    flex-basis: 95%;
-    @media only screen and (min-width: $break) {
-      flex-basis: 50%;
-    }
+	.moments-list-wrapper {
+		order: 3;
+		flex-basis: 95%;
+		@media only screen and (min-width: $break) {
+			flex-basis: 50%;
+		}
+	}
 
+  .moments-list {
     > h3 {
       @include vertical-rhythm(1);
+			padding-left: $base-line-height / 2;
       text-align: left;
-      background: linear-gradient(to right, rgba(255,255,255,.2) 0%, color(primary, base) 50%);
+			background: rgba(white, .1);
+      // background: linear-gradient(to right, rgba(255,255,255,.1) 0%, color(primary, base) 50%);
       background-repeat: no-repeat;
-      background-size: 100% 1px;
+      background-size: 100%;
       background-position: bottom;
     }
     li {
@@ -60,8 +64,10 @@
       padding-top: $base-line-height;
       padding-left: $base-line-height / 2;
       padding-right: $base-line-height / 2;
-      border-bottom: 1px solid color('primary', 'light');
     }
+		li:last-child {
+			margin-bottom: $base-line-height;
+		}
     a {
       display: flex;
       justify-content: space-between;

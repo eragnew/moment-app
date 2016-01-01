@@ -3,17 +3,17 @@
     <div class="page-banner">
       <h1>Add A Moment</h1>
     </div>
-    <form ng-submit="vm.search(search)">
-      <input class="search-heavy" type="text" ng-model="search" name="search" placeholder="Search"/>
+    <form data-ng-submit="vm.search(search)">
+      <input class="search-heavy" type="text" data-ng-model="search" name="search" placeholder="Search"/>
     </form>
-    <section ng-show="vm.results.length > 0" class="results">
+    <section data-ng-show="vm.results.length > 0" class="results">
       <h2>Select your track</h2>
       <div class="results-nav">
-        <a class="icon-arrowL" ng-click="vm.pagination.prevPage()"></a>
+        <a class="icon-arrowL" data-ng-click="vm.pagination.prevPage()"></a>
         <ul>
-          <li ng-click="vm.addTrack(result)" ng-repeat="result in vm.results | pager:vm.pagination">
+          <li data-ng-click="vm.addTrack(result)" data-ng-repeat="result in vm.results | pager:vm.pagination">
             <figure>
-              <img ng-src="{{ result.album.images[2].url }}" alt="" title="" >
+              <img data-ng-src="{{ result.album.images[2].url }}" alt="{{ result.name }} by {{ result.artists[0].name }}" title="{{ result.name }}" >
               <figcaption>
                 <p>{{ result.artists[0].name | limitTo: 11}}{{ result.artists[0].name.length > 11 ? '...' : '' }}</p>
                 <p><span>{{ result.name | limitTo: 11}}{{ result.name.length > 11 ? '...' : '' }}</span></p>
@@ -21,37 +21,35 @@
             </figure>
           </li>
         </ul>
-        <a class="icon-arrowR" ng-click="vm.pagination.nextPage()"></a>
+        <a class="icon-arrowR" data-ng-click="vm.pagination.nextPage()"></a>
       </div>
     </section>
   </div>
   <div class="form-wrapper">
-    <form ng-submit="vm.save()">
+    <form data-ng-submit="vm.save()">
       <div class="moment-date">
         <p>{{ vm.date | date: 'dd MMMM' }}</p>
-        <p><span>{{ vm.date | date: 'yyyy' }}</span></p>
-        <input type="date" ng-model="vm.date" value="{{ vm.date }}" required>
+        <p><span>{{ vm.date | date: 'yyyy' }}</span></p> 
+        <input type="datetime" data-ng-model="vm.today" value="{{ vm.today }}" required> 
       </div>
       <input class="btn-primary-alt" type="submit" name="Submit" value="Save">
       <ul class="content-tabs">
-        <li ng-class="{'active-tab': vm.isSelected(1)}">
-          <a href ng-click="vm.selectTab(1)">Edit</a>
+        <li data-ng-class="{'active-tab': vm.isSelected(1)}">
+          <a data-ng-click="vm.selectTab(1)">Edit</a>
         </li>
-        <li ng-class="{'active-tab': vm.isSelected(2)}">
-          <a href ng-show="vm.moment.content.length > 0" ng-click="vm.selectTab(2)">Preview</a>
-          <p ng-hide="vm.moment.content.length > 0">Preview</p>
+        <li data-ng-class="{'active-tab': vm.isSelected(2)}">
+          <a data-ng-show="vm.moment.content.length > 0" data-ng-click="vm.selectTab(2)">Preview</a>
+          <p data-ng-hide="vm.moment.content.length > 0">Preview</p>
         </li>
       </ul>
       <div class="content">
-        <textarea ng-show="vm.isSelected(1)" id="moment-textarea" class="moment-content" type="text" ng-keyup="vm.contentExpand()" ng-model="vm.moment.content" placeholder="Content" required></textarea>
-        <section class="content-preview primary-content" ng-show="vm.isSelected(2)" ng-bind-html="vm.moment.content | markdown"></section>
-        <figure>
-          <img src="{{ vm.track.album.images[1].url || '../images/defaultAlbum.png'}}" alt="Album cover for {{ vm.track.artists[0].name }}" title="{{ vm.track.artists[0].name }}">
-          <figcaption ng-show="vm.track.artists.length > 0">
+        <textarea data-ng-show="vm.isSelected(1)" id="moment-textarea" class="moment-content" data-ng-keyup="vm.contentExpand()" data-ng-model="vm.moment.content" placeholder="Content" required></textarea>
+        <section class="content-preview primary-content" data-ng-show="vm.isSelected(2)" data-ng-bind-html="vm.moment.content | markdown"></section>
+        <figure> <img src="{{ vm.track.album.images[1].url || '../images/defaultAlbum.png'}}" alt="Album cover for {{ vm.track.artists[0].name }}" title="{{ vm.track.artists[0].name }}"> <figcaption data-ng-show="vm.track.artists.length > 0">
             <p><span class="moment-song">{{ vm.track.name }}</span><span>|</span>{{ vm.track.artists[0].name }}</p></figcaption>
         </figure>
       </div>
-      <input class="moment-tags search-light" type="text" ng-model="vm.tags" placeholder="Tags" >
+      <input class="moment-tags search-light" type="text" data-ng-model="vm.tags" placeholder="Tags" >
       <a class="content-link" href="https://help.github.com/articles/markdown-basics/" target="_blank">Markdown supported. What is Markdown?</a>
     </form>
   </div>

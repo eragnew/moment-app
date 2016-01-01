@@ -7,11 +7,13 @@
   font-weight: 300;
 }
 
-input[type="date"] {
+input[type="datetime"] {
   font-family: font-family('primary', 'semibold');
   width: 4em;
   height: 3.3em;
+  padding-right: .5em;
   color: transparent;
+  text-align: right;
   background: url('/images/calendar.svg') no-repeat;
   background-position: left .2em;
   background-size: 3em;
@@ -33,7 +35,7 @@ input[type="date"] {
       opacity: 1;
     }
     @media screen and (min-width: $break) {
-      width: 14em;
+      width: 24em;
     }
   }
   &::-webkit-inner-spin-button {

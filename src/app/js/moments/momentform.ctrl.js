@@ -14,7 +14,8 @@ module.exports = function(app) {
     vm.save = submitMoment;
     vm.update = updateMoment;
     vm.date = $filter('date')(Date.now(), 'yyyy-MM-dd');
-    vm.today = new Date(vm.date);
+    vm.dateNow = Date.now();
+    vm.today = new Date(vm.dateNow);
     vm.moment = {};
     vm.track = {};
     vm.tab = 1;
@@ -23,6 +24,7 @@ module.exports = function(app) {
 
     function showDate () {
       console.log(vm.date);
+      console.log(vm.today);
     }
 
     function start() {
@@ -74,8 +76,8 @@ module.exports = function(app) {
       var momentAPI = new MomentsAPI();
       vm.moment.title = vm.track.name;
       vm.moment.spotifyResource = vm.track.id;
-      vm.moment.dateCreated = vm.date;
-      vm.moment.dateModified = vm.date;
+      vm.moment.dateCreated = vm.today;
+      vm.moment.dateModified = vm.today;
       var formattedToken = token.replace(/"/g, '');
       if (vm.tags)
         vm.moment.tags = vm.tags.split(',');
@@ -89,7 +91,7 @@ module.exports = function(app) {
     function updateMoment(){
       var momentAPI = new MomentsAPI();
 
-      vm.moment.dateModified = vm.date;
+      vm.moment.dateModified = vm.today;
       var formattedToken = token.replace(/"/g, '');
       if (vm.moment.tags) {
         vm.moment.tags = vm.moment.tags.split(',');
