@@ -48,8 +48,6 @@ module.exports = function(app) {
                 }
               );
           });
-        return data.profile;
-      });
           var monthChecker = [];
           var monthChunk = function(index1, index2) {
             return vm.moments.slice(monthChecker.indexOf(index1), index2);
@@ -75,7 +73,6 @@ module.exports = function(app) {
           console.log(vm.months);
           return data.profile;
         });
->>>>>>> adeb5ce15eae92c79042d1798d1ab87c761c9974
 
         vm.stats = momentsAPI.stats(token, function(err, data) {
           vm.momentCount = data[0];
