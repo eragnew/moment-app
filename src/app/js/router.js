@@ -5,6 +5,10 @@ module.exports = function(momentApp) {
         templateUrl: 'views/moments.html',
         controller: 'MomentsController as vm'
       })
+      .when('/albums', {
+        templateUrl: 'views/moments_album.html',
+        controller: 'MomentsController as vm'
+      })
       .when('/moments/new', {
         templateUrl: 'views/moment_form.html',
         controller: 'MomentFormController as vm'

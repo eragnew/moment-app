@@ -17,7 +17,8 @@ $iconPrimary:
 (valid 2 "\ed6f" 100% #1e1d24)
 (arrowR 2 "\edba" 2em #1e1d24)
 (arrowL 2 "\edc2" 2em #1e1d24)
-(play 2 "\ed7b" 2em #1e1d24);
+(play 2 "\ed7b" 2em #1e1d24)
+(album 0 "\ea8b" 1.5em #4CAF50);
 
 @each $iconP in $iconPrimary {
   .icon-#{nth($iconP, 1)} {

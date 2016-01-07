@@ -57,17 +57,17 @@ module.exports = function(app) {
             var month = createDate.getMonth();
             monthChecker.push(month);
             if (i === 0 && vm.moments.length === 1) {
-              vm.months.push(vm.moments.slice(0)); 
+              vm.months.push(vm.moments.slice(0));
             } else if (i !== 0) {
               if (month !== monthChecker[i - 1] && i !== vm.moments.length - 1) {
                 vm.months.push(monthChunk(monthChecker[i - 1], i));
               } else if (month !== monthChecker[i - 1] && i === vm.moments.length - 1) {
                 vm.months.push(monthChunk(monthChecker[i - 1], i));
-                vm.months.push(monthChunk(month)); 
+                vm.months.push(monthChunk(month));
               } else if (i === vm.moments.length - 1) {
-                vm.months.push(monthChunk(month)); 
-              } 
-            } 
+                vm.months.push(monthChunk(month));
+              }
+            }
           }
           vm.months.reverse();
           console.log(vm.months);
