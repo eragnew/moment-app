@@ -2,7 +2,7 @@
   @include flex-box($align: center, $wrap: wrap, $direction: column, $justify: center);
   @include background('/images/mainBGdark.svg');
   @media only screen and (min-width: $break) {
-    @include flex-box($wrap: wrap, $direction: row, $justify: space-between);
+    @include flex-box($wrap: nowrap, $direction: row, $justify: space-between);
     padding: 1em 6em 2em 4em;
   }
 
@@ -44,6 +44,7 @@
       @media only screen and (min-width: $break) {
         order: 2;
         padding: 1em;
+        min-width: 300px;
         margin: 0;
       }
     }

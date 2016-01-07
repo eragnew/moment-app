@@ -4,6 +4,7 @@ module.exports = function(app) {
 
     vm.user = {};
     vm.moments = [];
+    vm.months = [];
     vm.resources = [];
     vm.albumArts = [];
     vm.currentPath = $location.path();
@@ -27,6 +28,15 @@ module.exports = function(app) {
         });
         momentsAPI.getAll(token, function(err, data) {
           if (err) return errorHandler(err);
+          data.sort(function(a,b) {
+            if (parseInt(a.dateModified.slice(5,7)) > parseInt(b.dateModified.slice(5,7))) {
+              return 1;
+            }
+            if (parseInt(b.dateModified.slice(5,7)) > parseInt(a.dateModified.slice(5,7))) {
+              return -1;
+            }
+            return 0;
+          });
           for (var i = 0; i < data.length; i++) {
             vm.moments.push(data[i]);
             vm.resources.push(data[i].spotifyResource);
@@ -38,17 +48,41 @@ module.exports = function(app) {
                 }
               );
           });
-          // console.log(vm.moments);
         return data.profile;
       });
+          var monthChecker = [];
+          var monthChunk = function(index1, index2) {
+            return vm.moments.slice(monthChecker.indexOf(index1), index2);
+          };
+          for (i = 0; i < vm.moments.length; i++) {
+            var createDate = new Date(vm.moments[i].dateModified);
+            var month = createDate.getMonth();
+            monthChecker.push(month);
+            if (i === 0 && vm.moments.length === 1) {
+              vm.months.push(vm.moments.slice(0));
+            } else if (i !== 0) {
+              if (month !== monthChecker[i - 1] && i !== vm.moments.length - 1) {
+                vm.months.push(monthChunk(monthChecker[i - 1], i));
+              } else if (month !== monthChecker[i - 1] && i === vm.moments.length - 1) {
+                vm.months.push(monthChunk(monthChecker[i - 1], i));
+                vm.months.push(monthChunk(month));
+              } else if (i === vm.moments.length - 1) {
+                vm.months.push(monthChunk(month));
+              }
+            }
+          }
+          vm.months.reverse();
+          console.log(vm.months);
+          return data.profile;
+        });
+>>>>>>> adeb5ce15eae92c79042d1798d1ab87c761c9974
 
-      vm.stats = momentsAPI.stats(token, function(err, data) {
-        console.log(data);
-        vm.momentCount = data[0];
-        vm.tagCount = data[1];
+        vm.stats = momentsAPI.stats(token, function(err, data) {
+          vm.momentCount = data[0];
+          vm.tagCount = data[1];
+        });
       });
-    });
-  };
+    };
 
     vm.initPage();
 

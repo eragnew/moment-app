@@ -7,8 +7,15 @@
 
   li {
     border: 2px solid transparent;
+    border-bottom: 1px solid color('primary', 'light');
     &:hover {
       border-color: color('secondary', 'base');
     }
   }
+	li:last-child {
+		border-bottom-color: color('primary', 'base');
+		&:hover {
+			border-bottom: 1px solid color('secondary', 'base');
+		}
+	}
 }

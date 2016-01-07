@@ -9,7 +9,7 @@ module.exports = {
   spotify: {
     clientId: 'f4ffe5be37984004ab370083ec607daf',
     clientSecret: '2c8c6f83ca7740e68be5cd0f36a67ccf',
-    // spotifyCallback: 'https://moment-app.herokuapp.com/auth/spotify/callback'
+    //spotifyCallback: 'https://moment-app.herokuapp.com/auth/spotify/callback'
     spotifyCallback: 'http://localhost:3000/auth/spotify/callback'
   }
 };
